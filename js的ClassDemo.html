@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class a{
+        constructor(data){
+            this.a = data;
+        }
+        a1(){
+            console.log("class a的a1方法"+this.a);
+
+            return this.a;
+        }
+        helloWord(){
+            console.log("hello Word!!");
+            let sb='阮瑞麟';
+            return sb;
+        }
+    }
+
+
+    class a1 extends a{
+        constructor(who){
+            super(who);
+            this._who = who;
+        }
+
+        con(){
+            console.log("子类a1的con方法"+this.a1());
+        }
+    }
+    var b = new a1('zlsy');
+    b.a1();
+    b.helloWord();
+    b.con();
+</script>
+</html>

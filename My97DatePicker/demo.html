@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<script type="text/javascript" src="WdatePicker.js"></script>
+
+</head>
+<body>
+	先changing
+	后changed
+			   <input type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd', dchanging:cDayFunc})" />
+
+
+
+			      <input type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'%yyyy-01-01',maxDate:'%yyyy-%MM-%dd', dchanging:cDayFunc, Mchanging:cMonthFunc, ychanging:cYearFunc,dchanged:cDayFunc, Mchanged:cMonthFunc, ychanged:cYearFunc})" />
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+
+	function cDayFunc(){
+		cFunc('d');
+	}
+	function cMonthFunc(){
+		cFunc('M');
+	}
+	function cYearFunc(){
+		cFunc('y');
+	}
+	function cFunc(who){
+		var str,p,c = $dp.cal;
+		if(who=='y'){
+			str='年份';
+			p='y';
+		}
+		else if(who=='M'){
+			str='月份';
+			p='M';
+		}
+		else if(who=='d'){
+			str='日期';
+			p='d';
+		}
+
+		var tt=str+'发生改变了!\n$dp.cal.date.y='+c.date['y']+'\n$dp.cal.newdate.y='+c.newdate['y']+'\n$dp.cal.date.M='+c.date['M']+'\n$dp.cal.newdate.M='+c.newdate['M']+'\n$dp.cal.date.d='+c.date['d']+'\n$dp.cal.newdate.d='+c.newdate['d']
+
+		alert(tt);
+	}
+</script>

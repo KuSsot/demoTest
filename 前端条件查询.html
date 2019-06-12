@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        ul{
+            display: flex;
+            width: 36%;
+            margin: 0 auto;
+        }
+        ul li{
+            width: 50%;
+            list-style:none;
+            cursor: pointer;
+            transition: background 0.5s;
+        }
+        .on{
+            background: #0e93d7;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<ul >
+    <li class="on" onclick="getInfo('外卖')">外卖</li>
+    <li onclick="getInfo('自提')">自提</li>
+    <li onclick="getInfo()">全部</li>
+</ul>
+</body>
+<script>
+    $('ul li').click(function () {
+        $(this).attr('class','on').siblings().removeAttr('class','on');
+    });
+    var information_list = [
+        {
+            "sort":1,
+            "type":"外卖",
+            "time":"12.30",
+            "address":"南城区宏丰大厦6051111",
+            "phone":"13355667755",
+            "payment_status":"已支付",
+            "order_status":"以完成",
+            "money":35
+        }, {
+            "sort":2,
+            "type":"外卖",
+            "time":"12.30",
+            "address":"南城区宏丰大厦60522222",
+            "phone":"13355667755",
+            "payment_status":"已支付",
+            "order_status":"以完成",
+            "money":35
+        },{
+            "sort":2,
+            "type":"自提",
+            "time":"12.30",
+            "address":"南城区宏丰大厦60533333",
+            "phone":"13355667755",
+            "payment_status":"已支付",
+            "order_status":"以完成",
+            "money":35
+        },]
+    getInfo('外卖');
+    function getInfo(keyWord) {
+        console.log(keyWord);
+        if(keyWord != '' && keyWord != undefined){
+            $.each(information_list,function (idx,item) {
+                if(item.type == keyWord){
+                    console.log(item);
+                }
+            })
+        }else {
+            $.each(information_list,function (idx,item) {
+                console.log(item);
+            })
+        }
+    }
+</script>
+
+</html>

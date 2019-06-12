@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        #div1{
+            width: 70%;
+            margin: 200px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #div1>div{
+            display: flex;
+            width: 45%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1" style="">
+    <div class="search_text null">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            发布地区：
+        </div>
+        <input type="text" name="a_3" placeholder="请输入">
+    </div>
+
+    <div class="search_text null">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            标题：
+        </div>
+        <input type="text" name="a_4" class="nickname" placeholder="请输入">
+    </div>
+
+    <div class="search_text ">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            品牌名称：
+        </div>
+        <input type="text" name="a_30" placeholder="请输入您的品牌名称">
+    </div>
+
+    <div class="m_div_ask ">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            招商地区：
+        </div>
+        <select name="a_31" class="usermes">
+            <option value="广东-中山">广东-中山</option>
+            <option value="广东-广州">广东-广州</option>
+            <option value="广东-顺德">广东-顺德</option>
+        </select>
+    </div>
+
+    <div class="search_text text_div">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            所属行业：
+        </div>
+        <input type="text" name="a_32" placeholder="例如：餐饮、服装">
+    </div>
+
+    <div class="search_text text_div">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            招商对象：
+        </div>
+        <input type="text" name="a_34" placeholder="例如：自由创业 在岗投资">
+    </div>
+
+    <div class="m_div_ask ">
+        <div class="ask_cla">
+            <span class="necess">*</span>
+            经营模式：
+        </div>
+        <select name="a_36" class="usermes">
+            <option value="经销">经销</option>
+            <option value="代理">代理</option>
+            <option value="自营">自营</option>
+        </select>
+    </div>
+
+    <div class="m_div_ask null">
+        <div class="ask_cla">
+            <span class="necess"></span>
+            投资金额：
+        </div>
+        <select name="a_128" class="usermes">
+            <option value="3万以下">3万以下</option>
+            <option value="3-5万">3-5万</option>
+            <option value="5-8万">5-8万</option>
+            <option value="8-12万">8-12万</option>
+            <option value="12万以上">12万以上</option>
+        </select></div>
+
+    <div class="search_text null">
+        <div class="ask_cla"><span class="necess"> </span>
+            创立时间：
+        </div>
+        <input type="text" name="a_712" placeholder="请输入">
+    </div>
+    <button onclick="getInput()">获取品牌名称</button>
+</div>
+<script>
+
+    function getInput() {
+        var a = 0;
+        $('#div1>div').each(function () {
+            var $parent = $(this);
+            $parent.find(".msg").remove();
+            //验证发布地区填了没有
+            if ($(this).text().indexOf('发布地区') >= 0) {
+                var fbdq = $.trim($(this).find('input').val());
+                if(fbdq == '' || fbdq == undefined || fbdq == null){
+                    $parent.append("<div class='msg onError col-xs-10' style='padding: 0;'><span>请输入发布地区</span></div>");
+                    a=0;
+                }else{
+                    console.log(fbdq);
+                    a=a+1;
+                    console.log(a);
+                }
+            }
+            //验证标题填了没有
+            if($(this).text().indexOf('标题') >= 0){
+                var bt = $.trim($(this).find('input').val());
+                if(bt == '' || bt == undefined || bt == null){
+                    $parent.append("<div class='msg onError col-xs-10' style='padding: 0;'><span>请输入标题</span></div>");
+                    a=0;
+                }else{
+                    console.log(bt);
+                    a=a+1;
+                    console.log(a);
+                }
+            }
+            //验证品牌名称填了没有
+            if($(this).text().indexOf('品牌名称') >= 0){
+                var ppmc = $.trim($(this).find('input').val());
+                if(ppmc == '' || ppmc == undefined || ppmc == null){
+                    $parent.append("<div class='msg onError col-xs-10' style='padding: 0;'><span>请输入品牌名称</span></div>");
+                    a=0;
+                }else{
+                    console.log(ppmc);
+                    a=a+1;
+                    console.log(a);
+                }
+            }
+            //验证招商地区填了没有
+            if($(this).text().indexOf('招商地区') >= 0){
+                var zsdq = $.trim($(this).find('select').val());
+                if(zsdq == '' || zsdq == undefined || zsdq == null){
+                    $parent.append("<div class='msg onError col-xs-10' style='padding: 0;'><span>请输入招商地区</span></div>");
+                    a=0;
+                }else{
+                    console.log(zsdq);
+                    a=a+1;
+                    console.log(a);
+                }
+            }
+        });
+        if(a==4) {
+            alert("提交成功");
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.kqdj_a {
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.hawed {
+    width: 99%;
+    margin: auto;
+}
+
+.my_kqdj button a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.my_kqdj button {
+    width: 94px;
+    height: 27px;
+    line-height: 20px;
+    border-radius: 3px 3px 0px 0px;
+    background-color: rgba(65, 174, 225, 1);
+    text-align: center;
+    border: 1px solid rgba(221, 221, 221, 1);
+    margin-left: 12px;
+}
+
+.my_kqdj .kqdj_x {
+    width: 99.8%;
+    border: 1px solid rgb(219, 219, 219);
+    display: block;
+}
+
+.my_Djdata {
+    width: 97%;
+    margin: auto;
+}
+
+.my_Djdata input {
+    width: 142px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 0 5px;
+    border: 1px solid rgba(187, 187, 187, 1);
+    background: url(/image/t_image/data.png) no-repeat;
+    background-position: 120px;
+    background-size: 24px;
+}
+
+.my_Djdata img {
+    margin: 0px -32px 0px;
+}
+
+.my_biaoge {
+    display: inline-block;
+    margin-left: 40px;
+    background: rgba(255, 152, 0, 1);
+    width: 106px;
+    height: 30px;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.my_biaoge a {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.kuandu {
+    border-bottom: 2px solid rgb(219, 219, 219);
+    height: 80px;
+}
+
+.table3_1 table {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.table3_1 tr {
+    color: #000000;
+}   
+
+.table3_1,
+.table3_1 th,
+.table3_1 td {
+    font-size: 14px;
+    text-align: center;
+    padding: 4px;
+    border-bottom: 2px solid rgb(219, 219, 219);
+    border-collapse: collapse;
+}
+
+.my_tablek .table3_1 tr td {
+    width: 10%;
+    height: 25px;
+}
+
+
+
+ul.my_pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.my_pagination li {
+    display: inline;
+}
+
+ul.my_pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid rgba(187, 187, 187, 1);
+    margin: 0 0 0 5px;
+}
+
+.my_pagination li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.my_pagination li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.my_pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.my_pagination li a:hover:not(.active) {
+    background-color: rgba(255, 152, 0, 1);
+    color: #fff;
+}
+
+.my_uliboklk {
+    text-align: center;
+    margin-top: 60px;
+} 
+
+
+/* 政务信息登记 */
+.my_Djdatafds select {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.zwuxx {
+    width: 97%;
+    margin: auto;
+    min-width: 1326px;
+}
+
+.my_kqdj {
+    min-width: 1326px;
+}
+
+.head_ko {
+    width: 100%;
+    height: 50px;
+}
+
+.iner input {
+    width: 75%;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid rgba(187, 187, 187, 1);
+}
+
+
+.iner span {
+    margin-left: 50px;
+}
+
+.iner {
+    margin-left: 31px;
+}
+
+.n_world {
+    width: 74%;
+    display: -webkit-box;
+    margin: 0 114px;
+}
+
+
+.kg_body {
+    width: 81%;
+    height: 24px;
+}
+
+/* ***************************************************** */
+
+section#editor {
+    width: 74%;
+    margin: 0 115px;
+    margin-top: -25px;
+}
+
+.froala-editor {
+    border: 2px solid rgb(159, 237, 225);
+}
+
+.froala-element.f-basic {
+    border: 2px solid rgb(159, 237, 225);
+    padding: 10px;
+    height: 200px;
+}
+
+/* ***************************************************** */
+/* 文件 */
+.bootn{
+    width: 100%;
+    height: 40px;
+}
+
+.huagza{
+    width: 93.5%;
+    margin: auto;
+}
+
+.right_l{
+    display: inline-block;
+}
+.g_kges{
+    display: inline-block;
+    height: 19px;
+    width: 43%;
+}
+.x_body{
+     width: 82%;
+}
+
+/*会议登记-会议登记*/
+.img_right {
+    float: right;
+}
+.img_right a{
+    color: black;
+    margin: 30px;
+    text-decoration: none;
+}
+.check{
+    width: 97%;
+    height: 100%;
+    margin: auto;
+}
+.check .t_show input{
+    width: 260px;
+    height: 30px;
+    padding: 0 5px;
+    font-size: 14px;
+    border-radius: 3%;
+    border: 1px solid rgba(187, 187, 187, 1);
+}
+.check .t_show .T_test{
+    width: 6.7%;
+    height: 5px;
+    display: inline-block;
+}
+.check .t_show .T_test_one{
+    width: 5%;
+    height: 5px;
+    display: inline-block;
+}
+.check .add_data input {
+    background: url(/image/t_image/b_data.png) no-repeat;
+    background-position: 97%;
+}
+.check .Staff select{
+    width: 137px;
+    height: 30px;
+    color: gray;
+    border-radius: 3%;
+    font-size: 14px;
+    border: 1px solid rgba(187, 187, 187, 1);
+}
+.Staff .w_change{
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 1.8;
+    cursor:pointer;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid rgba(187, 187, 187, 1);
+}
+.Staff .w_right{
+    height: 5px;
+    width: 328px;
+    display: inline-block;
+}
+.Staff .my_cen{
+    height: 10px;
+    width: 100%;
+    display: -webkit-box;
+}
+.b_respat{
+    width: 100%;
+    display: block;
+    border: 0.5px solid rgba(187, 187, 187, 1);
+}
+.Staff img{
+    position: relative;
+    left: -14px;
+    top: -8px;
+}
+.Staff .my_insert a{
+    width: 70px;
+    height: 25px;
+    color: black;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    background: rgba(229, 28, 35, 1);
+}
+.meeting .my_meeting{
+    width: 100%;
+    height: 10px;
+}
+.meeting textarea{
+    width: 57%;
+    height: 161px;
+}
+.Conference{
+    width: 100%;
+    height: 30px;
+}
+.button_two{
+    width: 55%;
+    height: 32px;
+}
+.button_two a{
+    width: 106px;
+    height: 30px;
+    border: 1px solid;
+    float: right;
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 2.3;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+

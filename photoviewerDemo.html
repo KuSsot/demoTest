@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <!--核心CSS文件 -->
+    <link href="./photoviewer/photoviewer.css" rel="stylesheet">
+    <!--核心JS文件 -->
+    <script src="./photoviewer/photoviewer.js"></script>
+
+</head>
+<body>
+<div>
+    <div><img src="images/house1.jpg"></div>
+    <div><img src="images/house2.jpg"></div>
+    <div><img src="images/house3.jpg"></div>
+</div>
+<script>
+   /* //构建图像数组
+    var items = [
+        {
+            src: 'images/house1.jpg', // 图像路径
+            title: 'Image Caption 1' //如果你跳过它，会显示原始图像名称
+        },
+        {
+            src: 'images/house2.jpg',
+            title: 'Image Caption 2'
+        }
+    ];*/
+    //定义选项（如果需要）
+    var options = {
+        // optionName: 'option value'
+        // 例如：
+        index: 0 // 此选项表示您将从第一张图片开始
+    };
+    //初始化插件
+    /*var viewer = new PhotoViewer([], options);*/
+
+    $("img").each(function () {
+        $(this).click(function () {
+            console.log(this);
+            new PhotoViewer([{
+                footToolbar:['',''],
+                src: $(this).attr('src'), // 图像路径
+                title: '图片' //如果你跳过它，会显示原始图像名称
+
+            }]);
+        })
+    })
+    
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    $.ajax({
+        url:'http://192.168.0.253:8988/app/index.php?i=1&c=entry&do=postdatanoopenid&m=gm_mod',
+        type:'post',
+        dataType:'text',
+        data:{
+            htmlname:'lzpDemo.html',
+            mainid:'2',
+            typeid:'',//1.改   2.增   3.查   4.删
+            id:97,
+            a1:'德莫西亚'
+        },success(data){
+            console.log(data);
+        }
+    });
+
+</script>
+</html>

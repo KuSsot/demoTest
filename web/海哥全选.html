@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="am-form-group" id="a36">
+    <h3 class="qsa">综合股</h3>
+    <input type="checkbox" class="allcheck" >全选
+    <div class="div_1">
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >陈结媚
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >李芳
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >李日明
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >林淑媛
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox">林志明
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox">阮绮华
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox">喻自林
+        </label>
+    </div>
+</div>
+<div class="am-form-group" id="a37">
+    <h3 class="qsa">综合股</h3>
+    <input type="checkbox" class="allcheck" >全选
+    <div class="div_1">
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >陈结媚
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >李芳
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >李日明
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox" >林淑媛
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox">林志明
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox">阮绮华
+        </label>
+        <label class="am-checkbox-inline">
+            <input type="checkbox">喻自林
+        </label>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.allcheck').on('click',function () {
+        var $_this = $(this);
+        console.log($(this));
+        if($_this.prop('checked')){
+            $_this.next().find('input[type="checkbox"]').attr('checked',true);
+        }else {
+            $_this.next().find('input[type="checkbox"]').attr('checked',false);
+        }
+    });
+</script>
+</body>
+</html>

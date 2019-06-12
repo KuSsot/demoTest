@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/*规章制度查询*/
+.index-content{padding: 5px 0px 0px 0px;width: 100%}
+.index-content .ZD p{height: 29px;border-bottom: 1px solid #ccc;padding-left: 6px;padding-right: 29px; line-height: 27px}
+.index-content .ZD p span{font-size: 14px;;background: #41AEE1;padding: 5px 10px;color: #FFFFFF}
+.index-content .ZD p a{float: right;font-size: 14px;color:#000000;}
+.index-content .LX{padding: 15px 0px 0px 6px;display:table-cell;vertical-align:middle;}
+.index-content .LX label{font-size: 14px;line-height: 30px}
+.index-content .LX input[type=text]{height: 30px;width: 214px;border-radius: 5px;margin-right: 50px;border: 1px solid #ccc;vertical-align:middle;padding-left: 10px}
+.index-content .LX .submit{text-align: center;line-height: 30px; display: inline-block;height: 30px;width: 106px;background:#FF9800;border: none;border-radius: 5px;font-size: 15px;color: #FFFFFF;vertical-align:middle;padding-left: 10px}
+.index-content .BG{padding: 30px 0px 0px 15px}
+.index-content .BG table{font-size: 14px;text-align: center;}
+.index-content .BG table th{font-size: 14px;padding: 5px 0px;border-bottom: 1px solid #ccc;font-weight: 100}
+.index-content .BG table td{font-size: 14px;padding: 5px 0px;border-bottom: 1px solid #ccc}
+.index-content .BG table td a{line-height: 25px;color: #FFFFFF}
+.index-content .BG .td-1{width: 170px}
+.index-content .BG .a-1{width: 70px;height: 25px;background: #FF9800;display: block;float: left;border-radius: 5px}
+.index-content .BG .a-2{width: 70px;height: 25px;background: #E51C23;display: block;float: right;margin-right: 20px;border-radius: 5px}
+/*规章制度查询end*/
+
+/*规章制度增加*/
+.increase-content{padding: 5px 0px 0px 0px;width: 100%}
+.increase-content .ZD p{height: 29px;border-bottom: 1px solid #ccc;padding-left: 6px;padding-right: 29px; line-height: 27px}
+.increase-content .ZD p span{font-size: 14px;;background: #41AEE1;padding: 5px 10px;color: #FFFFFF}
+.increase-content .ZD p a{float: right;font-size: 14px;color:#000000;}
+.increase-content .ZDXZ{padding: 15px 0px 0px 6px;padding-right: 80px}
+.increase-content .ZDXZ label{font-size: 14px;line-height: 30px;margin-bottom: 20px;display: block;white-space: nowrap;margin-left: 20px}
+.increase-content .ZDXZ select{height: 30px;width: 200px;border-radius: 5px;margin-right: 50px;border: 1px solid #ccc;vertical-align:middle;padding-left: 10px;color: #9B9B9B;}
+.increase-content .ZDXZ input[type=text]{height: 30px;width:942px;border-radius: 5px;margin-right: 50px;border: 1px solid #ccc;vertical-align:middle;padding-left: 10px;line-height: 30px}
+.increase-content .ZDXZ .CZCX{float: right}
+.increase-content .ZDXZ input[type=submit]{height: 30px;width: 106px;background:#FF9800;border: none;border-radius: 5px;font-size: 14px;color: #FFFFFF;padding-left: 10px;text-align: center;}
+.increase-content .ZDXZ input[type=reset]{height: 30px;width: 106px;background: #E51C23;border: none;border-radius: 5px;font-size: 14px;color: #FFFFFF;margin-right: 20px}
+.increase-content .ZDXZ .TEXT {padding-bottom: 40px;margin-left: 20px}
+.increase-content .ZDXZ .TEXT .content{font-size: 14px}
+/*规章制度增加end*/
+
+/*固定资产登记*/
+.assets-content{padding: 5px 0px 0px 0px;width: 100%}
+.assets-content .ZD p{height: 29px;border-bottom: 1px solid #ccc;padding-left: 6px;padding-right: 29px; line-height: 27px}
+.assets-content .ZD p span{font-size: 14px;;background: #41AEE1;padding: 5px 10px;color: #FFFFFF}
+.assets-content .ZD p a{float: right;font-size: 14px;color:#000000;}
+.assets-content .ZCDJ{padding: 40px 0px 0px 42px;padding-right: 80px}
+.assets-content .ZCDJ label{font-size: 14px;line-height: 30px;margin-right: 50px;white-space: nowrap}
+.assets-content .ZCDJ input[type=text]{height: 30px;border-radius: 5px;border: 1px solid #ccc;vertical-align:middle;padding-left: 10px;line-height: 30px;}
+.assets-content .ZCDJ textarea{width: 100%;min-height: 200px;border-radius: 5px;margin-top: 10px;margin-bottom: 50px;padding: 10px}
+.assets-content .ZCDJ p{font-size: 14px}
+.assets-content .ZCDJ .CZCX{float: right}
+.assets-content .ZCDJ input[type=submit]{height: 30px;width: 106px;background:#FF9800;border: none;border-radius: 5px;font-size: 14px;color: #FFFFFF;padding-left: 10px;text-align: center;}
+.assets-content .ZCDJ input[type=reset]{height: 30px;width: 106px;background: #E51C23;border: none;border-radius: 5px;font-size: 14px;color: #FFFFFF;margin-right: 20px}
+.assets-content .ZCDJ .TEXT {padding-bottom: 40px}
+.assets-content .ZCDJ .TEXT .content{font-size: 14px}
+/*固定资产登记end*/
+
+/*固定资产查询*/
+.assetss-content{padding: 5px 0px 0px 0px;width: 100%}
+.assetss-content .ZD p{height: 29px;border-bottom: 1px solid #ccc;padding-left: 6px;padding-right: 29px; line-height: 27px}
+.assetss-content .ZD p span{font-size: 14px;;background: #41AEE1;padding: 5px 10px;color: #FFFFFF}
+.assetss-content .ZD p a{float: right;font-size: 14px;color:#000000;}
+.assetss-content .ZCDJ{padding: 40px 0px 0px 42px;padding-right: 80px}
+.assetss-content .ZCDJ label{font-size: 14px;line-height: 30px;margin-right: 10px;white-space: nowrap}
+.assetss-content .ZCDJ input[type=text]{height: 30px;width: 80px; border-radius: 5px;border: 1px solid #ccc;line-height: 30px;padding-left: 10px}
+.assetss-content .ZCDJ input[type=submit]{height: 30px;width: 106px;background:#FF9800;border: none;border-radius: 5px;font-size: 14px;color: #FFFFFF;padding-left: 10px;text-align: center;}
+.assetss-content .DADE{background: url(../image/index_2.png) 210px 5px no-repeat;width:230px;height: 30px;border: 1px solid #bbb;font-size: 12px;color: #333;border-radius: 3px;padding-left: 10px}
+.assetss-content .BG{padding: 30px 0px 0px 0px}
+.assetss-content .BG table{font-size: 14px;text-align: center;}
+.assetss-content .BG table th{font-size: 14px;padding: 5px 0px;border-bottom: 1px solid #ccc;font-weight: 100}
+.assetss-content .BG table td{font-size: 14px;padding: 5px 0px;border-bottom: 1px solid #ccc}
+.assetss-content .BG table td a{line-height: 25px;color: #FFFFFF}
+.assetss-content .BG .td-1{width: 170px}
+.assetss-content .BG .a-1{width: 70px;height: 25px;background: #FF9800;display: block;float: left;border-radius: 5px}
+.assetss-content .BG .a-2{width: 70px;height: 25px;background: #E51C23;display: block;float: right;margin-right: 20px;border-radius: 5px}
+/*固定资产查询end*/
+
+/*会议查询*/
+.meeting-content{padding: 5px 0px 0px 0px;width: 100%}
+.meeting-content .ZD p{height: 29px;border-bottom: 1px solid #ccc;padding-left: 6px;padding-right: 29px; line-height: 27px}
+.meeting-content .ZD p span{font-size: 14px;;background: #41AEE1;padding: 5px 10px;color: #FFFFFF}
+.meeting-content .ZD p a{float: right;font-size: 14px;color:#000000;}
+.meeting-content .ZCDJ{padding: 40px 0px 0px 42px;padding-right: 80px}
+.meeting-content .ZCDJ label{font-size: 14px;line-height: 30px;margin-right: 10px;white-space: nowrap}
+.meeting-content .ZCDJ input[type=text]{height: 30px;width: 80px; border-radius: 5px;border: 1px solid #ccc;line-height: 30px;padding-left: 10px}
+.meeting-content .ZCDJ .submit{text-align: center;line-height: 30px; display: inline-block;height: 30px;width: 106px;background:#FF9800;border: none;border-radius: 5px;font-size: 15px;color: #FFFFFF;vertical-align:middle;padding-left: 10px}
+.meeting-content .DADE{background: url(../image/index_2.png) 210px 5px no-repeat;width:230px;height: 30px;border: 1px solid #bbb;font-size: 12px;color: #333;border-radius: 3px;padding-left: 10px}
+.meeting-content .BG{padding: 30px 0px 0px 0px}
+.meeting-content .BG table{font-size: 14px;text-align: center;}
+.meeting-content .BG table th{font-size: 14px;padding: 5px 0px;border-bottom: 1px solid #ccc;font-weight: 100}
+.meeting-content .BG table td{font-size: 14px;padding: 5px 0px;border-bottom: 1px solid #ccc}
+.meeting-content .BG table td a{line-height: 25px;color: #FFFFFF}
+.meeting-content .BG .td-1{width: 170px}
+.meeting-content .BG .a-1{width: 70px;height: 25px;background: #FF9800;display: block;float: left;border-radius: 5px}
+.meeting-content .BG .a-2{width: 70px;height: 25px;background: #E51C23;display: block;float: right;margin-right: 20px;border-radius: 5px}
+/*会议查询end*/
+
+/*固定资产登记-日期插件*/
+.date_selector, .date_selector *{width: auto;height: auto;border: none;background: none;margin: 0;padding: 0;text-align: left;text-decoration: none;}
+.date_selector{background:#fbfbfb;border: 1px solid #ccc;padding: 10px;margin:0;margin-top:-1px;position: absolute;z-index:100000;display:none;border-radius: 3px;box-shadow: 0 0 5px #aaa;box-shadow:0 2px 2px #ccc; width:220px;}
+.date_selector_ieframe{position: absolute;z-index: 99999;display: none;}
+.date_selector .nav{width: 17.5em;}
+.date_selector .nav p{clear: none;}
+.date_selector .month_nav, .date_selector .year_nav{margin: 0 0 3px 0;padding: 0;display: block;position: relative;text-align: center;}
+.date_selector .month_nav{float: left;width: 50%;}
+.date_selector .year_nav{float: right;width: 40%;margin-right: 20px;}
+.date_selector .month_name, .date_selector .year_name{font-weight: bold;position: relative;top: -5px}
+.date_selector .button{display: block;position: absolute;top: 0;width:18px;height:18px;line-height:16px;font-weight:bold;color:#5985c7;text-align: center;font-size:12px;overflow:hidden;border: 1px solid #ccc;border-radius:2px;}
+.date_selector .button:hover, .date_selector .button.hover{background:#5985c7;color: #fff;cursor: pointer;border-color:#3a930d;}
+.date_selector .prev{left: 0;}
+.date_selector .next{right: 0;}
+.date_selector table{border-spacing: 0;border-collapse: collapse;clear: both;margin: 0; width:220px;}
+.date_selector th, .date_selector td{width: 2.5em;height: 2em;padding: 0 !important;text-align: center !important;color: #666;font-weight: normal;}
+.date_selector th{font-size: 12px;}
+.date_selector td{border:1px solid #f1f1f1;line-height: 2em;text-align: center;white-space: nowrap;color:#5985c7;background: #fff;}
+.date_selector td.today{background: #eee;}
+.date_selector td.unselected_month{color: #ccc;}
+.date_selector td.selectable_day{cursor: pointer;}
+.date_selector td.selected{background:#2b579a;color: #fff;font-weight: bold;}
+.date_selector td.selectable_day:hover, .date_selector td.selectable_day.hover{background:#5985c7;color: #fff;}
+/*固定资产登记-日期插件end*/
+
+
+
+
+

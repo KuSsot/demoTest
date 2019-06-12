@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		.a-box{
+			display: block;
+			width: 100%;
+			border: 1px solid #000;
+			position: absolute;
+		}
+		.a-box .a-list{
+			display: block;
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+		}
+		.a-box .a-list .a-bar{
+			display: block;
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: 0;
+			left: 100px;
+			background: #000;
+			transition: 300ms ease all;/*设置动画滑动效果*/
+		}
+		.a-box:hover .a-list:hover .a-bar{
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="a-box">
+		<div class="a-list">
+			a-list
+			<div class="a-bar"></div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!--<script>-->
+		<!--$(".a-box .a-list").hover(function(){-->
+			<!--$(".a-box .a-list .a-bar").css("left","0px");-->
+		<!--},function(){-->
+			<!--$(".a-box .a-list .a-bar").css("left","100px");-->
+		<!--})-->
+	<!--</script>-->
+</body>
+</html>

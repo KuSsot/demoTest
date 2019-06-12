@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<link rel="stylesheet" href="indexfile/css/index.css">
+<script src="indexfile/js/jquery-3.3.1.min.js    "></script>
+<style>
+    a{
+        color: black;
+        text-decoration:none;
+    }
+</style>
+<body>
+<div id="ma-box-home">
+    <div id="box-Ngtion">
+        <ul>
+            <li><span>首页</span></li>
+            <li><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=know">知道</a></li>
+            <li><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=duo_zixun">资讯</a></li>
+            <li><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=duo11">百科</a></li>
+            <li><a href="">天气</a></li>
+            <li><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=news">消息</a></li>
+            <li><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=gerenzhongxin">我的</a></li>
+            <li><a href="">设置</a></li>
+        </ul>
+    </div>
+    <div id="box-max-include">
+        <div class="box-search-dv">
+        <div><img src="http://www.zhunduoduo.cn/addons/gm_mod/template/mobile/web/images/zdd.png"></div>
+        <div id="search-box">
+            <span><input type="text" placeholder="搜索交友"></span>
+            <span><button>搜索一下</button></span>
+        </div>
+    </div>
+        <div class="box-marst">
+            <div id="box-link">
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=1">招商</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=2">交友</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=3">招聘</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=4">汽车</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=5">房屋</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=6">家装</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=7">建材</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=8">家政</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=9">美容</a></span>
+                <span><a  href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=10">服务</a></span>
+            </div>
+        </div>
+        <div id="box-code" class="box-fixe">
+            <div>
+                <img src="indexfile/images/download.jpg">
+                <div>扫一扫下载APP</div>
+            </div>
+            <div class="box-text">
+                <div class="box-matters">
+                    <span><a href="">把准多多设为主页</a></span>
+                    <span><a href="">关于准多多</a></span>
+                    <span></span><a href="">About  Zhunduoduo</a>
+                    <span><a href="">准多多推广</a></span>
+                </div>
+                <span>©2018 Zhunduoduo <a href="">使用准多多前必读</a> 意见反馈 xICP证xxxxxx号        x公网安备0000000000000号</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    $(window).resize(function(){
+        var he=$(window).height();
+        var nav=$("#box-code"); //得到导航对象
+        if(he<670){
+            nav.removeClass("box-fixe");
+            nav.addClass("fixednav");
+        }else{
+            nav.removeClass("fixednav");
+            nav.addClass("box-fixe");
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <span id="tex">123456789</span>
+    <span id="dTex"></span>
+<div id="jjcfb">
+
+</div>
+</body>
+<script>
+
+    var texarr = $('#tex').text();
+    var tex = texarr.split('');
+
+
+    for(var i=0;i < tex.length-1; i++){
+        for(var j = i+1; j < tex.length; j++) {
+            if (tex[i] < tex[j]) {
+                var big = tex[i];
+                tex[i] = tex[j];
+                tex[j] = big;
+            }
+        }
+        console.log(tex[i]);
+    }
+    tex = tex.join('');
+    $('#dTex').text(tex);
+
+
+</script>
+<script>
+    var a='';
+    for(var i = 1; i <= 9; i++){
+        for(var j = 1 ; j <= i; j++){
+            $('#jjcfb').append('<span> - '+j+'*'+i+'='+i*j+'</span>');
+
+        }
+        $('#jjcfb').append('<br>');
+    }
+</script>
+</html>

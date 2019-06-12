@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目管理</title>
+    <script type="text/javascript" src="../addons/qsnw_potm/template/mobile/web/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/assets/css/amazeui.css">
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/assets/css/amazeui.min.css">
+    <script src="../addons/qsnw_potm/template/mobile/web/assets/js/amazeui.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/assets/js/amazeui.min.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/assets/js/amazeui.ie8polyfill.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/assets/js/amazeui.ie8polyfill.min.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/assets/js/amazeui.widgets.helper.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/assets/js/amazeui.widgets.helper.min.js"></script>
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/css/style1.css">
+    <script src="../addons/qsnw_potm/template/mobile/web/laydate/laydate.js"></script>
+    <link rel="stylesheet" type="text/css" href="../addons/qsnw_potm/template/mobile/web/css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="../addons/qsnw_potm/template/mobile/web/css/pagination.css">
+    <link rel="stylesheet" type="text/css" href="../addons/qsnw_potm/template/mobile/web/css/main.css">
+    <script type="text/javascript" src="../addons/qsnw_potm/template/mobile/web/js/jquery.pagination.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/js/wechat_ts.js"></script>
+
+    <style type="text/css">
+        .h-table .tron td {
+            background-color: #fafafa;
+        }
+
+        span.btn_del {
+            float: left;
+            margin-right: 10px;
+            color: red;
+            cursor: pointer;
+            display: inline-block;
+            border: 1px solid red;
+            padding: 0 5px;
+            line-height: 20px;
+            margin-top: 7px;
+        }
+
+        .BZ {
+            width: 100%;
+            border-bottom: 1px solid #888
+        }
+
+        .BZ ul {
+            float: right;
+            position: relative;
+            right: 123px;
+            top: 20px;
+        }
+
+        .BZ ul li {
+            float: left;
+            margin-right: 10px
+        }
+
+        .BZ .GJR {
+            height: 10px;
+            width: 10px;
+            background: #0EED5F;
+            display: inline-block
+        }
+
+        .BZ .FZR {
+            height: 10px;
+            width: 10px;
+            background: #3380FF;
+            display: inline-block
+        }
+
+        .JDT {
+            height: 5px;
+            position: relative;
+            top: -13px
+        }
+        .guab h1{
+            color: #fff;
+            font-size: 24px;
+            margin: 20px 20px;
+            float: right;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body style="background-color: #ececec;padding: 30px 20px;">
+<div class="tablewrap">
+    <!--项目名称-->
+    <!--搜索框-->
+    <div class="am-cf am-form " style="background: #fff;height: 50px;line-height: 50px;">
+        <div class="am-inline-block" style="margin-left:3%;">
+            <span class="text-gray am-text-sm">项目名称：</span>
+            <div class="am-inline-block">
+                <input id="xmname" type="text" class="am-input-sm " name="">
+            </div>
+        </div>
+
+        <span class="am-btn am-btn-success am-btn-sm am-radius" onclick="search();">查询</span>
+    </div>
+
+    <!--表格循环-->
+    <table class="h-table main">
+        <thead>
+        <tr>
+            <td>项目名称</td>
+            <td>进度</td>
+            <td>剩余天数</td>
+            <td>项目负责人</td>
+            <td>开始时间</td>
+            <td>结束时间</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody class="AllList main">
+        <!--表格循环end-->
+        </tbody>
+    </table>
+    <!--表格循环end-->
+</div>
+<!--分页代码-->
+<div style="text-align: center; padding: 30px;margin-top: -15px;">
+    <div class="pagination"></div>
+</div>
+<!--分页代码end-->
+<div id="all_task1" class="zi_div" style="width: 100%;border:1px solid #888;background: #fff;display: none;">
+    <div class="tabgroup" style="height: 50px;line-height: 50px;background: #e3e3e3;font-size: 15px;">
+        <div style="display: none;" id="menu_020201" class="xm_tab tab1" onclick="check_tab(1)">商务</div>
+        <div style="display: none;" id="menu_020202" class="xm_tab tab2" onclick="check_tab(2)">技术</div>
+        <div style="display: none;" id="menu_020203" class="xm_tab tab3" onclick="check_tab(3)">资料</div>
+        <div style="display: none;" id="menu_020204" class="xm_tab tab4" onclick="check_tab(4)">业务资料</div>
+        <div style="display: none;" id="menu_020205" class="xm_tab tab5" onclick="check_tab(5)">附件</div>
+    </div>
+    <div style="padding: 10px 0;display: none;font-size: 14px;" class="tab_title" data-b="1">
+        <div class="tab_row">
+            <div style="display: inline-block;" class="btn_newtab" id="sw_new">+&ensp;新建子任务</div>
+        </div>
+        <div class="BZ">
+            <ul>
+                <li>颜色说明</li>
+                <li><span class="GJR"></span>：跟进人</li>
+                <li><span class="FZR"></span>：检查人</li>
+            </ul>
+        </div>
+        <div id="sw_nodone"></div>
+        <div id="sw_done"></div>
+    </div>
+    <div style="padding: 10px 0;display: none;" class="tab_title" data-b="2">
+        <div class="tab_row">
+            <div style="display: inline-block;" class="btn_newtab" id="js_new">+&ensp;新建子任务</div>
+        </div>
+        <div class="BZ">
+            <ul>
+                <li>颜色说明</li>
+                <li><span class="GJR"></span>：跟进人</li>
+                <li><span class="FZR"></span>：负责人</li>
+            </ul>
+        </div>
+        <div id="js_nodone"></div>
+        <div id="js_done"></div>
+    </div>
+    <div style="padding: 10px 0;display: none;" class="tab_title" data-b="3">
+        <div class="tab_row">
+            <div style="display: inline-block;" class="btn_newtab" id="zl_new">+&ensp;上传附件</div>
+        </div>
+        <!--<div class="BZ">-->
+            <!--<ul>-->
+                <!--<li>颜色说明</li>-->
+                <!--<li><span class="GJR"></span>：跟进人</li>-->
+                <!--<li><span class="FZR"></span>：负责人</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div id="zl_nodone"></div>
+        <div id="zl_done"></div>
+    </div>
+    <div style="padding: 10px 0;display: none;" class="tab_title" data-b="4">
+        <div class="tab_row">
+            <div style="display: inline-block;" class="btn_newtab" id="yw_new">+&ensp;新建子任务</div>
+        </div>
+        <div class="BZ">
+            <ul>
+                <li>颜色说明</li>
+                <li><span class="GJR"></span>：跟进人</li>
+                <li><span class="FZR"></span>：负责人</li>
+            </ul>
+        </div>
+        <div id="yw_nodone"></div>
+        <div id="yw_done"></div>
+    </div>
+    <div style="padding: 10px 0;display: none;" class="tab_title" data-b="5">
+        <div class="tab_row">
+            <div style="display: inline-block;" class="btn_newtab" id="fj_new">+&ensp;上传附件</div>
+        </div>
+        <!--<div class="BZ">-->
+            <!--<ul>-->
+                <!--<li>颜色说明</li>-->
+                <!--<li><span class="GJR"></span>：跟进人</li>-->
+                <!--<li><span class="FZR"></span>：负责人</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div id="fj_nodone"></div>
+        <div id="fj_done"></div>
+    </div>
+</div>
+<!--关闭弹出框start-->
+<div class="tc_show_w" id="tc_show" style="display: none;">
+
+    <div class="tc_show">
+        <div class="tc_title"><span class="tc_tit">项目详情内容</span><i onclick="tc_show();"></i></div>
+        <div class="tc_top">
+            <p>任务内容:</p>
+            <textarea id="rw_nr" style="width: 100%; height: 100px; resize:none; border: 1px solid silver;"></textarea>
+        </div>
+        <div class="tc_bot">
+            <p>任务附件:</p>
+            <div class="picming tc_showd" id="ckfj_nr"></div>
+        </div>
+    </div>
+    <!--关闭按钮-->
+    <!--<div class="guab"><h1 onclick="hu_cha()">X</h1></div>-->
+</div>
+<!--关闭弹出框end-->
+
+<!--<div style="width: 30px;height: 30px; font-size: 0px;"></div>-->
+<div id="picbig" style="display: none;" onclick="pic_close();">
+    <!--<div class="pic_mov">-->
+    <!--<div class="picmov_title">-->
+    <!--<i onclick="pic_close();"></i>-->
+    <!--</div>-->
+    <!--<div class="pic_img"><img src="http://s.amazeui.org/media/i/demos/pure-1.jpg" alt="" width="100%" height="100%" class="img_pic"></div>-->
+    <!--</div>-->
+</div>
+</body>
+</html>
+<!--关闭start-->
+<script>
+    function hu_cha() {
+        $("#tc_show").hide();
+    }
+</script>
+<!--关闭end-->
+<script language="javascript">//项目归档
+function tc_show(tid,ppid) {
+    $("#tc_show").toggle(100);
+    ckfj(tid,ppid);
+    var sql1=" id='"+tid+"' ";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "../app/index.php?i=1&c=entry&do=select&m=qsnw_potm",
+        data: {
+            tablename: 'xmgl_task',
+            where:sql1,
+        },
+        success: function(info) {
+            $.each(info,function(idx,item){
+                $("#rw_nr").val(item.content);
+            })
+        }
+    })
+
+
+}
+function picbig(url) {
+    $( "#picbig" ).show(500);
+    $( "#picbig" ).html("");
+    $( "#picbig" ).append('<div class="pic_mov">' +
+        '<div class="picmov_title">' +
+        '<i onclick="pic_close();"></i>' +
+        '</div>' +
+        '<div class="pic_img"><img src="'+url+'" alt=""  class="img_pic"></div>' +
+        '</div>');
+
+}
+function pic_close() {
+    $("#picbig").hide();
+}
+function ckfj(tid,ppid){
+    var sqlstr=" pid="+ppid+" and tid="+tid+"";
+    $.ajax({
+        url: "../app/index.php?i=1&c=entry&do=select&m=qsnw_potm",
+        type: "POST",
+        dataType: "json",
+        data: {
+            tablename: 'xmgl_fj',
+            where:sqlstr
+        },
+        success: function(info) {
+            // console.log("468468468468468468468468468468");
+            // console.log(info);
+            $( "#ckfj_nr" ).html("") ;
+            $.each(info,function(idx,item){
+                var url= item.url;
+                var xzid = item.id;
+
+                var url1= item.url ;
+                var d ="'";
+                var url2=d+url1+d;
+
+                $( "#ckfj_nr" ).append(
+                    '<div class="picDis img_hh" id="pxz_'+item.id+'"  > <img src="'+item.url+'" alt="" width="100%" height="100%" onclick="picbig('+url2+');">'
+                    +'<input type="text" class="ckfj_input" name="" id="add_name1"  readonly="readonly" value="'+item.sname+'">'
+                    +'<div class="xz_icon" id="xz_ico_'+item.id+'"  ><i class="icon_xz1" id="xzicon_'+item.id+'"><a href="'+url+'" style="width:25px; height:25px; display: block;" download="'+item.sname+'"></a></i></div>'
+                    +'</div>' );
+            })
+
+        }
+    })
+
+
+}
+////wechat
+
+function modi(id1) {
+    window.location.href = '{php echo $this->createMobileUrl("web",array("html"=>"xjxm"))}&id=' + id1 + '';
+}
+
+function aaurl(id1,tiname,content,fzrid) {
+    console.log(tiname);
+    console.log(content);
+    console.log(fzrid);
+
+    var obj = document.getElementById("aago");
+    var url = obj.getAttribute("href");
+    if (confirm('确认要项目文档？')) {
+        pj_artchive(id1);
+        url='http://glt.qsnwdss.top/app/index.php?i=1&c=entry&html=xm&do=web&m=qsnw_potm&xmtype=normal';
+        wechat_ts(url,tiname,content,fzrid,"","",'gd')//url,项目名字，项目内容,id;
+
+        //obj.setAttribute("href","{php echo $this->createMobileUrl('web',array('html'=>'xjxm'))}");
+    }
+}
+</script>
+<script language="javascript">//项目归档
+function bburl(id1,tiname,content,fzrid) { //var obj = document.getElementById("bbgo");
+    //var url = obj.getAttribute("href");
+    if (confirm('确认要删除文档？')) {
+        delpj(id1);
+        url='http://glt.qsnwdss.top/app/index.php?i=1&c=entry&html=xm&do=web&m=qsnw_potm&xmtype=normal';
+        wechat_ts(url,tiname,content,fzrid,"","",'gd',)//url,项目名字，项目内容,id;
+        //obj.setAttribute("href","{php echo $this->createMobileUrl('web',array('html'=>'xjxm'))}");
+    }
+}
+</script>
+<script type="text/javascript">
+    var xmtype = "{$_GPC['xmtype']}";
+    var type2 = "{$_GPC['type2']}";
+    var userid = "{$_SESSION['pid']}";
+    var username = "{$_SESSION['truename']}";
+    var userroleId = "{$_SESSION['roleid']}";
+    var fun_del = false;
+    //var ppid ="{$_GPC["ppid"]}";// getQueryString("ppid");
+    if (userroleId != "" && userroleId != "0") {
+        getroleright();
+    }//结束
+    function getroleright() {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                tablename: "xmgl_right",
+                where: " uid=" + userroleId + " and isrole=1 order by mno"
+            },
+        })
+            .done(function (data) {
+                if (data != "") {
+                    //console.log(data)
+                    $.each(data, function (idx, item) {
+                        if (xmtype == "normal") {
+                            if (item.mno == "020201") {
+                                $("#menu_020201").show();
+                            } else if (item.mno == "020202") {
+                                $("#menu_020202").show();
+                            } else if (item.mno == "020203") {
+                                $("#menu_020203").show();
+                            } else if (item.mno == "020204") {
+                                $("#menu_020204").show();
+                            } else if (item.mno == "020205") {
+                                $("#menu_020205").show();
+                            } else if (item.mno == "020206") {
+                                //删除功能
+                                fun_del = true;
+                            }
+                        } else {
+                            if (xmtype == "guid") {
+                                if (item.mno == "020301") {
+                                    $("#menu_020201").show();
+
+                                } else if (item.mno == "020301") {
+                                    $("#menu_020202").show();
+                                } else if (item.mno == "020303") {
+                                    $("#menu_020203").show();
+                                } else if (item.mno == "020304") {
+                                    $("#menu_020204").show();
+                                } else if (item.mno == "020305") {
+                                    $("#menu_020205").show();
+                                } else if (item.mno == "020306") {
+                                    fun_del = true;
+                                    //删除功能
+                                }
+                            }
+                        }
+                        //$("#menu_"+item.mno).show();
+                    });
+                    settabon();
+                    // getListNum();=search();
+                    search();
+                }
+            })
+            .fail(function () {
+                console.log("error");
+            });
+    }//结束
+    function settabon() {
+        //console.log("settabon");
+        var b1 = 0;
+        $('.tabgroup .xm_tab').each(function (idx, item) {
+            //	console.log(idx+","+$(this).css("display"));
+            if ($(this).css("display") == "block") {
+                b1++;
+                if (b1 == 1) {
+                    check_tab(idx + 1);
+                }
+            }
+            //if($(this).css("display"))
+        });
+    }//结束
+    function div_check() {
+        $("div.checkbox").click(function () {
+            $(this).toggleClass("on");
+            $(this).next().toggleClass("del_line");
+        });
+    }//结束
+    /*$(".xm_tab").click(function(){
+        $(this).addClass("on").siblings().removeClass('on');
+    })*/
+    function check_tab(a) {
+        $(".tab" + a).addClass("on").siblings().removeClass('on');
+        $(".tab_title").each(function () {
+            var g = $(this).data("b");
+            if (g == a) {
+                $(".tab_title").hide();
+                $(this).show();
+            }
+        })
+    }//结束
+    function animate() {
+        $(".charts").each(function (i, item) {
+            var a = parseInt($(item).attr("w"));
+            $(item).animate({
+                width: a + "%"
+            }, 1000);
+        });
+    }//结束
+    // getdata();
+    //getListNum()
+    function getListNum() {
+
+        var Sql = "del_flag=0 isarchive=0 order by credate desc  ";
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=pagesum&m=qsnw_potm',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                tablename: 'xmgl_project',
+                where: Sql
+            },
+        })
+            .done(function (info) {
+                //	console.log(info);
+                getListwrap(info, Sql);
+            })
+            .fail(function () {
+                console.log("error");
+            });
+    }//结束
+
+    //关键词搜索
+    function search(){
+        var str1=$("#xmname").val();
+        var keyword="";
+        if(str1 !="" ){
+            keyword="%"+str1+"%";
+        }
+        getTotal1(keyword);
+    }
+    function getTotal1(keyword){
+        var sql="isarchive=0 and del_flag=0";
+        if(type2==1){
+            if(keyword!=""){
+                sql=sql+" and pname like '"+keyword+"'";
+            }else {
+                sql=sql+" and jd_bfb = 100";
+            }
+        }else if(type2==2){
+            if(keyword!=""){
+                sql=sql+" and pname like '"+keyword+"'";
+            }else {
+                sql=sql+" and datediff(jzdate,DATE(now()))<0";
+            }
+        }else {
+
+        }
+
+
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=pagesum&m=qsnw_potm',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                tablename:"xmgl_project",
+                where:sql
+            },
+        })
+            .done(function(total) {
+                if(total!=""){
+                    $(".pagination_1").html("");
+                    getListwrap(0,5,total,sql);
+                }
+            })
+            .fail(function() {
+                console.log("error");
+            });
+    }//关键词搜索end
+
+
+    //项目分页
+    function getListwrap(pageIndex,pageSize,allCount,sql) {
+        // pageIndex = 0;     //页面索引初始值
+        pageSize = 5;     //每页显示条数初始化，修改显示条数，修改这里即可
+        InitTable(0);    //Load事件，初始化表格数据，页面索引为0（第一页）
+        //分页，PageCount是总条目数，这是必选参数，其它参数都是可选
+        $(".pagination").pagination(allCount, {
+            callback: PageCallback,  //PageCallback() 为翻页调用次函数。
+            prev_text: "上一页",
+            next_text: "下一页",
+            items_per_page: pageSize,
+            num_edge_entries: 2,       //两侧首尾分页条目数
+            num_display_entries: 2,    //连续分页主体部分分页条目数
+            current_page: pageIndex,   //当前页索引
+        });
+
+        //翻页调用
+        function PageCallback(index, jq) {
+            InitTable(index);
+        }
+
+        //请求数据
+
+        //项目表格循环请求数据
+        function InitTable(pageIndex) {
+            var cidx = pageIndex + 1;
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: '../app/index.php?i=1&c=entry&do=page&m=qsnw_potm',      //提交到一般处理程序请求数据
+                data: {
+                    tablename: 'xmgl_project',
+                    where: sql,
+                    page: cidx,
+                    pagesize: pageSize
+                },
+
+                success: function (info) {
+
+                    $(".AllList").html("");
+
+                    $.each(info, function (idx, item) {
+                        //判断剩余天数
+
+                        var day = parseInt(item.datediff2);//获取天数
+
+                        var orange = '';//样式为空
+
+                        if (day == 3) {
+                            orange = 'style="color:orange"';
+
+                        } else if (day >= 0 && day < 3) {
+                            orange = 'style="color:red"';//0至2天
+
+                        } else if (day < 0) {
+
+                            orange = 'style="color:red"';//0至2天
+                        } else {
+                            orange = 'style="color:#333333"';//大于3天
+                        }
+                        var a = "'"+item.fzname+"'";
+                        var b = "'"+item.content+"'";
+                        var str = item.jd_bfb;
+                       var jdtxx = str.split(".",1)
+                        var c = item.fzid;
+                        //判断剩余天数 end
+                        $(".AllList").append(
+                            '<tr data-id="' + item.id + '" id="tr_' + item.id + '" onclick="getprojectwrap(' + item.id + ');">'
+                            + '<td>' + item.pname + '</td>'
+                            +'<td>'
+                            +'<div class="votebox" style="margin:2px auto 0 auto">'
+                            +'<dl class="barbox">'
+                            +'<dd class="barline">'
+                            +'<div w="'+item.jd_bfb+'" style="width:0px;" class="charts"></div>'
+                            +'</dd>'
+                            +'</dl>'
+                            +'</div>'
+                            +'<div class="JDT">'+item.jd_bfb+'%</div>'
+                            +'</td>'
+                            + '<td class=" day_sty" ' + orange + '>' + item.datediff1 + '</td>'//天数
+                            + '<td>' + item.fzname + '</td>'//项目负责人
+                            + '<td>' + item.credate.split(" ")[0] + '</td>'
+                            + '<td>' + item.jzdate.split(" ")[0] + '</td>'
+                            + '<td><a class="a-1" href="#" onclick="modi(' + item.id + ');">修改</a><a class="a-12" href="#" onclick="aaurl(' + item.id + ','+a+','+b+','+c+')" id="aago">归档</a><a class="a-3" href="#"  onclick="bburl(' + item.id + ','+a+','+b+','+c+')" id="bbgo">删除</a></td>'
+                            + '</tr>'
+                        );
+
+                        if (idx == 0) {
+                            getprojectwrap(item.id);
+                        }
+                    })
+                    animate();
+                    // getchecked();
+                }
+            }); //结束
+        }
+
+//项目表格循环请求数据end
+
+    }//结束
+
+    $(document).ready(function () {
+        var time = $(".SYTS").text();
+//	alert(time);
+    });
+
+
+
+    function zrw(a, b, c) {
+        var d;
+        var str="";
+        var type1="";
+        if (b == 1) {
+            d = "sw";
+            type1=1;
+        }
+        if (b == 2) {
+            d = "js";
+            type1=1;
+        }
+        if (b == 3) {
+            d = "zl";
+            type1=0;
+        }
+        if (b == 4) {
+            d = "yw";
+            type1=1;
+        }
+        if (b == 5) {
+            d = "fj";
+            type1=0;
+        }
+        // var str="{php echo $this->createMobileUrl('web',array('html'=>'zrw','tid'=>'"+a+"','lx'=>'"+d+"','ppid'=>'"+c+"'))}"
+       // str = "./index.php?i=1&c=entry&do=web&tid=" + a + "&lx=" + d + "&ppid=" + c + "&m=qsnw_potm&html=zrw&xmtype=" + xmtype;
+        if(type1==1){
+            str = "./index.php?i=1&c=entry&do=web&tid=" + a + "&lx=" + d + "&ppid=" + c + "&m=qsnw_potm&html=zrw&xmtype=" + xmtype;
+        }else {
+            str = "./index.php?i=1&c=entry&do=web&tid=" + a + "&lx=" + d + "&ppid=" + c + "&m=qsnw_potm&html=zrwfj&xmtype=" + xmtype;
+        }
+        window.location.href = str;
+
+
+
+
+
+    }//结束
+    function getprojectwrap(hid) {
+        $("#tr_" + hid).addClass('tron').siblings().removeClass("tron");
+        //getGjList(gno);
+        editProgress(hid);
+        //保存添加跟进
+        $("#genjin_addsave").unbind().on("click", function () {
+            saveProgress(hid, gno);
+        });
+        // 保存房源信息变更
+        $("#changeHouseSave").unbind().on("click", function () {
+            changeHouseSave(hid, gno);
+        });
+    }//结束
+    function getchecked() {
+        $(".AllList tr").on("click", function () {
+            $(this).addClass('tron').siblings().removeClass("tron");
+            // var gno=$(this).data("no");
+            var hid = $(this).data("id");
+            if (hid != "") {
+
+                //getGjList(gno);
+                editProgress(hid);
+                //保存添加跟进
+                $("#genjin_addsave").unbind().on("click", function () {
+                    saveProgress(hid, gno);
+                });
+                // 保存房源信息变更
+                $("#changeHouseSave").unbind().on("click", function () {
+                    changeHouseSave(hid, gno);
+                });
+            }
+
+        })
+    }//结束
+    ///////////////////////////////
+
+    function getServerDate(flag) {
+        var cudate = new Date($.ajax({async: false}).getResponseHeader("Date"));
+        var m1 = cudate.getMonth() + 1;
+        var d1 = cudate.getDate();
+        if (m1.toString().length == 1) {
+            m1 = '0' + m1;
+        }
+        if (d1.toString().length == 1) {
+            d1 = '0' + d1;
+        }
+        if (flag == "0") {
+            var cuDateTime = cudate.getFullYear() + '-' + m1 + '-' + d1 + '';
+        } else if (flag == "1") {
+            var cuDateTime = cudate.getFullYear() + '-' + m1 + '-' + d1 + ' ' + cudate.getHours() + ':' + cudate.getMinutes() + ':' + cudate.getSeconds();
+        } else {
+            var cuDateTime = cudate.getFullYear() + '-' + m1
+        }
+        return cuDateTime;
+    }
+
+
+    //任务栏更新状态
+    function div_checkon(id,Cid) {
+
+        $("#bx_" + id).click(function () {
+            $(this).addClass("on");
+            $(this).next().addClass("del_line");
+            $.ajax({
+                url: '../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm',//插入和改修的地址是一样的
+                type: 'POST',//传输方式
+                dataType: 'text',//表示传输的是文本
+                data: {
+                    htmlname: 'xm',//网页名称
+                    tablename: 'xmgl_task',//数据表
+                    mainid: 4,  //区分每个js 如查同一个页面占用了要另一个数字
+                    typeid: 1,  //插入或修改   2插入  1是修改
+                    id: id,
+                    okdate: getServerDate(1),
+                    ok: 1       //状态： 1选中、没传值是0（打勾是1，不打勾是0）
+                },
+            }).done(function () {
+                setTimeout(jdt_rew(Cid),0);
+                //getListNum();
+
+                setTimeout(editProgress(id),0);
+
+
+            })
+
+
+        });
+
+    }
+
+    ///////
+    function div_checkoff(id,Cid) {
+
+        $("#bx_" + id).click(function () {
+
+            $(this).removeClass("on");
+            $(this).next().removeClass("del_line");
+            $.ajax({
+                url: '../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm',//插入和改修的地址是一样的
+                type: 'POST',//传输方式
+                dataType: 'text',//表示传输的是文本
+                data: {
+                    htmlname: 'xm',//网页名称
+                    tablename: 'xmgl_task', //数据
+                    mainid: 4,    //区分每个js 如查同一个页面占用了要另一个数字
+                    typeid: 1,   //插入或修改   1插入  2是修改
+                    id: id,
+                    okdate: getServerDate(1),
+                    ok: 0         //状态： 1选中、没传值是0（打勾是1，不打勾是0）
+                },
+            }).done(function () {
+
+                setTimeout(jdt_rew(Cid),0);
+                setTimeout(editProgress(id),0);
+
+            })
+
+
+        });
+
+    }
+
+    ///////////////////////////
+   // 传任务总数和完成数
+        function jdt_rew(Cid) {
+           // var sql = " del_flag=0 and isarchive=0 order by credate desc  ";
+
+
+            // $.ajax({
+            //     type: "POST",
+            //     dataType: "json",
+            //     url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',      //提交到一般处理程序请求数据
+            //     data: {
+            //         tablename: 'xmgl_project',
+            //         where: sql,
+
+                // }, success(info) {
+
+                    // $.each(info, function (idx, item) {
+                    //     var Cid = item.id;
+                        // console.log(info.length,':1');
+                        var sql1 = " pid='" + Cid + "' and del_flag=0 ";
+                        var sql2 = " pid='" + Cid + "' and del_flag=0 and ok=1";
+                        $.ajax({
+                            type: "POST",
+                            dataType: "json",
+                            url: "../app/index.php?i=1&c=entry&do=select&m=qsnw_potm",
+                            data: {
+                                tablename: 'xmgl_task',
+                                where: sql1,
+                            }, success(info) {
+                                var tnum =info.length;
+                                $.ajax({
+                                    type: "POST",
+                                    dataType: "json",
+                                    url: "../app/index.php?i=1&c=entry&do=select&m=qsnw_potm",
+                                    data: {
+                                        tablename: 'xmgl_task',
+                                        where: sql2,
+                                    }, success(info) {
+                                        // console.log(info.length);
+                                        if(tnum==undefined){
+                                            tnum=0
+                                        }
+                                        if(onum==undefined){
+                                            onum=0
+                                        }
+                                       var onum = info.length;
+                                        // console.log(tnum);
+                                        // console.log(onum)
+                                        if(tnum!=0){
+                                            var jd_bfb=Math.round(onum/tnum *100);
+
+                                        }else {
+                                            jd_bfb=0;
+                                        }
+
+
+                                        var bfh='%';
+                                        var wid='width:'
+                                        // console.log(jd_bfb);
+                                        // console.log(Cid);
+
+                                      var jdt_xs = wid+jd_bfb+bfh+'; color:red;';
+                                      var jds_xs = jd_bfb+bfh;
+                                       $("#jdt_"+Cid).attr("style",jdt_xs);
+
+                                        $("#jdt_"+Cid).html(jds_xs);
+                                        $.ajax({
+                                            url: '../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm',
+                                            type: 'post',
+                                            dataType: 'text',
+                                            data: {
+                                                tablename: 'xmgl_project',
+                                                htmlname: "xm",
+                                                mainid: 2,
+                                                typeid: 1,
+                                                id: Cid,
+                                                tnum:tnum,
+                                                onum:onum,
+                                               jd_bfb:jd_bfb
+                                            }, success(info) {
+
+                                            }
+                                        })
+                                    }
+                                });
+                                // console.log(item.id);
+                                // console.log(info.length,':2');
+
+                                //console.log(tnum);
+
+                            }
+
+                        });
+
+                    // })
+
+
+                // }
+
+
+            // })
+        }
+       // jdt_rew();
+    //////////////////////////
+    //商务、技术、资料、业务资料、附件
+    function editProgress(hid) {
+        var ids = $(".tron").data("id");
+        var sql1 = " pid='" + ids + "' and del_flag=0 ";
+        //console.log(ids);
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "../app/index.php?i=1&c=entry&do=select&m=qsnw_potm",
+            data: {
+                tablename: 'xmgl_task',
+                where: sql1,
+            },
+            success: function (info) {
+                // jdt_rew();
+                $("#sw_nodone").html("");
+                $("#sw_done").html("");
+                $("#js_nodone").html("");
+                $("#js_done").html("");
+                $("#zl_nodone").html("");
+                $("#zl_done").html("");
+                $("#yw_nodone").html("");
+                $("#yw_done").html("");
+                $("#fj_nodone").html("");
+                $("#fj_done").html("");
+                // console.log(info);
+                $("#sw_nodone").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">未完成</div>');
+                $("#sw_done").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">已完成</div>');
+                $("#js_nodone").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">未完成</div>');
+                $("#js_done").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">已完成</div>');
+                // $("#zl_nodone").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">未完成</div>');
+                // $("#zl_done").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">已完成</div>');
+                $("#yw_nodone").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">未完成</div>');
+                $("#yw_done").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">已完成</div>');
+                // $("#fj_nodone").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">未完成</div>');
+                // $("#fj_done").append('<div class="tab_row" style="height: 30px;font-size: 15px;font-weight: bolder;">已完成</div>');
+                $.each(info, function (idx, item) {
+
+                    var delstr = "";
+                    if (fun_del) {
+                        delstr = '<span  class="btn_del" onclick="delswu(' + item.id + ');" style="width: 30px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del.png) 0px -2px no-repeat;border: none">删除</span>';
+                    }
+                    if (item.type1 == "商务") {
+                        if (item.ok == 0) {
+                            $("#sw_nodone").append(
+                                '<div data-tid="' + item.id + '" class="tab_row new_zrw1" id="swu_' + item.id + '" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="checkbox" id="bx_' + item.id + '" onclick="div_checkon(' + item.id + ','+item.pid+')" style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;">' + item.tname + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',1,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                + '</div>'
+                            );
+                        }
+                        if (item.ok == 1) {
+                            $("#sw_done").append(
+                                '<div data-tid="' + item.id + '"   id="swu_' + item.id + '"  class="tab_row new_zrw1" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="checkbox on" id="bx_' + item.id + '" onclick="div_checkoff(' + item.id + ','+item.pid+')" style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;" class="del_line" >' + item.tname + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',1,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                //+'<div style="float: right;margin-left: 5px;margin-top: 6px;" class="task_daynum">123</div>'
+                                + '</div>'
+                            );
+                        }
+                    }
+                    if (item.type1 == "技术") {
+                        if (item.ok == 0) {
+                            $("#js_nodone").append(
+                                '<div data-tid="' + item.id + '" class="tab_row new_zrw1" id="swu_' + item.id + '" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="checkbox" id="bx_' + item.id + '" onclick="div_checkon(' + item.id + ','+item.pid+')" style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;">' + item.tname + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',2,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                + '</div>'
+                            );
+                        }
+                        if (item.ok == 1) {
+                            $("#js_done").append(
+                                '<div data-tid="' + item.id + '"   id="swu_' + item.id + '"  class="tab_row new_zrw1" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="checkbox on" id="bx_' + item.id + '" onclick="div_checkoff(' + item.id + ','+item.pid+')" style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;" class="del_line" >' + item.tname + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',2,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                //+'<div style="float: right;margin-left: 5px;margin-top: 6px;" class="task_daynum">123</div>'
+                                + '</div>'
+                            );
+                        }
+                    }
+                    if (item.type1 == "资料") {
+                        if (item.ok == 0) {
+                            $("#zl_nodone").append(
+                                '<div data-tid="' + item.id + '" class="tab_row new_zrw1" id="swu_' + item.id + '" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="" id="bx_' + item.id + '"  style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;">' + item.content + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',3,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                // + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                // + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                + '</div>'
+                            );
+                        }
+                        // if (item.ok == 0) {
+                        //     $("#zl_done").append(
+                        //         '<div data-tid="' + item.id + '"   id="swu_' + item.id + '"  class="tab_row new_zrw1" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                        //         + '<div class="new_zrw2"><div class="" id="bx_' + item.id + '"  style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                        //         + '<div style="font-size: 15px;float: left;" class="del_line" >' + item.tname + '</div></div>'
+                        //         + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                        //         + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',3,' + hid + ')" class="task_daynum">修改</div>'
+                        //         + delstr
+                        //         // + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                        //         // + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                        //         //+'<div style="float: right;margin-left: 5px;margin-top: 6px;" class="task_daynum">123</div>'
+                        //         + '</div>'
+                        //     );
+                        // }
+                    }
+                    if (item.type1 == "业务资料") {
+                        if (item.ok == 0) {
+                            $("#yw_nodone").append(
+                                '<div data-tid="' + item.id + '" class="tab_row new_zrw1" id="swu_' + item.id + '" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="checkbox" id="bx_' + item.id + '" onclick="div_checkon(' + item.id + ','+item.pid+')" style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;">' + item.tname + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',4,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                + '</div>'
+                            );
+                        }
+                        if (item.ok == 1) {
+                            $("#yw_done").append(
+                                '<div data-tid="' + item.id + '"   id="swu_' + item.id + '"  class="tab_row new_zrw1" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="checkbox on" id="bx_' + item.id + '" onclick="div_checkoff(' + item.id + ','+item.pid+')" style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;" class="del_line" >' + item.tname + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',4,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                //+'<div style="float: right;margin-left: 5px;margin-top: 6px;" class="task_daynum">123</div>'
+                                + '</div>'
+                            );
+                        }
+                    }
+                    if (item.type1 == "附件") {
+                        if (item.ok == 0) {
+                            $("#fj_nodone").append(
+                                '<div data-tid="' + item.id + '" class="tab_row new_zrw1" id="swu_' + item.id + '" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                                + '<div class="new_zrw2"><div class="" id="bx_' + item.id + '"  style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                                + '<div style="font-size: 15px;float: left;">' + item.content + '</div></div>'
+                                + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                                + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',5,' + hid + ')" class="task_daynum">修改</div>'
+                                + delstr
+                                // + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                                // + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                                + '</div>'
+                            );
+                        }
+                        // if (item.ok == 1) {
+                        //     $("#fj_done").append(
+                        //         '<div data-tid="' + item.id + '"   id="swu_' + item.id + '"  class="tab_row new_zrw1" style="width:90%;line-height: 35px;border-bottom: 1px solid #ccc;margin: 0 auto;">'
+                        //         + '<div class="new_zrw2">' +
+                        //         '<div class="" id="bx_' + item.id + '"  style="float: left;margin-top:8px;margin-right: 20px;"></div>'
+                        //         + '<div style="font-size: 15px;float: left;" class="del_line" >' + item.tname + '</div></div>'
+                        //         + '<div class="new_zrw3"><div  onclick="tc_show(' + item.id +','+ hid +')" ><i class="tc_iocn"></i></div>'
+                        //         + '<div style="margin-left: 5px;margin-top: 8px;width: 40px;height: 40px; font-size: 0px;background: url(../addons/qsnw_potm/template/mobile/web/images/del_1.png) 0px -2px no-repeat;border: none" onclick="xq(' + item.id + ',5,' + hid + ')" class="task_daynum">修改</div>'
+                        //         + delstr
+                        //         // + '<div style="float: right;margin-left: 5px;background: #0EED5F" class="someone_div1 bg_blue1">' + item.fzname + '</div>'
+                        //         // + '<div style="float: right;margin-left: 5px;" class="someone_div1 bg_blue1">' + item.jcname + '</div></div>'
+                        //         //+'<div style="float: right;margin-left: 5px;margin-top: 6px;" class="task_daynum">123</div>'
+                        //         + '</div>'
+                        //     );
+                        // }
+                    }
+                })
+                $("#sw_new").unbind().on("click", function () {
+                    zrw(0, 1, hid);
+                })
+                $("#js_new").unbind().on("click", function () {
+                    zrw(0, 2, hid);
+                })
+                $("#zl_new").unbind().on("click", function () {
+                    zrw(0, 3, hid);
+                })
+                $("#yw_new").unbind().on("click", function () {
+                    zrw(0, 4, hid);
+                })
+                $("#fj_new").unbind().on("click", function () {
+                    zrw(0, 5, hid);
+                })
+                $("#all_task1").show();
+                div_check();
+            }
+        })//商务、技术获取遍历数据
+
+
+    };//遍历函数结束
+    //商务、技术、资料、业务资料、附件end
+    function xq(a, b, c) {
+        var d;
+        var str="";
+        var type1="";
+        if (b == 1) {
+            d = "sw";
+            type1=1;
+        }
+        if (b == 2) {
+            d = "js";
+            type1=1;
+        }
+        if (b == 3) {
+            d = "zl";
+            type1=0;
+        }
+        if (b == 4) {
+            d = "yw";
+            type1=1;
+        }
+        if (b == 5) {
+            d = "fj";
+            type1=0;
+        }
+        if(type1==1){
+            str = "./index.php?i=1&c=entry&do=web&tid=" + a + "&lx=" + d + "&ppid=" + c + "&m=qsnw_potm&html=zrw&xmtype=" + xmtype;
+        }else {
+            str = "./index.php?i=1&c=entry&do=web&tid=" + a + "&lx=" + d + "&ppid=" + c + "&m=qsnw_potm&html=zrwfj&xmtype=" + xmtype;
+        }
+
+        // console.log(str)
+        window.location.href = str;
+    }//结束
+    function pj_artchive(Cid) {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                tablename: 'xmgl_project',
+                htmlname: "xm",
+                mainid: 2,
+                typeid: 1,
+                id: Cid,
+                isarchive: 1
+            },
+        })
+            .done(function (info) {
+                if (info == "ok") {
+                    $("#tr_" + Cid).remove();
+                    //getprojectwrap(0);
+                }
+            })
+            .fail(function () {
+                console.log("error");
+            });
+
+    }//结束
+    function delpj(Cid) {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                tablename: 'xmgl_project',
+                htmlname: "xm",
+                mainid: 1,
+                typeid: 1,
+                id: Cid,
+                del_flag: 1
+
+            },
+        })
+            .done(function (info) {
+                if (info == "ok") {
+                    $("#tr_" + Cid).remove();
+                    //getprojectwrap(0);
+                }
+            })
+            .fail(function () {
+                console.log("error");
+            });
+
+    }//结束
+    function delswu(Cid) {
+
+        if (confirm('确认要删除子任务？')) {
+            $.ajax({
+                url: '../app/index.php?i=1&c=entry&do=del&m=qsnw_potm',
+                type: 'post',
+                dataType: 'text',
+                data: {
+                    tablename: 'xmgl_task',
+                    id: Cid
+                },
+            })
+                .done(function (info) {
+                    if (info == "ok") {
+                        $("#swu_" + Cid).remove();
+                    }
+                })
+                .fail(function () {
+                    console.log("error");
+                });
+        }
+
+    }//结束
+
+
+    function delzl(Cid) {
+
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=del&m=qsnw_potm',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                tablename: 'xmgl_xmdata',
+                id: Cid
+            },
+        })
+            .done(function (info) {
+                if (info == "ok") {
+                    $("#zl_" + Cid).remove();
+                }
+            })
+            .fail(function () {
+                console.log("error");
+            });
+    }//结束
+    function delfj(Cid) {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=del&m=qsnw_potm',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                tablename: 'xmgl_fj',
+                id: Cid
+            },
+        })
+            .done(function (info) {
+                if (info == "ok") {
+                    $("#fj_" + Cid).remove();
+                }
+            })
+            .fail(function () {
+                console.log("error");
+            });
+
+    }//结束
+</script>

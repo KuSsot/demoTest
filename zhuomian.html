@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>工作台</title>
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/css/style1.css">
+
+
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/css/jquery.classycountdown.css">
+    <script type="text/javascript" src="../addons/qsnw_potm/template/mobile/web/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/css/WdatePicker.css">
+    <script src="../addons/qsnw_potm/template/mobile/web/js/WdatePicker.js"></script>
+    <script src="../addons/qsnw_potm/template/mobile/web/js/simple-calendar.js"></script>
+    <!--待完成 延迟 已完成 任务总数start-->
+    <script type="text/javascript" src="../addons/qsnw_potm/template/mobile/mobile/js/index_js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../addons/qsnw_potm/template/mobile/mobile/js/index_js/jquery.SuperSlide.2.1.1.source.js"></script>
+    <script type="text/javascript" src="../addons/qsnw_potm/template/mobile/mobile/js/index_js/echarts.min.js"></script>
+    <!-- yuan -->
+    <script src="../addons/qsnw_potm/template/mobile/web/js/progress.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../addons/qsnw_potm/template/mobile/web/css/default.css">
+    <link href="../addons/qsnw_potm/template/mobile/web/css/base.css"  rel="stylesheet" type="text/css" />
+    <link href="../addons/qsnw_potm/template/mobile/web/css/project_base.css"  rel="stylesheet" type="text/css" />
+    <link href="../addons/qsnw_potm/template/mobile/web/css/radialindicator.css"  rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../addons/qsnw_potm/template/mobile/web/css/simple-calendar.css">
+    <script src="../addons/qsnw_potm/template/mobile/web/js/radialIndicator.js"></script>
+    <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body {
+            font-family: "微软雅黑";
+        }
+        li{
+            list-style: none;
+        }
+        div#AllList_5 {
+            height: 210px;
+            width: 50%;
+            float: right;
+        }
+
+        .circle {
+            width: 136px;
+            height: 136px;
+            position: absolute;
+            border-radius: 50%;
+            border: 8px solid #EEEEEE;
+        }
+
+        .pie_left,
+        .pie_right {
+            width: 136px;
+            height: 136px;
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            z-index: 5;
+        }
+
+        .left,
+        .right {
+            width: 136px;
+            height: 136px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .pie_right,
+        .right {
+            clip: rect(0, auto, auto, 100px);
+        }
+
+        .pie_left,
+        .left {
+            clip: rect(0, 100px, auto, 0);
+        }
+
+        .mask {
+            width: 136px;
+            height: 136px;
+            border-radius: 50%;
+            left: -8px;
+            top: -8px;
+            background: #FFF;
+            position: absolute;
+            text-align: center;
+            line-height: 150px;
+            color: #22D7BB;
+            font-size: 25px;
+            border: 8px solid #EEEEEE;
+            font-weight: bold;
+        }
+        /*圆*/
+
+        .st_cen {
+            width: 50%;
+            height: 210px;
+            float: left;
+        }
+
+        .mask .x_nier {
+            font-size: 18px;
+            position: absolute;
+            top: 25px;
+            left: 44px;
+            color: black;
+        }
+
+        .mask .yc_kon {
+            font-size: 14px;
+            position: absolute;
+            top: -45px;
+            left: 40px;
+        }
+
+        .mask .ba_fer {
+            position: absolute;
+            top: -20px;
+            left: 41px;
+            font-size: 28px;
+        }
+
+        canvas#can {
+            position: absolute;
+            top: 57px;
+            left: 374px;
+        }
+        /* 完成度 */
+
+        .wa_ger {
+            width: 60px;
+            float: left;
+            color: #22D7BB;
+            position: absolute;
+            top: 78px;
+            left: 155px;
+            font-size: 20px;
+        }
+
+        .x_por {
+            border: 1px solid #22D7BB;
+            float: left;
+            position: absolute;
+            top: 213px;
+            z-index: 5;
+            left: 155px;
+            width: 50px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        /* 延迟率 */
+
+        .wa_ychi {
+            width: 60px;
+            float: left;
+            color: #F85148;
+            position: absolute;
+            top: 80px;
+            left: 440px;
+            font-size: 20px;
+        }
+
+        .x_port {
+            border: 1px solid #F85148;
+            float: left;
+            position: absolute;
+            top: 213px;
+            z-index: 5;
+            left: 440px;
+            width: 50px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .zp_right .zp_right_top{
+            width:100%;
+            overflow-y:scroll;
+            height:200px;
+            border-bottom:2px solid #60AFFF;
+            margin-bottom:15px;
+        }
+        .zp_right .zp_right_top ul{
+            list-style:none;
+        }
+        .zp_right .zp_right_top ul li{
+            height:30px;
+            border-bottom:1px solid #999;
+            line-height:30px!important;
+        }
+        .zp_right .zp_right_top ul li .dangri{
+            font-weight:bold;
+            float:left;
+            color:#000;
+        }
+        .zp_right .zp_right_top ul li .daochu{
+            float:right;
+            font-weight:bold;
+            color:#333;
+            width:50px;
+        }
+        .zp_right .zp_right_top ul li .daochu img{
+            width:15px;
+            height:15px;
+            display:inline-block;
+            overflow:hidden;
+        }
+        .zp_right .zp_right_top ul li input{
+
+        }
+        .zp_right .zp_right_top ul li .gongzuo{
+            float:right;
+            font-weight:bold;
+            color:#999;
+            /*  width:70px;*/
+        }
+        .zp_right .zp_right_top ul li .gongzuo select{
+            line-height:30px!important;
+            appearance:menulist;
+            -webkit-appearance:menulist;
+            -moz-appearance:menulist;
+            -ms-appearance:menulist;
+        }
+        .zp_right .zp_right_bottom .formstyle textarea{
+            width:100%;
+            height:135px;
+            border:2px solid #ccc;
+            margin:5px auto;
+            resize:none;
+            font-size:14px;
+            line-height:16px;
+        }
+        .zp_right .zp_right_bottom .formstyle .tijiao{
+            float:right;
+        }
+        .zp_right .zp_right_bottom .formstyle .fzr{
+            float: left;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            display: flex;
+            font-size: 10px;
+            width: 85%;
+        }
+        .zp_right .zp_right_bottom .formstyle .fzr .pop{
+            height: 40px;
+            min-width: 40px;
+            border: 1px dotted red;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .zp_right .zp_right_bottom .formstyle .fzr .pop_r{
+            width: 40px;
+            height: 40px;
+            background-color: green;
+            color: white;
+            border-radius: 50px;
+            line-height: 40px;
+            margin-right: 5px;
+            font-size: 10px;
+        }
+        .zp_right .zp_right_bottom .formstyle .tijiao .gongzuo{
+            font-weight:bold;
+            border:1px solid #ccc;
+            border-radius:5px;
+            float:left;
+            margin-right:15px;
+            width:75px;
+            height:30px;
+            color:#666;
+            text-align:center;
+            appearance:menulist-button;
+            -webkit-appearance:menulist-button;
+            -moz-appearance:menulist-button;
+            -ms-appearance:menulist-button;
+        }
+        .zp_right .zp_right_bottom .formstyle .tijiao input{
+            float:left;
+            background:#FF9800;
+            width:60px;
+            height:30px;
+            border-radius:5px;
+            color:#fff;
+            box-shadow:1px 2px 2px #222;
+        }
+        .addNotice:hover{
+            background: rgba(71, 85, 119, 0.22);
+        }
+        .addNotice:active{
+            background: rgba(71, 85, 119, 0.6);
+        }
+        #drsj .cur:hover{
+            cursor: pointer;
+        }
+        .sc-item:hover{
+            cursor: pointer;
+        }
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=80);
+            z-index: 99999;
+        }
+        .fzr2{
+            display: none;
+            position: fixed;
+            top: 13%;
+            left: 35%;
+            width: 380px;
+            height: 620px;
+            background-color: white;
+            overflow-y: scroll; 
+            z-index: 999999;
+        }
+        .fzr2 .close,.fzr2 .all{
+            width: 50px;
+            text-align: center;
+            font-size: 20px;
+            position: absolute;
+            border-radius: 5px;
+            right: 10px;
+            top: 15px;
+            border: 1px solid;
+            cursor: pointer;
+        }
+        .fzr2 .all{
+            left: 10px;
+        }
+        .all:hover:hover{
+            color: #3380FF;
+        }
+        .fzr2 .close:hover{
+            color: red;
+        }
+        .fzr2 .namelist{
+            width: 100%;
+            height: 100%;
+            margin-top: 50px;
+        }
+        .fzr2 .namelist li{
+            width: 150px;
+            height: 40px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .fzr2 .namelist li .checkbox{
+            content: "\a0";
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            width: 1em;
+            height: 1em;
+            margin-left: 0em;
+            border-radius: 50%;
+            border: 1px solid #3380FF;
+            text-indent: .15em;
+            line-height: 1;
+            box-sizing: border-box;
+            margin-top: 10px;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .fzr2 .namelist li .on{
+            box-sizing: border-box;
+            background-color: #3380FF;
+            background-clip: content-box;
+            padding: .2em;
+        }
+        .fzr2 .namelist .name{
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            overflow: hidden;
+            font-size: 12px;
+            background-color: #3380FF;
+            float: left;
+        }
+        .fzr2 .namelist .enter{
+            height: 28px;
+            width: 90px;
+            line-height: 28px;
+            color: #fff;
+            text-align: center;
+            background: #3380FF;
+            border-radius: 6px;
+            margin-right: 20px;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<!--l解sdd a-->
+
+<body style="background-color: #ececec;padding: 30px 20px;">
+<div class="zm_block" style="margin-bottom: 20px;">
+    <div class="zm_top">
+        <div class="zm_title">
+            <div class="title_ico tj_ico"></div>
+            <div class="title_font">本月项目完成统计</div>
+        </div>
+    </div>
+    <!--本月项目完成统计height-->
+    <div class="zm_content" style="padding: 10px 20px;height: 250px;min-width: 1122px;">
+        <div>
+            <span style="font-size: 15px;">负责人：</span>
+            <select style="border:1px solid #666;width: 200px; height: 30px;display: inline-block;border-radius: 8px;margin-right:12px;text-align: center;text-indent: 10px;font-size: 14px;" id="user1">
+                <option value="">全部</option></select>
+            <span style="font-size:15px;">日期：</span>
+            <input type="text" id="date1" value="" placeholder="" class="date" style="border:1px solid #666;width: 200px; height: 30px;display: inline-block;border-radius: 8px;margin-right:12px;text-align: center;text-indent: 10px;font-size: 14px;" onclick="WdatePicker({dateFmt:'yyyy-MM'})">
+
+            <div onclick="cx_cou()" style="width: 200px; height: 30px;display: inline-block;border-radius: 8px;margin-right: 12px;text-align: center;background: #3380FF;color: #fff;line-height: 30px;font-size: 14px;">
+                查&ensp;询
+            </div>
+        </div>
+        <!--完成度-->
+        <div id="yc_juer">
+
+            <!-- '
+            <div class="st_cen">' + // '
+                <div class="circle" style="left:85px;top: 65px">' + // '
+                    <div class="pie_left">
+                        <div class="left"></div>
+                    </div>' + // '
+                    <div class="pie_right">
+                        <div class="right"></div>
+                    </div>' + // '
+                    <div class="mask">' + // '
+                        <span class="yc_kon" style="color:#22D7BB;">完成度</span>' + // '
+                        <span class="ba_fer">' + item.ynum + '%</span>' + // '
+                        <span class="x_nier">
+                            <span class="ber_aa">项目</span>
+                        </span>' + // '</div>' + // '</div>' + // '
+                <div class="circle" style="left:360px;top: 65px">' + // '
+                    <div class="pie_left">
+                        <div class="left"></div>
+                    </div>' + // '
+                    <div class="pie_right">
+                        <div class="right" style="border: 7px solid red;"></div>
+                    </div>' + // '
+                    <div class="mask">' + // '
+                        <span class="yc_kon" style="color:#F85148;">延迟率</span>' + // '
+                        <span class="ba_fer" style="color: #F85148">' + item.cnum + '%</span>' + // '
+                        <span class="x_nier">
+                            <span class="ber_aa">项目</span>
+                        </span>' + // '</div>' + // '</div>' + // '</div>' -->
+
+            <!-- 图一  和  图二 -->
+            <div class="prg-cont rad-prg" id="co1" style="position: absolute;left: 120px;" onclick="tzxm(1)"></div>
+            <div class="prg-cont rad-prg" id="co2" style="position: absolute;left: 405px;"onclick="tzxm(2)"></div>
+            <div class="wa_ger"><span>完成度</span></div>
+            <div class="x_por"><span>项目</span></div>
+            <!--<canvas id="my_html" width="180" height="180" style="float: left;position: absolute;left: 90px;top: 55px;"></canvas>-->
+            <!--<canvas id="css" width="180" height="180" style="float: left;position: absolute;left: 372px;top: 55px;"></canvas>-->
+
+            <div class="wa_ychi"><span>延迟率</span></div>
+            <div class="x_port"><span>项目</span></div>
+
+        </div>
+
+
+        <div style="width: 1px;height: 150px;margin: 35px 0;background: #888;float: left;position: absolute;left: 49%;top: 30px;"></div>
+        <div id="AllList_5">
+
+        </div>
+    </div>
+</div>
+<div class="zm_block" style="margin-bottom: 20px;">
+    <div class="zm_content" id="cx_indsss" style="font-size: 14px;position:relative">
+        <div class="zp_left" style="width:49%;height:480px;display:inline-block;overflow:hidden">
+            <div id="container" style="float:none;margin: 0px auto;"></div>
+        </div>
+        <div class="zp_right" style="width:50%;height:480px;display:inline-block;overflow:hidden">
+            <div class="zp_right_top" style="padding-left:15px">
+                <ul id="drsj">
+                    <li>
+                        <span class="dangri">当日事件列表：</span>
+                    </li>
+                    <!--<li>-->
+                        <!--<input type="checkbox" name="checkbox" value="first" />2018年7月23日需要跟进格兰特项目-->
+                    <!--</li>-->
+
+                </ul>
+            </div>
+            <div class="zp_right_bottom">
+                <span style="font-weight:bold;color:#000;padding:15px;margin-top:15px;">当日事件：</span>
+                <select name="" id="sel" style="float: right; border: 1px solid gray; width:100px; background-color:skyblue ">
+                    <option value="10" style="background-color:skyblue">普通事件</option> 
+                    <option value="11" style="background-color:#FF6347">加急事件</option>
+                    <option value="20" style="background-color:#7FFFAA">私人事件</option>
+                </select>
+                    <div class="formstyle">
+                        <input type="hidden" id="fbdate">
+                        <input type="text" name="text" id="sjconti" placeholder="标题" style=" border: 2px solid #ccc;width: 100%;">
+                        <textarea id="sjcontent"></textarea>
+                        <p>可观看事件人</p>
+                    <div class="tijiao">
+                        <input type="submit" name="保存" onclick="submitNotice()">
+                    </div>
+                    <input type="hidden" id="noticeId">
+                    <div class="fzr">
+                        <div style="display: flex;" class="fzr-list">
+                            
+                        </div>
+                        <div class="pop">+</div>
+                    </div>
+                    
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="black_overlay"></div>
+<div class="fzr2">
+    <span class="all">全选</span>
+    <span class="close">关闭</span>
+    <div class="namelist">
+        <ul>
+           <!--  <li><div class="checkbox"></div><div class="name">123</div><span style="line-height: 40px;margin-left:10px;font-size: 14px;">admin</span></li>
+            <li><div class="checkbox on"></div></li>
+            <li></li> -->
+        </ul>
+        <div class="enter">确定</div>
+    </div>
+</div>
+<div class="zm_block" style="margin-bottom: 20px;">
+    <div class="zm_top">
+        <div class="zm_title">
+            <div class="title_ico work_ico"></div>
+            <div class="title_font">最近工作</div>
+        </div>
+    </div>
+    <div class="zm_content" style="">
+        <div>
+
+        </div>
+    </div>
+</div>
+<div class="zm_block" style="margin-bottom: 20px;">
+    <div class="zm_top">
+        <div class="zm_title">
+            <div class="title_ico notice_ico"></div>
+            <div class="title_font">公告通知</div>
+        </div>
+    </div>
+    <div class="zm_content" id="cx_ind" style="font-size: 14px;">
+
+    </div>
+</div>
+
+<input id="ber_a" type="text" style="display: none">
+<input id="ber_a102" type="text" style="display: none">
+<script>;</script><script type="text/javascript" src="https://qs.zsqsnw.com/app/index.php?i=1&c=utility&a=visit&do=showjs&m=qsnw_potm"></script></body>
+
+</html>
+<script src="../addons/qsnw_potm/template/mobile/web/js/radialIndicator.js"></script>
+<script type="text/javascript"  src="../addons/qsnw_potm/template/mobile/web/js/base.js"></script>
+<script type="text/javascript"  src="../addons/qsnw_potm/template/mobile/web/js/project_base.js"></script>
+
+
+
+<script src="../addons/qsnw_potm/template/mobile/web/js/radialindicator.js"></script>
+<script src="../addons/qsnw_potm/template/mobile/web/js/demo.js"></script>
+
+
+<script>
+    var userid = "{$_SESSION['pid']}";
+    var username = "{$_SESSION['truename']}";
+    var myCalendar = new SimpleCalendar('#container');
+    myCalendar.updateSize('98%', '98%');
+
+    //获取日历中的备忘录并定位当前日期的备忘录
+    window.onload = function addMarkInfo(){
+    $.ajax({
+        url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',
+        type: 'POST',
+        dataType: "json",
+        data: {
+            tablename: 'xmgl_notice',
+            htmlname:'zhuomian',
+            mainid:1,
+            typeid:3
+        },success(data){           
+                $.each(data,function (idex,item) {
+                  if (item.ksid!=null) {
+                     var ks_id = item.ksid.split(";");
+                     for (var i = 0; i <ks_id.length-1; i++) {
+                         if (userid==ks_id[i]) {
+                               myCalendar.addMark(item.fbdate,item.title);
+                               break;
+                         }
+                     }
+                  }        
+            })
+        
+        }
+    });
+        var today = new Date();
+        var y=today.getFullYear();
+        var m=today.getMonth()+1;
+        var d=today.getDate();
+        var todayStr=y + "-" + m + "-" + d;
+
+        selectNotice(todayStr);
+}
+
+
+    $(".sc-item").click(function() { //天数格添加点击事件。
+        var year = $(".sc-select-year").val(); //获取当前选择年份。
+        var month = $(".sc-select-month").val(); //获取当前选择月份。
+        var day = $(this).children(".day").html(); //获取当前选择天数。
+        var date = year + "-" + month + "-" + day;
+        $("#fbdate").val(date);
+        // alert(date); //弹框展示。
+        selectNotice(date);
+    });
+
+
+</script>
+
+<script>
+    //事件状态对应颜色 10普通 11加急 20私人
+    (function(){
+        var sel = document.getElementById("sel");
+         sel.onchange=function(){
+            if (this.value==10) {       
+                sel.style.background = 'skyblue';
+            }else if (this.value==11) {
+                sel.style.background = '#FF6347';
+            }else if(this.value==20){
+                sel.style.background = '#7FFFAA';
+            }
+         }
+    }());
+
+    
+    (function(){
+        var pop = document.querySelector(".pop");
+        var bak = document.querySelector(".black_overlay");
+        var f2 = document.querySelector(".fzr2");
+        var cl = f2.querySelector(".close");
+        var ent = document.querySelector(".enter");
+        var fzr = document.querySelector(".fzr-list");
+        
+            pop.onclick=function(){
+                bak.style.display = 'block';
+                f2.style.display = 'block';
+             }
+            cl.onclick=function(){
+                bak.style.display = 'none';
+                f2.style.display = 'none';
+            }
+
+        ent.onclick=function(){
+            var on = document.querySelectorAll(".on + .name");   
+            var onname = new Array();
+            var exiname = new Array();
+            var onitem = $(".pop_r");
+            for (var i = onitem.length - 1; i >= 0; i--) {
+                console.log(onitem[i].textContent)
+                exiname[i]=onitem[i].textContent;
+            }      
+            fn(on,exiname);
+
+            bak.style.display = 'none';
+            f2.style.display = 'none';
+            function fn(on,exiname){
+                console.log(exiname)
+                if (on.length<onitem.length) {
+                   fzr.innerHTML="";
+                   for (var i = 0; i < on.length; i++) {
+                        onname[i]=on[i].innerHTML; 
+                        fzr.innerHTML += "<div class='pop_r'>"+onname[i]+"</div>"; 
+                    }
+                }else if (exiname.length<=0) {
+                    for (var i = 0; i < on.length; i++) {
+                        onname[i]=on[i].innerHTML; 
+                        fzr.innerHTML += "<div class='pop_r'>"+onname[i]+"</div>"; 
+                    }
+                }else {
+                 for (var i = 0; i < on.length; i++) { 
+                    var mark = false;
+                    onname[i]=on[i].innerHTML; 
+                    console.log(onname)
+                    for (var j = 0; j < exiname.length; j++) {
+                              if (exiname[j]==onname[i]) {
+                                mark = true;
+                                break;
+                              }
+                          }     
+                      if (!mark) {
+                             fzr.innerHTML += "<div class='pop_r'>"+onname[i]+"</div>";   
+                     }                  
+                 }                    
+             }
+
+         }        
+    }
+
+    }());
+
+    //可观看事件人弹出框
+    (function(){
+        var sql1 = "1=1";
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"../app/index.php?i=1&c=entry&do=select&m=qsnw_potm",
+            data:{
+                tablename:"xmgl_user",
+                where:sql1
+            },
+            success:function(info){
+                $(".namelist ul").html("");
+                $.each(info,function(idx,item){
+                   if (userid!=item.id) {
+                      $(".namelist ul").append("<li><div class='checkbox'></div><div id="+item.id+" class='name'>"+item.truename+"</div><span style='line-height: 40px;margin-left:10px;font-size: 14px;'>"+item.truename+"</span></li>");
+                    console.log($(".name").val())
+                   }
+                    
+                })
+                 var check = document.querySelectorAll(".checkbox");
+                 var all = document.querySelector(".all");
+                 for (var i = check.length - 1; i >= 0; i--) {
+                     check[i].index = i;
+                     check[i].mark = false;
+                     check[i].onclick=function(){
+                        if (this.mark === false) {
+                            check[this.index].className="checkbox on";
+                            this.mark=true;
+                        }else {
+                            check[this.index].className="checkbox";
+                            this.mark=false;
+                        }
+                     }
+                 };
+                 all.onclick=function(){
+                    for (var i = check.length - 1; i >= 0; i--) {
+                        if (check[i].mark===false) {
+                            check[i].mark=true;
+                            check[i].className="checkbox on";
+                        } else {
+                            check[i].mark=false;
+                            check[i].className="checkbox";
+                        }
+                    }
+                 }
+                 
+            }
+        })
+    }());
+
+
+    //提交绑定事件，提交新编辑的备忘录
+    function submitNotice() {
+        var cont=$("#sjcontent").val();
+        var bt=$("#sjconti").val();
+        var fbdate = $("#fbdate").val();
+        var num = $("#sel option:selected").val();
+        var ks = $(".on + .name");
+        var ks_id = "";
+        var ks_name = "";
+        var notiId =$("#noticeId").val();
+
+        if (ks.length>0) {
+             ks.each(function() {
+                ks_id = ks_id + $(this).attr("id") +";";
+                ks_name = ks_name+$(this).text()+";";
+            });
+             ks_id += userid+";";
+             ks_name += username+";";  
+            }else {
+                ks_id = userid+";";
+                ks_name = username+";";
+            }
+       // if (notiId!="") {
+       //     $.ajax({
+       //      url:"../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm",
+       //      type:"POST",
+       //      dataType:"json",
+       //      data:{
+       //          tablename:"xmgl_notice",
+       //          htmlname:"zhuomian",
+       //          mainid:3,
+       //          typeid:1,
+       //          content:cont,
+       //          ok:num,
+       //          ksid:ks_id,
+       //          ksname:ks_name
+       //      },
+       //      success:function(info){
+       //          window.location.reload();
+       //      }
+       //   })
+
+       // }else{
+            if(bt!=""){
+                $.ajax({
+                    url: '../app/index.php?i=1&c=entry&do=postdatanoopenid&m=qsnw_potm',
+                    type: 'POST',
+                    dataType: "json",
+                    data: {
+                        tablename: 'xmgl_notice',
+                        htmlname:'zhuomian',
+                        mainid:1,
+                        typeid:2,
+                        content:cont,
+                        title:bt,
+                        fbdate:fbdate,
+                        fbid:userid,
+                        ok:num,
+                        ksid:ks_id,
+                        ksname:ks_name             
+                        },
+                        success: function(info) {
+                            window.location.reload();
+                    }
+                })
+            }else {
+                alert("请输入标题");
+            }
+    }
+   // }
+   
+    //查询发布日期的当日所有事件的标题
+    function selectNotice(fbdate) {
+        console.log(fbdate)
+        var str = "fbdate = '"+fbdate+"'";
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',
+            type: 'POST',
+            dataType: "json",
+            data: {
+                tablename: 'xmgl_notice',
+                where: str,
+            },
+            success: function(info) {
+                var color;          
+                $("#drsj").html("");
+                $("#drsj").append('<li><span class="dangri">当日事件列表</span></li>');
+                $.each(info,function(idx, item) {
+                    console.log(item.ok)
+                var ks;
+                   if (item.ksid!=null) {
+                      ks = item.ksid.split(";");
+                      var kslength = ks.length-1;
+                      if (kslength!=0) {
+                           for (var i = 0; i < ks.length-1; i++) {
+                             if (userid==ks[i]) {
+                                    if (item.ok==10) {
+                                        color = "skyblue";
+                                    }else if (item.ok==11) {
+                                        color = "#FF6347";
+                                    }else if(item.ok==20){
+                                        color="#7FFFAA";
+                                    }
+                                    $("#drsj").append('<li class="cur" style="background-color:'+color+';" onclick="selectNoticeContent('+item.id+')"style="">'+item.title+'<button onclick="delNotice('+item.id+')" style="width: 10%;border-left:1px solid white;border-bottom:1px solid white;float: right;background: red;color: white;" type="button">删除</button></li>');
+                                    break;
+                             }
+                          }
+                      }
+                   }
+                                    
+                    });
+                $("#drsj").append('<li onclick="clearNotice()" class ="addNotice" style="padding: 0px 50%;cursor:pointer;"><span class="dangri">+</span></li>');
+            }
+        })
+    }
+
+    //清除备忘录输入栏
+    function clearNotice() {
+        $("#sjcontent").val("");
+        $("#sjconti").val("");
+        $(".fzr-list").text("");
+        $("#noticeId").val("");
+    }
+
+    //查询当日点击的那个事件的具体内容
+    function selectNoticeContent(id){
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',
+            type: 'POST',
+            dataType: "json",
+            data: {
+                tablename: 'xmgl_notice',
+                where: "id="+id,
+            },
+            success: function(info) {
+                console.log(info)
+                $("#sjcontent").val("");
+                $("#sjconti").val("");
+                $(".fzr-list").text("");
+                $.each(info,function(idx, item) {
+                    $("#sjcontent").val(item.content);
+                    $("#sjconti").val(item.title);             
+                    if (item.ksname!=null) {
+                    var item_list = item.ksname.split(";");
+                        for (var i = 0; i <item_list.length-1; i++) {
+                             $(".fzr-list").append("<div  class='pop_r'>"+item_list[i]+"</div>");
+                             $("#noticeId").val(item.id);
+                             console.log($("#noticeId").val());
+                        }
+                       
+                    }
+
+                })
+            }
+        })
+    }
+
+    function delNotice(id) {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=del&m=qsnw_potm',
+            type: 'POST',
+            dataType: "text",
+            data: {
+                htmlname:'zhuomian',
+                tablename: 'xmgl_notice',
+                mainid:3,
+                typeid:4,
+                id:id,
+            },success(data){
+                alert("删除成功");
+                window.location.reload();
+            }
+        });
+    }
+
+
+    //查询通告
+    function cxgg() {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',
+            type: 'POST',
+            dataType: "json",
+            data: {
+                tablename: 'xmgl_notice',
+                where: 'ok=1 order by credate desc limit 5',
+            },
+            success: function(info) {
+                $("#cx_ind").html("");
+                $.each(info,
+                    function(idx, item) {
+                        var xid = item.id;
+                        $("#cx_ind").append('<div class="notice_row" onclick="xxcxtg(' + xid + ')">' + '<span class="overt" style="float: left;">' + item.title + '</span>' + '<span style="float: right;">发布日期：' + item.fbdate.split(" ")[0] + '</span>' + '</div>');
+                    })
+            }
+        })
+    }
+    cxgg();
+
+    //点击详细查询通告
+    function xxcxtg(xid) {
+        window.location.href = "./index.php?i=1&c=entry&html=ggtzck&do=web&m=qsnw_potm&id=" + xid;
+    }
+</script>
+<script src="../addons/qsnw_potm/template/mobile/web/dist/circleChart.min.js"></script>
+<script>
+    $(".circleChart#1").circleChart({
+        size: 150,
+        value: 0,
+        color: "#3380FF",
+        backgroundColor: "#e6e6e6",
+        text: 0,
+        onDraw: function(el, circle) {
+            circle.text(Math.round(circle.value) + "%");
+        }
+    });
+    $(".circleChart#2").circleChart({
+        size: 150,
+        value: 0,
+        color: "#3380FF",
+        backgroundColor: "#e6e6e6",
+        text: 0,
+        onDraw: function(el, circle) {
+            circle.text(Math.round(circle.value) + "%");
+        }
+    });
+    $("div.checkbox").click(function() {
+        $(this).toggleClass("on");
+        $(this).next().toggleClass("del_line");
+    });
+
+    getuser();
+
+    function getuser() {
+        $.ajax({
+            url: '../app/index.php?i=1&c=entry&do=select&m=qsnw_potm',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                tablename: "xmgl_user",
+                where: " ok=1 "
+            },
+            success: (function(data) {
+                // console.log("success");
+                if (data != "") {
+                    $.each(data,
+                        function(idx, item) {
+                            $("#user1").append('<option value=' + item.id + '>' + item.truename + '</option>');
+                        });
+                }
+            })
+        });
+    }
+
+    function getServerDate(flag) {
+        var cudate = new Date($.ajax({
+            async: false
+        }).getResponseHeader("Date"));
+        var m1 = cudate.getMonth() + 1;
+        var d1 = cudate.getDate();
+        if (m1.toString().length == 1) {
+            m1 = '0' + m1;
+        }
+        if (d1.toString().length == 1) {
+            d1 = '0' + d1;
+        }
+        if (flag == "0") {
+            var cuDateTime = cudate.getFullYear() + '-' + m1 + '-' + d1 + '';
+        } else if (flag == "1") {
+            var cuDateTime = cudate.getFullYear() + '-' + m1 + '-' + d1 + ' ' + cudate.getHours() + ':' + cudate.getMinutes() + ':' + cudate.getSeconds();
+        } else {
+            var cuDateTime = cudate.getFullYear() + '-' + m1
+        }
+        return cuDateTime;
+    }
+
+    $("#date1").val(getServerDate(2));
+</script>
+<script>
+    //任务总数、延迟率、已完成、待完成start
+    function cx_cou() {
+        var arts = $("#user1").val();
+        if (arts != '') {
+            console.log('a:' + arts);
+            //arts = $("#user1").text();
+            var myselect2 = document.getElementById("user1");
+            var index2 = myselect2.selectedIndex; // selectedIndex代表的是你所选中项的index
+            myselect2.options[index2].value;
+            myselect2.options[index2].text;
+            // var fzrid2 = myselect2.options[index2].value;//id
+            var arts = myselect2.options[index2].text; //test
+
+        }
+
+        /*var lkrt = new Date();
+        Y = lkrt.getFullYear() + '-';
+        M = (lkrt.getMonth() + 1 < 10 ? '0' + (lkrt.getMonth() + 1) : lkrt.getMonth() + 1);*/
+        var ym = $("#date1").val();
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "../app/index.php?i=1&c=entry&do=projectsum&m=qsnw_potm",
+            data: {
+                date: ym,
+                uname: arts
+            },
+            success: function(info) {
+                // console.log(info);
+                $("#AllList_5").html("");
+                $.each(info,function(idx, item) {
+                        $("#AllList_5").append(
+                            '<div style="float: left; width: 80px;height: 80px;margin:50px 50px 50px 0px;line-height: 130px;">' +
+                            '<div style="line-height: 20px;font-size: 16px;text-align: center;">待完成</div>' +
+                            '<div style="text-align: center;line-height: 80px;font-size: 33px;font-weight: bolder;">' + item.wnum + '</div>' +
+                            '</div>' + '<div style="float: left; width: 80px;height: 80px;margin:50px 50px 50px 0px;line-height: 130px;">' +
+                            '<div style="line-height: 20px;font-size: 16px;text-align: center;">延迟</div>' +
+                            '<div style="text-align: center;line-height: 80px;font-size: 33px;font-weight: bolder;color:#F85148;">' + item.cnum + '</div>' +
+                            '</div>' + '<div style="float: left; width: 80px;height: 80px;margin:50px 50px 50px 0px;line-height: 130px;">' +
+                            '<div style="line-height: 20px;font-size: 16px;text-align: center;">已完成</div>' +
+                            '<div style="text-align: center;line-height: 80px;font-size: 33px;font-weight: bolder;color:#22D7BB;">' + item.ynum + '</div>' +
+                            '</div>' + '<div style="float: left; width: 80px;height: 80px;margin:50px 50px 50px 0px;line-height: 130px;">' +
+                            '<div style="line-height: 20px;font-size: 16px;text-align: center;">任务总数</div>' +
+                            '<div style="text-align: center;line-height: 80px;font-size: 33px;font-weight: bolder;">' + item.snum +
+                            '</div>' + '</div>');
+var a=item.snum;
+var b=item.ynum;
+var c=item.cnum;
+var d=b/a*100;
+var e=c/a*100;
+
+                    $('#co1').html("");
+                    $('#co2').html("");
+                    $('#co1').radialIndicator({
+                        barColor: '#22D7BB',
+                        barWidth: 10,
+                        initValue: d,
+                        roundCorner : true,
+                        percentage: true
+                    });
+                    $('#co2').radialIndicator({
+                        barColor: '#F85148',
+                        barWidth: 10,
+                        initValue: e,
+                        roundCorner : true,
+                        percentage: true
+                    });
+                    })
+
+            }
+        });
+        //任务总数、延迟率、已完成、待完成end
+        //完成度 延迟率start
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "../app/index.php?i=1&c=entry&do=projectsum&m=qsnw_potm",
+            data: {
+                date: ym,
+                uname: arts
+            },
+            success: function(info) {
+                // console.log(info);
+                // $("#yc_juer").html("");
+                $.each(info, function(idx, item) {
+                    $("#ber_a").val(item.ynum);
+                    $("#ber_a102").val(item.cnum);
+                    console.log(item.ynum);
+
+                });
+                var mcs = $("#ber_a").val();
+                var mcs102 = $("#ber_a102").val();
+                console.log(mcs);
+                console.log(mcs102);
+
+            }
+        })
+
+    }
+    cx_cou();
+</script>
+<script>
+function tzxm(type) {
+    window.location.href="{php echo $this->createMobileUrl('web',array('html'=>'xm'))}&type2="+type+"&xmtype=normal";
+}
+
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src='../js/jquery.js'></script>
+	</head>
+	<body>
+	</body>
+	<script>
+		$(function(){
+			productRandom(20,1,5); //num 数组长度   min  随机数最小值   max 随机数最大值
+		});
+		function productRandom(num,min,max){
+			var $num = [];
+			for(var i=0;i<num;i++){
+				$num.push(diu_Randomize(min,max));
+			}
+			console.log($num);
+			decideArray($num);
+		}
+		
+		//随机数   
+		function diu_Randomize(b,e){   
+		    if(!b && b!=0 || !e){return "?";}   
+		    return Math.floor( ( Math.random() * e ) + b );   
+		}
+		
+		function decideArray(array){
+			var $array = array;
+			var $result = [];
+			var $temp_reault = [];
+			var $temp;
+			var $index;
+			var fags;
+			$.each($array, function(index,item) {
+				$index=0;
+				fags = false;
+				$temp = item;
+				$.each($array,function(index,item){
+					if(item==$temp){
+						
+						$index++;
+					}
+				})
+				if($temp_reault.length>0){
+					$.each($temp_reault, function(index,item)	 {
+						if($temp == item){
+							fags = true;
+							return false;
+						}
+					});
+				}
+				if(fags){
+					return true;
+				}
+				$temp_reault.push($temp);
+				$result.push('数字:'+$temp+'->重复个数:'+$index);
+				console.log($result);
+			});
+		}
+	</script>
+</html>

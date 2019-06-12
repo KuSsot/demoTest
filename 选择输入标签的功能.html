@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="ziwojieshao">
+<span class='jieshao_span beijingcolor1' >aaaa</span>
+</div>
+<div>
+    <input id="bq" value=""><button onclick="addbq()">添加</button>
+</div>
+</body>
+<script>
+    $(".jieshao_span").click(function () {
+        $(this).remove();
+    });
+    $(".xiugai").click(function () {
+        $(".jieshao_span").remove();
+    })
+    $(".label").click(function () {
+        let label_name = $(this).text();
+        let classname = $(this)[0].className.split(' ')[1];
+        let check = true;
+        $.each($(".jieshao_span"), function (index, item) {
+            if ($(item).text() == label_name){
+                check = false;
+                return false;
+            }
+        });
+        if (check == true) {
+            let span = $("<span class='jieshao_span " + classname + "'>" + label_name + "</span>");
+            $(".ziwojieshao").after(span);
+            span.click(function () {
+                $(this).remove();
+            })
+        }
+    });
+    function addbq(){
+        let bq = $('#bq').val();
+        let check = true;
+        $.each($(".jieshao_span"), function (index, item) {
+            if ($(item).text() == bq) {
+                check = false;
+                return false;
+            }
+        });
+        let a = [1,2,3,3,4,5,6,7,8,9];
+        if (check == true) {
+            let span = $("<span class='jieshao_span beijingcolor" + a[Math.floor(Math.random()*a.length)] + "'>" + bq + "</span>");
+            $(".ziwojieshao").after(span);
+            span.click(function () {
+                $(this).remove();
+            })
+        }
+    }
+</script>
+</html>

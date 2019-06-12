@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同样日期放在一个数组中</title>
+    <script type="text/javascript" src='../js/jquery.js'></script>
+</head>
+<body>
+
+<script>
+
+    var initDate = [{id : '1',date : '2017-07-07',num :'a'},{id:'2',date:'2016-07-06',num:'b'},{id:'3',date:'2017-07-06',num:'c'}, {id:'4',date:'2017-06-07',num:'d'},{id:'5',date:'2016-06-06',num:'e'},{id:'6',date:'2018-08-06',num:'f'},{id:'7',date:'2019-09-06',num:'g'},{id:'8',date:'2018-09-06',num:'h'}];
+
+
+    var hist = initDate.reduce(function (prev, item) {//回调数组的方法
+        console.log(prev);
+        console.log(item);
+
+        var d = item.date.split("-");//根据"-"拆分得到的时间以数组的形式存到d中所以d=[2017,7,7](里面的内容是字符串形式)
+        var date = d[0];//把得到的数组里面的前2位拼接成新的字符串201707
+
+        if (date in prev)//判断date里面是否有数组传过来的prev中相同的数
+            prev[date].push(item);
+        else
+            prev[date] = [item];
+
+        return prev;
+    }, {} );
+
+    for(var k in hist)
+        console.log(k, hist[k]);
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>事件冒泡</title>
+<script src="../js/jquery-1.11.3.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $(document).on("click", "#p1", function (e) {
+            console.log(e.target.tagName);
+            console.log("p1被点击了");
+            //e.stopPropagation(); //终止冒泡的方法
+            return false;
+        });
+
+        $("#aa").on("click", "#td1", function (e) {
+            console.log(e.target.tagName);
+            console.log("td1被点击了");
+        });
+
+        $("#aa").on("click", "#tr1", function (e) {
+            console.log(e.target.tagName);
+            console.log("tr1被点击了");
+        });
+
+        $("#aa").on("click", "#table1", function (e) {
+            console.log(e.target.tagName);
+            console.log("table1被点击了");
+        });
+
+    });
+</script>
+
+</head>
+<body id="aa">
+<table onclick="alert('这是table')">
+    <tr onclick="alert('这是tr')">
+        <td onclick="alert('这是td')">
+            <p onclick="alert('这是p')">段落</p>
+        </td>
+    </tr>
+</table>
+<table id="table1" onclick="alert('这是table1')">
+    <tr id="tr1" onclick="alert('这是tr1')">
+        <td id="td1" onclick="alert('这是td1')">
+            <p id="p1" onclick="alert('这是p1');event.cancelBubble=true;">你好</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+

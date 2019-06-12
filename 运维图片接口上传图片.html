@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/jquery-3.3.1.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div >
+    <input  type="file" onchange="getimg(this)" accept="image/jpg,image/jpeg,image/png,image/PNG">
+    <img id="cropedBigImg" style="width: 200px;height: 200px"/>
+</div >
+</body>
+<script>
+    function getimg(that) {
+        console.log("1");
+        var filePath = $(that).val(), //获取到input的value，里面是文件的路径
+            fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+            src = window.URL.createObjectURL(that.files[0]); //转成可以在本地预览的格式
+        console.log(filePath);
+        console.log(fileFormat);
+        console.log(src);
+
+        // 检查是否是图片
+        if(!fileFormat.match(/.png|.jpg|.jpeg/)) {
+            alert('上传错误,文件格式必须为：png/jpg/jpeg');
+            return;
+        }else{
+            $('#cropedBigImg').css('display','block');
+            $('#cropedBigImg').attr('src', src);
+        }
+
+        $.ajax({
+            url: 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=postphoto&m=gm_mod',//上传照片的url
+            type: 'post',
+            dataType: 'text',
+            data: {
+                picdata: Pic
+            }
+        })
+    }
+</script>
+<script>
+    function saveimg(file){
+        photoCompress(file, {
+            quality: 0.5
+        }, function(base64Codes){
+            postImg(base64Codes);
+        });
+    };
+
+
+    function postImg(file){
+        var Pic = file.replace(/^data:image\/(png|jpg|jpeg);base64,/,"" );
+        $.ajax({
+            url: "http://www.zhunduoduo.cn"+urladdimg,
+            type: 'post',
+            dataType: 'text',
+            data: {
+                picdata: Pic
+            },
+        }).done(function(data) {
+                $('#img-val').val(data);
+                console.log(data)
+            })
+    };
+
+
+    function photoCompress(file,w,objDiv){
+        var ready=new FileReader();
+        /*开始读取指定的Blob对象或File对象中的内容. 当读取操作完成时,readyState属性的值会成为DONE,如果设置了onloadend事件处理程序,则调用之.同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.*/
+        ready.readAsDataURL(file);
+        ready.onload=function(){
+            var re=this.result;
+            canvasDataURL(re,w,objDiv)
+        }
+    };
+    $(function () {
+        $("#file").change(function (e) {
+            console.log(e)
+            var file = e.target.files[0] || e.dataTransfer.files[0];
+            console.log(file)
+            e.stopPropagation();
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    $("#img img").attr("src", this.result);
+                }
+                saveimg(file,"yingye");
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+    function canvasDataURL(path, obj, callback){
+        var img = new Image();
+        img.src = path;
+        img.onload = function(){
+            var that = this;
+            // 默认按比例压缩
+            var w = that.width,
+                h = that.height,
+                scale = w / h;
+            w = obj.width || w;
+            h = obj.height || (w / scale);
+            var quality = 1;  // 默认图片质量为0.7
+            //生成canvas
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            // 创建属性节点
+            var anw = document.createAttribute("width");
+            anw.nodeValue = w;
+            var anh = document.createAttribute("height");
+            anh.nodeValue = h;
+            canvas.setAttributeNode(anw);
+            canvas.setAttributeNode(anh);
+            ctx.drawImage(that, 0, 0, w, h);
+            // 图像质量
+            if(obj.quality && obj.quality <= 1 && obj.quality > 0){
+                quality = obj.quality;
+            }
+            // quality值越小，所绘制出的图像越模糊
+            var base64 = canvas.toDataURL('image/jpeg', quality);
+            // 回调函数返回base64的值
+            callback(base64);
+        }
+    };
+
+</script>
+<script>
+    function photoCompress(file,w,objDiv){
+        var ready=new FileReader();
+        /*开始读取指定的Blob对象或File对象中的内容. 当读取操作完成时,readyState属性的值会成为DONE,如果设置了onloadend事件处理程序,则调用之.同时,result属性中将包含一个data: URL格式的字符串以表示所读取文件的内容.*/
+        ready.readAsDataURL(file);
+        ready.onload=function(){
+            var re=this.result;
+            canvasDataURL(re,w,objDiv)
+        }
+    };
+    $(function () {
+        $("#file").change(function (e) {
+            console.log(e);
+            var file = e.target.files[0] || e.dataTransfer.files[0];
+            console.log(file);
+            e.stopPropagation();
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    $("#img img").attr("src", this.result);
+                }
+                saveimg(file,"yingye");
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+
+
+    function saveimg(file){
+        photoCompress(file, {
+            quality: 0.5
+        }, function(base64Codes){
+            postImg(base64Codes);
+        });
+    };
+
+
+    function postImg(file){
+        var Pic = file.replace(/^data:image\/(png|jpg|jpeg);base64,/,"" );
+        $.ajax({
+            url: "http://www.zhunduoduo.cn"+urladdimg,
+            type: 'post',
+            dataType: 'text',
+            data: {
+                picdata: Pic
+            },
+        })
+            .done(function(data) {
+                $('#img-val').val(data);
+                console.log(data)
+            })
+    };
+
+    function canvasDataURL(path, obj, callback){
+        var img = new Image();
+        img.src = path;
+        img.onload = function(){
+            var that = this;
+            // 默认按比例压缩
+            var w = that.width,
+                h = that.height,
+                scale = w / h;
+            w = obj.width || w;
+            h = obj.height || (w / scale);
+            var quality = 1;  // 默认图片质量为0.7
+            //生成canvas
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            // 创建属性节点
+            var anw = document.createAttribute("width");
+            anw.nodeValue = w;
+            var anh = document.createAttribute("height");
+            anh.nodeValue = h;
+            canvas.setAttributeNode(anw);
+            canvas.setAttributeNode(anh);
+            ctx.drawImage(that, 0, 0, w, h);
+            // 图像质量
+            if(obj.quality && obj.quality <= 1 && obj.quality > 0){
+                quality = obj.quality;
+            }
+            // quality值越小，所绘制出的图像越模糊
+            var base64 = canvas.toDataURL('image/jpeg', quality);
+            // 回调函数返回base64的值
+            callback(base64);
+        }
+    };
+
+</script>
+</html>

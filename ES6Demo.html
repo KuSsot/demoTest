@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="select">
+
+    </div>
+</body>
+<script>
+    let data =
+        [{
+            name:'a',
+            sel:[
+                {val:'a1'},
+                {val:'a2'},
+                {val:'a3'},
+                {val:'a4'},
+                {val:'a5'}]
+        },{
+            name:'b',
+            sel:[
+                {val:'b1'},
+                {val:'b2'},
+                {val:'b3'},
+                {val:'b4'},
+                {val:'b5'}]
+        },{
+            name:'c',
+            sel:[],
+        }];
+    console.log(data);
+    $.each(data,function (idx,item) {
+        let sel;
+        if(item.sel != '') {
+            sel=$('<select name="'+item.name+'"></select>');
+        }else {
+            sel=$('<input name="'+item.name+'">');
+        }
+        $.each(item.sel, function (jdx, jtem) {
+            sel.append('<option value="' + jtem.val + '">' + jtem.val + '</option>')
+        });
+        $('#select').append(sel)
+
+
+    })
+</script>
+</html>

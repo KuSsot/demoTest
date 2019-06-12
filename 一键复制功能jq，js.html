@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div>
+    <input onclick="copyUrl()" type="button" id="copy_url_one" value="复制">
+    <input id="value1">
+    <script>
+        function copyUrl() {
+            var url = $('#value1'); //根据实际情况更改,需要复制内容的载体
+            url.select();
+            document.execCommand("Copy");
+            alert("已复制至剪切板");
+        }
+    </script>
+</div>
+</body>
+</html>

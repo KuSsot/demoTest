@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="./js/control.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        body {
+            background-color: rgb(242, 246, 249);
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            padding: 20px 20px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            background: #fff;
+            display: flex;
+            height: 100%;
+        }
+
+        .col-top {
+            margin: 20px 0;
+        }
+
+        .col-md-12 {
+            display: flex;
+            height: 45px;
+            line-height: 45px;
+        }
+
+        .card_title {
+            display: inline-block;
+            background-color: #fff;
+            z-index: 2;
+            position: absolute;
+            width: auto;
+            top: -15px;
+            left: 25px;
+        }
+
+        .col_md_inp input {
+            width: 100%;
+            height: 30px;
+            margin: auto;
+        }
+
+        .col_md_inp span {
+            white-space: nowrap;
+            padding-right: 10px;
+            text-align: right;
+            min-width: 140px;
+        }
+
+        .zcyh_b {
+            position: absolute;
+            right: 31px;
+            color: #fff;
+            top: 8px;
+            background: #008CE6;
+            width: 100px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .xgwj_box1 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #e2e2e2;
+            background: url(./img/icon_yyzz.png) no-repeat;
+            background-size: 80px;
+        }
+
+        .xgwj_box2 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #e2e2e2;
+            margin-left: 10px;
+            background: url(./img/icon_wxgh.png) no-repeat;
+            background-position: -1px -10px;
+            background-size: 80px;
+        }
+        .botm_but {
+            position: fixed;
+            bottom: 15%;
+            left: 35%;
+            justify-content: space-evenly;
+            display: flex;
+        }
+        .botm_but div{
+            background: #FF6803;
+            width: 150px;
+            text-align: center;
+            height: 35px;
+            margin: 0 30px;
+            line-height: 35px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div><a href="./zcdwgl.html">注册单位管理</a><span>>添加单位</span></div>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="col-md col-top">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="am-g" id="paifaList">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md col-top">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="am-g" id="paifaList2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="botm_but"> <div style="background:#A2A2A2;" onclick="window.location.href='./zcdwgl.html'">取消</div> <div id="sub" onclick="save_sum()">确定</div> <div style="display: none;" id="tjdw2" onclick="tjdw2()">下一步</div></div>
+</main>
+
+</body>
+</html>
+<script>
+    post_jbdl();
+    post_jbdl2();
+    var id=acquire("id");
+    if(id != undefined){
+        getValueToInput();
+        $("#sub").text('修改');
+        $("#sub").attr('onclick','updata_sum()');
+        $("#tjdw2").show();
+    }
+    function tjdw2(){
+        window.location.href='./tjdw2.html?id='+id+"";
+    }
+    
+    function updata_sum() {
+        var a1=$("#dwmc").val();
+        var a2=$("#gsdh").val();
+        var a3= $("#xxdm").val();
+        var a4=$("#gsdz").val();
+        if(a1&&a2&&a3&&a4 !=""){
+            $.ajax({
+                url:urlPostdatanoopenid,
+                type:'POST',
+                dataType:'text',
+                data:{
+                    htmlname:'tjdw',
+                    mainid:'3',
+                    typeid:'1',
+                    id:id,
+                    a1:a1,
+                    a2:a2,
+                    a3:a3,
+                    a4:a4,
+                },
+            }).done(function (data) {
+                alert("修改成功");
+                window.location.href="./zcdwgl.html";
+            })
+        }else {
+            alert("都是必填项，请填写完整");
+        }
+
+
+    }
+    
+    function acquire(data) {
+        var url=decodeURIComponent(window.location.href);
+        var a=url.substring(url.indexOf("?")+1);
+        var str=a.substring(a.indexOf(data)).split("=");
+        if(str[0]==='param'){
+            $("#profession").attr("value",str[1]);
+        }
+        return str[1];
+    }
+
+    function getValueToInput() {
+        $.ajax({
+           url:urlselect,
+           type:'POST',
+           dataType:'JSON',
+           data:{
+               htmlname:'tjdw',
+               mainid:'2',
+               typeid:'3',
+               a1:id,
+           },
+        }).done(function (data) {
+            $("#dwmc").val(data[0].compname);
+            $("#gsdh").val(data[0].telphone);
+            $("#xxdm").val(data[0].credit);
+            $("#gsdz").val(data[0].comadress);
+        })
+    }
+
+    function post_jbdl() {
+        $.ajax({
+            url: urlForm,
+            type: 'post',
+            dataType: 'text',
+            data: {
+                htmlname: "xzdw.html",
+                mainid: "1",
+            },
+        }).done(function(info) {
+            info = JSON.parse(info);
+            // console.log(info);
+            $("#paifaList").html("");
+            var a1 = 1;
+            var str1 = '<div class="col-md-12 style_col " >';
+            var str2 = '';
+            $.each(info, function (idx, item) {
+                if (item.value1 == null) {
+                    item.value1 = "";
+                }
+                if (item.row == a1) {
+                    str1 = str1 + '<div class="col-md-12 col_md_inp"><span>' + item.title + ':</span><' + item.type1 + '  id="'+item.idname+'" type="text" name="name" value="' + item.value1 + '"></div>';
+                } else {
+                    str1 = str1 + '</div><div class="col-md-12 style_col " >';
+
+                    if (item.type1 == 'button') {
+                        str1 = str1 + '<div class="col-md-12 col_md_inp "><span>' + item.title + ':</span><' + item.type1 + '  id="'+item.idname+'" class="am-btn am-btn-warning"  type="text" name="name" value="">' + item.value1 + '</"' + item.type1 + '"></div>';
+                    } else {
+                        str1 = str1 + '<div class="col-md-12 col_md_inp "><span>' + item.title + ':</span><' + item.type1 + '  id="'+item.idname+'" type="text" name="name" value="' + item.value1 + '"></div>';
+                    }
+                    a1 = item.row;
+                }
+            })
+            str1 = str1 + '</div>';
+
+            $("#paifaList").append(str1);
+
+        });
+    }
+
+
+    function post_jbdl2() {
+        $.ajax({
+            url: urlForm,
+            type: 'post',
+            dataType: 'text',
+            data: {
+                htmlname: "xzdw.html",
+                mainid: "2",
+            },
+        }).done(function(info) {
+            info = JSON.parse(info);
+            // console.log(info);
+            $("#paifaList2").html("");
+            var a1 = 1;
+            var str1 = '<div class="col-md-12 style_col " >';
+            var str2 = '';
+            $.each(info, function (idx, item) {
+                if (item.value1 == null) {
+                    item.value1 = "";
+                }
+                if (item.placeholder == null) {
+                    item.placeholder = "";
+                }
+                if (item.row == a1) {
+                    str1 = str1 + '<div class="col-md-12 col_md_inp "><span>' + item.title + ':</span><' + item.type1 + ' id="'+item.idname+'" placeholder="' + item.placeholder + '" type="text" name="name" value="' + item.value1 + '"></div>';
+                } else {
+                    str1 = str1 + '</div><div class="col-md-12 style_col " >';
+
+                    if (item.type1 == 'button') {
+                        str1 = str1 + '<div class="col-md-12 col_md_inp "><span>' + item.title + ':</span><' + item.type1 + ' id="'+item.idname+'" class="am-btn am-btn-warning"  placeholder="' + item.placeholder + '" type="text" name="name" value="">' + item.value1 + '</"' + item.type1 + '"></div>';
+                    } else {
+                        str1 = str1 + '<div class="col-md-12 col_md_inp "><span>' + item.title + ':</span><' + item.type1 + ' id="'+item.idname+'" placeholder="' + item.placeholder + '" type="text" name="name" value="' + item.value1 + '"></div>';
+                    }
+                    a1 = item.row;
+                }
+            })
+            str1 = str1 + '</div>';
+            // console.log(str1);
+            $("#paifaList2").append(str1);
+            $("#paifaList2 div").first().append('<div class="zcyh_b">选择注册用户</div>')
+            $("#paifaList2 div").eq(7).append('<div class="zcyh_b">发送</div>')
+            $("#paifaList").append('<div class="col-md-12 style_col " style="height: 100%;"><div class="col-md-12 col_md_inp " style="height: 100%;"><span>相关文件:</span><div class="xgwj_box1"></div><div class="xgwj_box2"></div></div></div>');
+
+
+        });
+    }
+
+function save_sum(){
+
+var a1=$("#dwmc").val();
+var a2=$("#gsdh").val();
+var a3= $("#xxdm").val();
+var a4=$("#gsdz").val();
+
+
+if(a1&&a2&&a3&&a4!=""){
+        $.ajax({
+            url: urlPostdatanoopenid,
+            type: 'post',
+            dataType: 'text',
+            data: {
+                htmlname: "tjdw",
+                mainid: "1",
+                typeid: "2",
+                a1:a1,
+                a2:a2,
+                a3:a3,
+                a4:a4,
+            }, success(info) {
+                alert("保存成功");
+                window.location.href="./tjdw2.html?id="+info+"";
+            }
+        })
+
+}else {
+    alert("内容不能为空")
+}
+
+}
+
+
+</script>

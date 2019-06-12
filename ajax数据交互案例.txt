@@ -1,0 +1,44 @@
+﻿//无tablelist的ajax书写规范
+$.ajax({
+        url: '../sys/code/prodata.ashx',
+        type: 'get',
+        dataType: 'json',
+        data: {
+            tablename: 'r_kqdj',//查询的表的名字
+            mtype: 1,//操作：1创建，2更改，3查询，4删除  31查总数，30查分页
+            //操作的内容的字段名字
+            date1: date1,
+            name: uname,
+            uid: uid,
+            symbol: symbol,
+            period: period
+        },success(data){ //成功后得到的返回值会存入data
+
+        ｝
+    });
+
+//有tablelist的书写规范
+$.ajax({
+        url: '../sys/code/prodata.ashx',
+        type: 'get',
+        dataType: 'json',
+        data: {
+            //操作的内容的字段名字//不需要写tablename会自动根据htmlname和mainid找到对应的表
+            htmlname: 'index',
+            mainid: 1,
+            typeid:3,//操作：1插入，2修改，3查询，4删除//默认是3查询不用写都可以
+            a1: uid
+        }success(data){ //成功后得到的返回值会存入data
+
+        }
+    });
+http://192.168.0.253:8086/app/index.php?i=1&c=entry&do=selectdata&m=gm_mod&mainid=1&htmlname=index&a1=2
+
+    数据库tablelist字段名详解
+    id             :   自动生成id
+    htmlname       :   对应页面（无后缀）                          例如：htmlname:index;
+    tablename      :   数据库表名（无前缀:ims_）                   例如：tablename:gnc_user;
+    mainid         :   页面的第几个功能就几                        例如第一个功能：mainid:1;
+    typeid         :   操作类型：：1插入，2更新，3查询，4删除        例如：typeid:3;
+    name1          :   ajax中的字段名对应要查的数据                 例如：a1:id;            数据库中的格式为:       name1: id=:a1
+    name2          :   ajax中的字段名字例如a1                                             数据库中的格式为:       name1: a1

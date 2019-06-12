@@ -1,0 +1,286 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #fff;
+    color: #333;
+    font-size: 12px;
+    margin-top: 5px;
+
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+select, input, img, select {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #009;
+}
+
+a:visited {
+    color: #800080;
+}
+
+a:hover, a:active, a:focus {
+    color: #c00;
+    text-decoration: underline;
+}
+
+/*****************************************************************/
+.header_ti {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.dd_input {
+    width: 517px;
+}
+
+.title_c span, back span {
+    display: inline-block;
+    color: white;
+}
+
+.cont_c {
+    margin-bottom: 30px;
+}
+
+.back {
+    margin-right: 29px;
+    line-height: 30px;
+}
+
+.title_cc {
+    width: 60px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.title_c {
+    margin-left: 7px;
+    width: 99px;
+    height: 27px;
+    line-height: 27px;
+    border-radius: 3px 3px 0 0;
+    background-color: rgba(65, 174, 225, 1);
+    text-align: center;
+    border: 1px solid rgba(221, 221, 221, 1);
+}
+
+.content {
+    margin: 35px 5%;
+}
+
+.con_tit_right select {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: left;
+    border: 1px solid rgba(187, 187, 187, 1);
+
+}
+
+.d_wid1 {
+    width: 517px !important;
+
+}
+
+.dd_wid {
+    margin-left: 57px;
+}
+
+.dd_wid1 {
+    margin-left: 20px;
+}
+
+.dd_wid3 {
+    margin-left: 10px;
+}
+
+.dd_wid2 {
+    width: 109px !important;
+
+}
+
+.d_wid3 {
+    width: 200px;
+    margin-left: 10px;
+}
+
+.cont_c {
+    display: flex;
+}
+
+.con_co {
+    display: flex;
+}
+
+.con_co span {
+    white-space: nowrap;
+    line-height: 30px;
+
+}
+
+.con_tit_right {
+    width: 200px;
+}
+
+.con_sel {
+    width: 200px;
+    height: 34px;
+    border-radius: 5px;
+    text-align: left;
+    border: 1px solid rgba(187, 187, 187, 1);
+
+}
+
+.input_data {
+    background: url(../../image/tower/icon_data1.png) no-repeat;
+    background-size: 24px;
+    background-position: 170px;
+}
+
+.title_ct {
+    margin-top: 40px;
+}
+
+.bianji {
+    padding-top: 10px;
+
+}
+
+.bianji img {
+    width: 100%;
+}
+
+.but1 {
+    display: inline-block;
+    line-height: 30px;
+    width: 106px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgba(255, 152, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0);
+
+}
+
+.but_l {
+    margin-left: 10px;
+    background-color: #E51C23;
+}
+
+.title_ct input {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    color: rgba(136, 136, 136, 1);
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid rgba(187, 187, 187, 1);
+
+}
+
+.fot {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.td_but {
+
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+
+}
+
+.tr_top1 {
+    border-bottom: 2px solid #6E6E6E;
+}
+
+.tr_oh {
+    height: 40px;
+    border-bottom: 2px solid #C4C4C4;
+    cursor: pointer;
+}
+
+.tg_tab {
+    border-collapse: collapse;
+    width: 100%;
+    color: #888;
+}
+
+td {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+}
+
+.cont_cs {
+    width: 100%;
+}
+
+.right_con {
+    width: 10px;
+}
+
+.cont_tex {
+    width: 890px;
+position: relative;
+}
+.bot_right{
+    display: flex;
+    position: relative;
+    left: 680px;
+    top: 10px;
+
+}
+.tis_span{
+    margin-left: 20px;
+    display: inline-block;
+}
+.tis_kspan{
+    display: inline-block;
+	margin-left: 5px;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    color: rgba(16, 16, 16, 1);
+    font-size: 14px;
+    text-align: center;
+
+    border: 1px solid rgba(187, 187, 187, 1);
+
+}
+.con_tit_gz select{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: left;
+    border: 1px solid rgba(187, 187, 187, 1);
+}
+.con_tit_gz {
+    width: 300px;
+}

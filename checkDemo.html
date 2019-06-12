@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<input name="aa" onclick="changeVale(this)" type="checkbox" value="0">
+<input name="bb" onclick="changeVale(this)" type="checkbox" value="0">
+</body>
+<script>
+function changeVale(that) {
+if($(that).val()== 1){
+    $(that).val(0);
+    getccc()
+}else {
+    $(that).val(1);
+    getccc()
+}
+}
+
+function getccc(){
+    var a1=$('input[name="aa"]').val();
+    var a2=$('input[name="bb"]').val();
+    console.log(a1);
+    console.log(a2);
+
+}
+</script>
+</html>

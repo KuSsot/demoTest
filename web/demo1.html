@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div>
+    <input id="keyword">
+    <button id="cx" onclick="demo()">查询</button>
+</div>
+<div>
+    <input id="lid" placeholder="id">
+    <input id="name" placeholder="名字">
+    <button onclick="seletpage()">超级查</button>
+</div>
+<div id="list">
+
+</div>
+</body>
+<script>
+    /*ajax通用接口*/
+    var urlLogin = '/app/index.php?i=1&c=entry&do=userlogin&m=gm_mod';//登录专用
+    var urlForm = '/app/index.php?i=1&c=entry&do=form_init&m=gm_mod';//tablelistnew 查
+    var urlSelectPage = '/app/index.php?i=1&c=entry&do=select_page&m=gm_mod';//maintablelist 查
+    var urlControl = '/app/index.php?i=1&c=entry&do=control_init&m=gm_mod';//controltablelist 查
+    /*tablelist专用*/
+    var urlTSelect = '/app/index.php?i=1&c=entry&do=selectdata&m=gm_mod';//tablelist 查 3
+    var urlTPostdatanoopenid = '/app/index.php?i=1&c=entry&do=postdatanoopenid&m=gm_mod';//tablelist 改/增 1/2
+    var urlTDelete = '/app/index.php?i=1&c=entry&do=deldata&m=gm_mod';//tablelist 删 4
+
+    function demo() {
+        $.ajax({
+            url: 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=selectdata&m=gm_mod',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                htmlname: 'demo1',
+                mainid: '1',
+                typeid: '3',
+                a1: $('#keyword').val(),
+                orders: 'id',
+            }
+        }).done(function (data) {
+            console.log(data);
+        });
+    }
+
+    function updata() {
+        $.ajax({
+            url: 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=postdatanoopenid&m=gm_mod',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                htmlname: 'demo1',
+                mainid: '2',
+                typeid: '1',
+                id:$('#lid').val(),
+                a1:$('#name').val(),
+            }
+        });
+    }
+
+    function seletpage() {
+        $.ajax({
+            url: 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=select_page&m=gm_mod',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                htmlname: 'demo2',
+                mainid: '1',
+                typeid: '1',
+                page:'1',
+                a1:$('#name').val(),
+                a2:$('#lid').val(),
+            }
+        }).done(function (data) {
+            console.log(data);
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="alertDemo()" value="按钮">
+</body>
+<script>
+    
+    function alertDemo(){
+        var x;
+        var y;
+        var person=prompt("请输入你的名字","Harry Potter");
+        var sex=prompt("请输入你的性别","男");
+        if (person!=null && person!=""){
+            x="姓名：" + person;
+            document.getElementById("demo").innerHTML=x;
+        if (sex!=null && sex!=""){
+            y="性别："+person;
+            document.getElementById("demo").innerHTML=y;
+        }
+    }
+</script>
+</html>

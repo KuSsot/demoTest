@@ -1,0 +1,119 @@
+<!--根据选择日期获取日期天数创建表-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--select-->
+    <!--分页-->
+
+    <link rel="stylesheet" href="../css/xqukaoq.css">
+    <link rel="stylesheet" type="text/css" href="../css/WdatePicker.css" >
+
+    <script language="javascript" type="text/javascript"  src="../js/WdatePicker.js"></script>
+    <script src="../js/jquery.js"></script>
+
+    <title>根据选择日期获取日期天数创建表</title>
+    <style>
+        footer {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="my_bolel">
+    <!--======================-->
+    <div class="my_kqdj">
+        <button>
+            <a href="#">考勤查询</a>
+        </button>
+        <div class="img_right">
+            <a href="#" class="daoc">导出</a>
+            <a href="javascript:history.go(-1)">返回</a>
+        </div>
+        <span class="kqdj_x"></span>
+    </div>
+    <div class="add_dj">
+        <!--======================-->
+        <div class="my_biaogebc">保存</div>
+        <div onclick="" class="my_biaogetjry">添加人员</div>
+        <div>
+            <input name="start_time" type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy-MM'})" id="date"><button onclick="getDateTd()">确定</button>
+        </div>
+        <div class="my_rightspan">
+            <span>出勤类型包括：出勤√、事假△、病假○、婚假※、产假⊙、探亲假#、年休假★、迟到！、早退！！、旷工！！！、其它*。</span>
+        </div>
+        <br>
+        <table class="table_k">
+            <thead>
+            <tr class="tab_one" id="day">
+                <td class="my_xm">姓名</td>
+                <td class="my_xm">分类</td>
+                <td class="my_datadd">日期</td>
+                <!--<td>1</td>-->
+                <!--<td>2</td>-->
+                <!--<td style="color: red">操作</td>-->
+            </tr>
+            </thead>
+
+            <tbody id="cel_name">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<br>
+<br>
+<footer>
+</footer>
+</body>
+<script type="text/javascript">
+
+    function getDateTd() {
+        getDate();
+        DateNum();
+        var day = "";
+
+        //获取指定日期月份的天数
+        function getDate() {
+            //存入input输入的日期
+            var date = new Date($("#date").val());
+
+            //拆分年月
+            var year = date.getFullYear();
+            console.log("年：" + year)
+            var month = date.getMonth() + 1;
+            console.log("月：" + month);
+
+            //传入参数年月
+            function getDaysInMonth(year, month) {
+                month = parseInt(month, 10);
+                var d = new Date(year, month, 0);
+                return d.getDate();
+            }
+
+            day = getDaysInMonth(year, month);
+            console.log(day);
+        }
+
+        //创建跟天数对应的td
+        function DateNum() {
+            console.log("开始")
+            for (var i = 1; i <= day; i++) {
+                $("#day").append("<td>" + i + "</td>")
+            }
+            $("#day").append("<td style='color: red'>操作</td>")
+        }
+    }
+
+    
+</script>
+</html>

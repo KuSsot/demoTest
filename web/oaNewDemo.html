@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试demo</title>
+    <link rel="stylesheet" type="text/css" href="../css/amazeui.css">
+    <script type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+        <div style="display: flex;flex-direction: column;">
+            <!--标题栏-->
+            <div class="am-u-lg-2  am-u-md-12">
+                <strong>请假登记</strong>
+                <span>返回</span>
+            </div>
+            <!--表内容-->
+            <div class="am-form  admin-formwrap">
+
+                <div class="am-g am-u-sm-10">
+                    <div class="am-u-md-4  am-u-sm-10">
+                        <span class="text-gray">姓名：</span>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field bg-blue3 border-blue3 am-input-sm" name="">
+                        </div>
+                    </div>
+
+                    <div class="am-u-md-4 am-u-sm-10">
+                        <span class="text-gray">部门：</span>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field bg-blue3 border-blue3 am-input-sm" name="">
+                        </div>
+                    </div>
+
+                    <div class="am-u-md-4  am-u-sm-10">
+                        <span class="text-gray">请假类型：</span>
+                        <div class="am-form-group">
+                            <select class="bg-blue3 border-blue3 am-input-sm">
+                                <option value="0">请选择</option>
+                                <option value="1">年假</option>
+                                <option value="2">调休</option>
+                                <option value="3">病假</option>
+                                <option value="3">事假</option>
+                                <!-- <option>测试</option> -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="am-g am-u-sm-10">
+
+                    <div class="am-u-md-4  am-u-sm-8">
+                        <span class="text-gray">开始时间：</span>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field bg-blue3 border-blue3 am-input-sm" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                        </div>
+                    </div>
+
+                    <div class="am-u-md-4 am-u-end">
+                        <span class="text-gray">结束时间：</span>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field bg-blue3 border-blue3 am-input-sm" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="am-g am-u-sm-10">
+                    <div class="am-u-md-12">
+                        <span class="text-gray">时长（天）：</span>
+                        <div class="am-form-group">
+                            <input type="text" class="am-form-field bg-blue3 border-blue3 am-input-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="am-g am-u-sm-10">
+                    <div class="am-form-group">
+                        <span>请假原由：</span>
+                        <textarea class="am-form-field am-radius" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="am-g am-u-sm-10 am-u-end">
+                    <div class="am-form-group">
+                        <span>备注：</span>
+                        <textarea class="am-form-field am-radius" rows="4"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <!--按钮-->
+            <div></div>
+        </div>
+</body>
+</html>

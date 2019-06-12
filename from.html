@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery.form.min.js"></script>
+</head>
+<body>
+<div><button onclick="give(1)">1</button><button onclick="give(2)">2</button></div>
+<div><button onclick="give2('新提问')">1</button><button onclick="give2('高悬赏')">2</button></div>
+<from id="filtrate" class="">
+    <input type="hidden" name="a1">
+    <input type="hidden" name="a2">
+    <input type="hidden" name="pege">
+</from>
+</body>
+<script>
+    function give(num) {
+        $('input[name="a1"]').val(num);
+    }
+    function give2(num) {
+        $('input[name="a2"]').val(num);
+    }
+    (function(){
+        $("#filtrate").ajaxForm(function (data) {
+            console.log(data);
+        });
+    }());
+</script>
+</html>

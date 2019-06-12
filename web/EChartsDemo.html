@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../js/echarts.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    var arr = [];
+    var ymd = "";
+    var timeH = [];
+    randomNum(0,21);// 11,15* (15-11+1)+11
+
+    function randomNum(min,max) {
+        //定义声明一个数组, 放随机生成的10个数字
+        for (var i = 1; i <= 20; i++) {//采用四舍五入包含0和100
+            var n = Math.round(Math.random()*(max-min)+ min);//检测重复
+            // var off = false;//假设随机出来数字不重复
+            // for (var j = 0; j < arr.length; j++) {
+            //     if (n == arr[j]) {// 如果重复就更改off的状态
+            //         off = true;
+            //         break;//跳出当前代码块
+            //     }
+            // }
+            // if (off) {//判断off的状态
+            //     i--
+            // } else {
+                arr.push(n);
+            // }
+        }
+        getDate();
+    }
+    function  getDate() {
+        var myDate = new Date();
+        var Y = myDate.getFullYear();//获取当前年
+        var M = myDate.getMonth()+1;//获取当前月份
+        var D = myDate.getDate();//获取当前日期
+
+        var h = myDate.getHours();
+
+        ymd = Y+"-"+M+"-"+D;
+        for (var i = 0 ; i <= h ; i++){
+            console.log(i);
+            if(i<10){
+                i=  "0" +i;
+            }
+            timeH.push(i+":00:00");
+        }
+    }
+console.log(timeH);
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option = {
+        title: {
+            text: ymd
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            data: timeH
+        },
+        yAxis: {
+            splitLine: {
+                show: false
+            }
+        },
+        toolbox: {
+            left: 'center',
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        dataZoom: [{
+            startValue: '1'
+        }, {
+            type: 'inside'
+        }],
+        visualMap: {
+            top: 10,
+            right: 10,
+            pieces: [{
+                gt: 0,
+                lte: 10,
+                color: '#096'
+            }, {
+                gt: 10,
+                lte: 20,
+                color: '#ffde33'
+            }, {
+                gt: 20,
+                lte: 30,
+                color: '#ff9933'
+            }, {
+                gt: 30,
+                lte: 40,
+                color: '#cc0033'
+            }, {
+                gt: 40,
+                lte: 50,
+                color: '#660099'
+            }, {
+                gt: 50,
+                color: '#7e0023'
+            }],
+            outOfRange: {
+                color: '#999'
+            }
+        },
+        series: {
+            name: 'Beijing AQI',
+            type: 'line',
+            data: arr,
+            markLine: {
+                silent: true,
+                data: [{
+                    yAxis: 10
+                }, {
+                    yAxis: 20
+                }, {
+                    yAxis: 30
+                }, {
+                    yAxis: 40
+                }, {
+                    yAxis: 50
+                }]
+            }
+        }
+    });
+    myChart.setOption(option);
+</script>
+</body>
+</html>

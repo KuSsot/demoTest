@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq日期插件</title>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+    <!--日历组件-->
+    <link rel="stylesheet" type="text/css" href="../css/simple-calendar.css">
+    <script type="text/javascript" src="../js/simple-calendar.js"></script>
+
+
+</head>
+<body>
+<!--容器-->
+<div id='container'></div>
+<script>
+    var myCalendar = new SimpleCalendar('#container');
+    // myCalendar.updateSize('98%', '98%');
+    $(function() {
+        $(".sc-item").click(function() { //天数格添加点击事件。
+            var year = $(".sc-select-year").val(); //获取当前选择年份。
+            var month = $(".sc-select-month").val(); //获取当前选择月份。
+            var day = $(this).children(".day").html(); //获取当前选择天数。
+            var date = year + "-" + month + "-" + day;
+            alert(date); //弹框展示。
+        });
+    });
+</script>
+</body>
+</html>

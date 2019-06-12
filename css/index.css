@@ -1,0 +1,129 @@
+#ma-box-home{
+    min-width: 1000px;
+    min-height: 700px;
+}
+#box-Ngtion{
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    padding:0 10%;
+    align-items: center;
+}
+#box-Ngtion span{
+    margin: -5px 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a:visited{
+    color:#000000;
+}
+
+#search-box{
+    border:1px solid #3385FF;
+    width:550px;
+    height:33px;
+    display:flex;
+    justify-content: flex-start;
+    padding-right: 103px;
+}
+#search-box input{
+    width:536px;
+    height:86%;
+    outline: medium;
+    margin-left:10px;
+    border:0;
+}
+
+#box-max-include{
+    width:100%;
+    margin-top:6%;
+}
+
+#box-max-include div{
+    margin:auto;
+    margin-bottom: 35px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#search-box button{
+    width: 102px;
+    height: 35px;
+    border:0;
+    background-color:#3385FF;
+    color:#fff;
+    font-size:15px;
+    margin-left: 5px;
+    margin-top: -1px;
+}
+
+#box-link{
+    width:550px;
+    display:inline-flex;
+    justify-content: space-around;
+    flex-flow: wrap row;
+    font-size: 16px;
+    font-weight: bold;
+    color:#888888;
+    font-family:Arial;
+    margin-left: -75px !important;
+}
+
+#box-link span{
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    margin-left: 70px;
+}
+
+.box-search-dv{
+    width:100%;
+    text-align: center;
+}
+.box-search-dv img{
+    width:150px;
+}
+#box-code{
+    width:100%;
+    font-size: 12px;
+}
+
+#box-code div{
+    margin-top:0 !important;
+    margin-bottom:25px !important;
+    color:#888888;
+}
+#box-code img{
+    width: 71px;
+    height: 75px;
+}
+.box-marst{
+    width:100%;
+}
+.box-matters{
+    width:800px;
+    display:flex;
+    flex-flow: wrap row;
+    padding-left:270px;
+    margin-bottom:10px !important;
+}
+.box-matters span{
+    margin-left: 40px;
+}
+.box-text{
+    font-size: 12px;
+    color:#888888;
+}
+.box-text a{
+    color:#888888;
+}
+.fixednav{
+    position: relative;
+    top: 50%;
+    margin-bottom: 0 !important;
+}
+.box-fixe{
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0 !important;
+}

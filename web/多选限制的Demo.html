@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多选 限制选择数量</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            background-color: white;
+            color: black;
+            border: 1px solid #D9D9D9;
+            padding: 2px 15px;
+        }
+
+        input[type="checkbox"]:checked + label {
+            background-color: #3385FF;
+            color: white;
+            border: 1px solid #3385FF;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox" class="check_box" id="check1"><label for="check1">美容</label>
+<input type="checkbox" class="check_box" id="check2"><label for="check2">视频</label>
+<input type="checkbox" class="check_box" id="check3"><label for="check3">热点</label>
+<input type="checkbox" class="check_box" id="check4"><label for="check4">双休</label>
+<input type="checkbox" class="check_box" id="check5"><label for="check5">奇谈</label>
+<input type="checkbox" class="check_box" id="check6"><label for="check6">军事</label>
+<input type="checkbox" class="check_box" id="check7"><label for="check7">科技</label>
+<input type="checkbox" class="check_box" id="check8"><label for="check8">旅游</label>
+<input type="checkbox" class="check_box" id="check9"><label for="check9">游戏</label>
+<script type="text/javascript">
+    $(function () {
+        var num = 0;
+        $(".check_box").each(function () {
+            $(this).click(function () {
+                if ($(this)[0].checked) {
+                    ++num;
+                    if (num >= 5) {
+                        //alert("最多选择 5项 的上限已满, 其他选项将会变为不可选.");
+                        $(".check_box").each(function () {
+                            if (!$(this)[0].checked) {
+                                $(this).attr("disabled", "disabled");
+                            }
+                        });
+                    }
+                } else {
+                    --num;
+                    if (num <= 5) {
+                        $(".check_box").each(function () {
+                            if (!$(this)[0].checked) {
+                                $(this).removeAttr("disabled");
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

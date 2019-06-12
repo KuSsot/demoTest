@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*1.求一个数字数组中数字的和*/
+    /*1.1不闭包的情况下*/
+    function f(arr) {
+        return arr.reduce(function (x,y) {
+            return x+y
+        });
+    }
+
+    var test1 = f([1,2,3,4,5]);
+    console.log(test1);
+
+    /*1.2闭包的情况下*/
+    function f1(arr) {
+        var fNum = function () {
+            return arr.reduce(function (x,y) {
+                return x + y;
+            })
+        };
+        return fNum;
+    }
+    var test2 = f1([1,2,3,4,5]);
+    console.log(test2());
+    for(var i=1;i<=3;i++){
+
+    }
+
+    /*2.生成给一个数组*/
+    function count() {
+        var arr = [];
+        for(var i=1;i<=3;i++){
+            arr.push(function () {
+                return i * i;
+            });
+        }
+        console.log(arr);
+        return arr;
+    }
+
+    var results = count();
+    var a1 = results[0];//1
+    var a3 = results[1];//4
+    var a2 = results[2];//9
+    // var a3 = results[2];//9
+    console.log(a1());
+    console.log(a2());
+    console.log(a3());
+    // console.log(a3());
+
+</script>
+</html>

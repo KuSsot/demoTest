@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<input id="phone">
+<button onclick="fasong()">发送短信</button>
+</body>
+<script>
+    function fasong() {
+        var phone = $('#phone').val();
+        var mr="";
+        for (var i = 0; i < 4; i++) {
+            mr += parseInt(Math.random(9) * 10);
+            console.log(mr);
+        }
+        $.ajax({
+            url: 'http://v.juhe.cn/sms/send',
+            type: 'post',
+            dataType: 'jsonp',
+            data: {
+                mobile: phone,
+                tpl_id: "123792",
+                tpl_value: "#code#=" + mr,
+                key: "d32a880338778132a0f995e4744ad54f",
+                dtype: "json"
+            },
+        }).done(function (data) {
+            console.log(data);
+        }).fail(function (data) {
+            console.log(data);
+        })
+    }
+</script>
+</html>

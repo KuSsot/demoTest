@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <link href="./企业服务_职位发布_files/base.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./企业服务_职位发布_files/help.css">-->
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        .zwfb_shop_table {
+            width: 540px;
+            height: 320px;
+            margin-top: 240px;
+            position: fixed;
+            background: white;
+            left: 30%;
+            display: none;
+        }
+
+        .fwmc_xxk {
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .fwmc_xxk li {
+            width: 120px;
+            height: 48px;
+            border: 1px solid #ddd;
+            font-size: 18px;
+            color: #666;
+            margin-right: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .fwmc_xxk li p {
+            line-height: 18px;
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .fwmc_xxk li.on {
+            background: url(../images/fw/fwkk.jpg) no-repeat center;
+            color: #169ed8;
+            border: 1px solid #169ed8;
+        }
+
+        .fwmc_xxk li.on p {
+            color: #169ed8;
+        }
+
+        a.ty_but {
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            font-size: 16px;
+            color: #fff;
+            border-radius: 3px;
+            background: #169ed8;
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s ease 0s, color 0.2s linear 0s;
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.3;
+            position: fixed;
+            display: none;
+        }
+        .close{
+            width: 26px;
+            line-height: 26px;
+            height: 26px;
+            text-align: center;
+            border: 1px solid #0000004a;
+            cursor: pointer;
+        }
+        .close:active{
+            background: #bebebe;
+            color: white;
+        }
+        a.bwfb{
+            background: white;
+            color: black;
+            border: 1px solid #5f5f5f;
+        }
+    </style>
+</head>
+<body>
+<div onclick="hidefbje()" id="fbjeBackground" class="background"></div>
+<div id="fbjeBox" width="100%" border="0" cellspacing="0" cellpadding="0" class="zwfb_shop_table">
+    <div valign="top">
+        <div width="30" style="display: flex;justify-content: space-between;line-height: 36px;">
+            <span style="margin-left:10px; ">服务名称：</span>
+            <div class="close" onclick="hidefbje()">×</div>
+        </div>
+        <ul id="fbje" class="fwmc_xxk" style="margin-top: 46px;">
+            <li class="on" je="2">
+                <p>多多币</p>
+                <i>2</i>个
+            </li>
+            <li je="5">
+                <p>多多币</p>
+                <i>5</i>个
+            </li>
+            <li je="10">
+                <p>多多币</p>
+                <i>10</i>个
+            </li>
+            <li je="15">
+                <p>多多币</p>
+                <i>15</i>个
+            </li>
+            <li je="20">
+                <p>多多币</p>
+                <i>20</i>个
+            </li>
+            <li je="30">
+                <p>多多币</p>
+                <i>30</i>个
+            </li>
+        </ul>
+    </div>
+
+    <div style="display: flex;margin: 0 auto; width: fit-content;">
+        <a class="ty_but" href="#" onclick="getDDB()">确定</a>
+    </div>
+</div>
+<input id="ddb" readonly onclick="showfbje()" value="">
+<script>
+    function showfbje(){
+        $('#fbjeBox,#fbjeBackground').fadeIn();
+    }
+
+    function hidefbje(){
+        $('#fbjeBox,#fbjeBackground').fadeOut();
+    }
+
+    $('#fbje li').click(function () {
+        $(this).attr('class','on').siblings('li').removeAttr('class','on')
+    })
+    function getDDB() {
+        var ddb = $('#fbje .on').attr('je');
+        $('#ddb').val(ddb);
+        hidefbje();
+    }
+</script>
+</body>
+</html>

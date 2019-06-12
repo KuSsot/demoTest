@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    $('.new-user').html(
+        '<table class="table"><thead ><tr class="t"></tr></thead><tbody class="c"></tbody></table>' +
+        '<div  id=""></div><div class="pagination_4"></div>'+
+        '<div><button onclick="show('+did+','+pageIndexjian+')">上一页</button>'+pageIndex+'/'+data.s.pagenum+'<button onclick="show('+did+','+pageIndexjia+')">下一页</button></div>'
+    );
+
+    $.each(data.t,function (idx,item) {
+        $(".new-user .t").append('<th>' + item.titlename + '</th>');
+    });
+
+    $.each(data.c, function (num, info) {
+        var tr = $("<tr id='" + info.id + "' />");
+        var td = $('</td>');
+        $.each(info, function (infoNum, infoContc) {
+            td = $('<td>' + infoContc.name1 + '</td>');
+            tr.append(td);
+        });
+        $(".new-user .c").append(tr);
+    });
+</script>
+</html>

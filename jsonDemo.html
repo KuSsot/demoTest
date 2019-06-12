@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    h1 {
+        width: 100%;
+        background: #ff9103;
+        color: white;
+        margin: 0;
+        text-align: center;
+    }
+
+    #body {
+        width: 375px;
+        height: 812px;
+        margin: 500px auto;
+        border: 1px solid #6e6e6e;
+    }
+    #gwc{
+        padding: 5px 10px;
+    }
+    .menu {
+        width: 100%;
+        background: #fff9b4;
+        margin: 10px 0;
+    }
+    .food{
+        display: flex;
+        justify-content: space-between;
+    }
+    .food div:first-child{
+        width: 40%;
+    }
+</style>
+<body>
+<div id="body">
+    <h1>购物车</h1>
+    <div id="gwc"><!--购物车-->
+
+    </div>
+</div>
+</body>
+<script>
+    var data = [
+        {title: "牧之原", content: [{"name": "原味珍珠奶茶", "num": 1, "price": 3.00}, {"name": "鱼丸", "num": 1, "price": 5.00}, {"name": "咖喱鸡", "num": 1, "price": 7.00}]},
+        {title: "麦当劳", content: [{"name": "板烧鸡腿堡套餐", "num": 2, "price": 26.00}]},
+        {title: "肯德基", content: [{"name": "嫩牛五方", "num": 3, "price": 18.00}, {"name": "上校鸡块", "num": 2, "price": 8.00}]},
+    ];
+    console.log(data);
+    $.each(data,function (idx,item) {
+        var menu= $('<div class="menu">' +
+            '            <div class="title">'+item.title+'</div>' +
+            '            <div class="food"><div>菜品</div><div>数量</div>单价<div></div></div>' +
+            '        </div>');
+        var content = $('<div class="content"></div>');
+        $.each(item.content,function (idx2,item2) {
+            var food = $('<div class="food">' +
+                '   <div class="name">'+item2.name+'</div>' +
+                '   <div class="num">'+item2.num+'</div>' +
+                '   <div class="price">'+item2.price+'</div>' +
+                '</div>');
+            $(content).append(food);
+        });
+        $(menu).append(content);
+        $("#gwc").append(menu);
+    })
+</script>
+</html>
+<!--        <div class="menu">
+            <div class="title">牧之原</div>
+            <div class="content">
+                <div class="food">
+                    <div class="name">原味珍珠奶茶</div>
+                    <div class="num">1</div>
+                    <div class="price">3.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="title">肯德基</div>
+            <div class="content">
+                <div class="food">
+                    <div class="name">原味珍珠奶茶</div>
+                    <div class="num">1</div>
+                    <div class="price">3.00</div>
+                </div>
+            </div>
+        </div>-->

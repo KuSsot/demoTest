@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    function aa() {
+        var json = [];
+        var j = {};
+        for (var i = 1; i < 5; i++) {
+            j.name = "name";
+            j.cars = "22";
+            j.obj = "457";
+            json.push(j);
+        }
+        console.log(json);
+        var a = JSON.stringify(json);
+        alert(a);
+    }
+</script>
+<div>
+    <input type="button" value="提交" onclick="aa()" />
+</div>
+    <div class="selects">
+        <span>英文</span>
+        <select>
+            <option>a</option>
+            <option>b</option>
+            <option>c</option>
+        </select>
+    </div>
+
+    <div class="selects">
+        <span>数字</span>
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+    </div>
+
+    <div class="selects">
+        <span>字符串</span>
+        <select>
+            <option>*1*</option>
+            <option>*2*</option>
+            <option>*3*</option>
+        </select>
+    </div>
+    <button onclick="getjs()">获取</button>
+<script>
+function getjs() {
+    var selects = $('.selects');
+
+    var json = [];
+    var j= {};//创建对象
+    $.each(selects,function (idx,item) {
+        console.log(item);
+        j = {};//需要初始化
+        j.title = item.querySelector('span').innerHTML;
+        j.content = item.querySelector('select').value;
+        json.push(j);
+    });
+    console.log(json);
+}
+</script>
+</body>
+</html>

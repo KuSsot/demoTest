@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+</body>
+    <script>
+         var str = ['全胜<em>网络科技</em>有限公司','中山市<em>德玛</em>西亚集团'];
+         $.each(str,function (idx,item) {
+
+             item = item.replace(/<em>|<\/em>|有限公司|集团/g,'');
+             console.log(item);
+             item = item.substring(item.length-4, item.length);
+             console.log(item);
+         })
+
+    </script>
+</html>

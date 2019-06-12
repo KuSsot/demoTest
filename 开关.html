@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        .chooseBtn {
+
+        }
+
+        .choose-label {
+            width: 40px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            position: relative;
+            background-color: #A7A5A6;
+            overflow: hidden;
+        }
+
+        .choose-label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 20px;
+            background-color: #fff;
+            z-index: 20;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .chooseBtn:checked + label.choose-label:before {
+            left: 20px;
+        }
+
+        .chooseBtn:checked + label.choose-label {
+            background-color:#A4B5F7;
+        }
+    </style>
+</head>
+<body>
+<div class="chebox_div ">
+    <div>价格</div>
+    <input type="text" name="1" value="">
+    <input onchange="getChoose(this)" type="checkbox" id="a_235" name="a_235" class="chooseBtn" value="">
+    <label onclick="" for="a_235" class="choose-label"></label>
+</div>
+<script>
+    function getChoose(that) {
+        // var rgb = $(that).css('background-color');
+        //     rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        //     function hex(x) {
+        //         return ("0" + parseInt(x).toString(16)).slice(-2);
+        //     }
+        //     rgb= "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+        // console.log(rgb);
+        console.log(that);
+        var checkbox = that.checked;
+        var num = $(that).siblings('input[name="1"]').val();
+        console.log(checkbox);
+        console.log(num);
+    }
+</script>
+</body>
+</html>

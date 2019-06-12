@@ -1,0 +1,519 @@
+/* 考勤查询 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.kqdj_a {
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.hawed {
+    width: 99%;
+    margin: auto;
+    /* border: 1px solid green; */
+}
+
+.my_kqdj button a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.my_kqdj button {
+    width: 94px;
+    height: 27px;
+    line-height: 20px;
+    border-radius: 3px 3px 0px 0px;
+    background-color: rgba(65, 174, 225, 1);
+    text-align: center;
+    border: 1px solid rgba(221, 221, 221, 1);
+    margin-left: 12px;
+}
+
+.my_kqdj .kqdj_x {
+    width: 99.8%;
+    border: 1px solid rgb(219, 219, 219);
+    display: block;
+}
+
+.my_Djdata {
+    width: 97%;
+    margin: auto;
+}
+/*********************/
+.my_Djdata .ber_ki {
+    width: 142px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 0 5px;
+    border: 1px solid rgba(187, 187, 187, 1);
+    background: url(../image/b_data.png) no-repeat;
+    background-position: 120px;
+    background-size: 24px;
+}
+
+.my_Djdata img {
+    margin: 0px -32px 0px;
+}
+
+.my_biaoge {
+    display: inline-block;
+    margin-left: 40px;
+    background: rgba(255, 152, 0, 1);
+    width: 106px;
+    height: 30px;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.my_biaoge a {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.kuandu {
+    border-bottom: 2px solid rgb(219, 219, 219);
+    height: 80px;
+}
+
+.table3_1 table {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.table3_1 tr {
+    color: #000000;
+}   
+
+.table3_1,
+.table3_1 th,
+.table3_1 td {
+    font-size: 14px;
+    text-align: center;
+    padding: 4px;
+    border-bottom: 2px solid rgb(219, 219, 219);
+    border-collapse: collapse;
+}
+
+.my_tablek .table3_1 tr td {
+    width: 10%;
+    height: 25px;
+}
+
+
+
+ul.my_pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.my_pagination li {
+    display: inline;
+}
+
+ul.my_pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid rgba(187, 187, 187, 1);
+    margin: 0 0 0 5px;
+}
+
+.my_pagination li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.my_pagination li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.my_pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.my_pagination li a:hover:not(.active) {
+    background-color: rgba(255, 152, 0, 1);
+    color: #fff;
+}
+
+.my_uliboklk {
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+/* 考勤登记 */
+/* 考勤登记-考勤登记 */
+.my_biaogebc {
+    display: inline-block;
+    margin-left: 40px;
+    background: rgba(255, 152, 0, 1);
+    width: 106px;
+    height: 30px;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0px;
+}
+
+.my_biaogetjry {
+    display: inline-block;
+    margin-left: 40px;
+    background: rgb(67, 129, 240);
+    width: 106px;
+    height: 30px;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.my_rightspan span {
+    font-size: 14px;
+    color: red;
+    float: right;
+}
+
+.my_bolel {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid rgba(187, 187, 187, 1); */
+}
+
+.add_dj {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+}
+
+.tab_one td {
+    font-size: 16px;
+    font-weight: bold;
+    height: 35px;
+}
+
+.table_k {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table_k .tab_one .my_xm {
+    width: 3%;
+    text-align: center;
+}
+
+.table_k .tab_one .my_datadd {
+    text-align: center;
+}
+
+button a {
+    width: 85px;
+    height: 35px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    line-height: 2.5;
+    display: block;
+}
+
+button {
+    width: 100%;
+    height: 35px;
+    background: red;
+    border-radius: 10px;
+}
+
+.table_k .my_resp {
+    width: 2%;
+    height: 30px;
+}
+input#w_dara {
+    width: 70px;
+    height: 68px;
+    border: none;
+}
+.table_k td {
+    height: 33px;
+    width: 20px;
+    /*width: 37px;*/
+}
+
+.table_k .my_optad {
+    width: 100%;
+    border: none;
+    background-position: 100%;
+}
+
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {
+    display: inline;
+}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid rgba(187, 187, 187, 1);
+    margin: 0 0 0 5px;
+}
+
+.pagination li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: rgba(255, 152, 0, 1);
+    color: #fff;
+}
+
+.my_uli {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.table_k .my_txf td {
+    color: red;
+    height: 39px;/****************/
+}
+/* 累计 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    min-width: 375px;
+}
+
+.kqdj_a {
+    width: 100%;
+}
+
+.my_kqdj button a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    line-height: 2;
+}
+
+.my_kqdj button {
+    width: 94px;
+    height: 27px;
+    line-height: 20px;
+    border-radius: 3px 3px 0px 0px;
+    background-color: rgba(65, 174, 225, 1);
+    text-align: center;
+    border: 1px solid rgba(221, 221, 221, 1);
+    margin-left: 12px;
+}
+
+.my_kqdj .kqdj_x {
+    width: 99.8%;
+    border: 1px solid rgb(219, 219, 219);
+    display: block;
+}
+
+.my_Djdata {
+    width: 97%;
+    margin: auto;
+}
+/********************/
+.my_Djdata .ber_ki {
+    width: 142px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 0 5px;
+    border: 1px solid rgba(187, 187, 187, 1);
+    background: url(../image/b_data.png) no-repeat;
+    background-position: 120px;
+    background-size: 24px;
+}
+
+.my_Djdata img {
+    margin: 0px -32px 0px;
+}
+
+.my_biaoge {
+    display: inline-block;
+    margin-left: 40px;
+    background: rgba(255, 152, 0, 1);
+    width: 106px;
+    height: 30px;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.my_biaoge a {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.img_right {
+    float: right;
+    margin: 0 16px;
+}
+
+.img_top {
+    position: relative;
+    top: 3px;
+}
+
+.daoc {
+    position: relative;
+}
+
+.img_right a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.hei_xm {
+    width: 20px;
+    border: 1.5px solid black;
+    display: inline-block;
+    margin: 0 0 3px;
+}
+
+.ko_gele {
+    width: 97%;
+    height: 30px;
+}
+
+.tab_bg h3 {
+    text-align: center;
+}
+
+.my_qjjx table {
+    border-collapse: collapse;
+}
+
+.my_qjjx table, td, th {
+    border: 1px solid black;
+}
+.my_qjjx td{
+    text-align: center;
+    line-height: 1.6;
+}
+.tr_tds{
+    color: black;
+    font-weight: bold;
+    background: rgb(241,241,241);
+}
+.my_qjjx table{
+    width: 97%;
+    font-size: 14px;
+}
+.my_qjjx table .tr_tds td{
+    height: 40px;
+}
+
+
+.my_uliboklklol {
+    text-align: center;
+    margin-top: 60px;
+}
+
+ul.my_paginationbo{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.my_paginationbo li {
+    display: inline;
+}
+
+ul.my_paginationbo li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid rgba(187, 187, 187, 1);
+    margin: 0 0 0 5px;
+}
+
+.my_paginationbo li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.my_paginationbo li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.my_paginationbo li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.my_paginationbo li a:hover:not(.active) {
+    background-color: rgba(255, 152, 0, 1);
+    color: #fff;
+}
+
+
+
+

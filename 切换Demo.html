@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        .display{
+            display: none!important;
+        }
+        .c_head{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<div style="width: 20%;background: #8c8c8c">
+    <div class="c_head">
+        <div>标题</div>
+        <div>×</div>
+    </div>
+    <div class="c_head display">
+        <div>选中</div>
+        <div>√</div>
+    </div>
+</div>
+<script>
+    $('.c_head').click(function(){
+        console.log(this);
+        $(this).attr('class','c_head display').siblings().attr('class','c_head');
+    });
+</script>
+
+</body>
+</html>

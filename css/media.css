@@ -1,0 +1,86 @@
+@media screen and (max-width:1024px ) {
+
+	.main .column.col-2 .colwrap.fcw{
+		width: 100%;
+		padding-right: 0px;
+	}
+
+
+}
+@media screen and (max-width:824px ) {
+	  .aboutHouse .h-inline{
+			margin-left: 0px !important;
+			width:50%%;
+			margin-right: 0px;
+	  }
+	  .aboutHouse .h-inline div{
+	  	width: auto !important;
+	  }
+
+	 
+
+}
+@media screen and (min-width:768px ) {
+#leftMenu{
+		display: block;
+	}
+
+
+}
+@media screen and (max-width:768px ) {
+	#leftMenu{
+		display: none;
+	}
+	#rightContent #headtop .left .menu{
+		display: inline;
+	}
+	#rightContent{
+		left: 0;
+	}
+	#rightContent #headtop,#rightContent #headtop .left{
+		border-left: none;
+	}
+	.Edit_houseProgress{
+		padding: 30px;
+	}
+	 .Edit_houseProgress .column.col-2 .colwrap{
+	 	width: 100%;
+	 	padding-right: 0px;
+	 }
+
+	  .Edit_houseProgress .colwrap .clear{
+	  	margin-bottom: 5px !important;
+	  }
+
+	  .fixPostImg{
+	  	padding: 30px;
+	  	overflow-y: auto;
+	  }
+	  .fixPostImg .wrap{
+	  	width: 100%;
+	  }
+
+	/*   .aboutHouse .h-inline{
+				margin-left: 0px !important;
+				width: 100%;
+	}
+	.aboutHouse .h-inline div{
+		width: auto !important;
+	}
+	 */
+}
+
+
+
+
+
+
+@media screen and (max-width:640px ) 
+	#rightContent #headtop .left .mspan{
+		display: none;
+	}
+	.ul-col2 li{
+		width: 100%;
+	}
+
+}

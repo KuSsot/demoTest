@@ -1,0 +1,232 @@
+﻿
+
+我的资料：{
+//项目管理系统
+    地址：https://qs.zsqsnw.com/app/index.php?i=1&c=entry&html=index&do=web&m=
+
+    账号：zlsy
+    密码：1
+
+//qq
+    2184324125
+    2184324125@qq.com
+}
+
+GNC恩币的相关资料{
+    移动端：http://www.gnceb.com/
+
+    typeid=//1：改   2：增   3：查   4：删除
+
+    FTP：
+    192.168.0.253:21
+    账号：gnc_h5
+    密码：gnc_h51234
+
+    FTP（H5）2018/09/30
+    47.74.249.16:21
+    账号：gnc_h5
+    密码：admin1234
+
+    MySQL
+    192.168.0.253:3306
+    账号：gnc
+    密码：gnc1234
+
+    验证码短信平台{
+        https://www.juhe.cn/docs/api/id/54
+
+        账号：gncenbi
+        密码：gnc123
+    }
+}
+
+兰亭蔚{
+    兰亭蔚后台登录网址：https://shop.lantingwei.com/app/index.php?i=2&c=entry&m=ewei_shopv2&do=mobile&r=pc
+
+    账号：13257607074
+    密码：APTX4869
+
+    FTP
+    119.23.217.81:21
+    帐号：ltw_shop
+    密码：ltw_shop1234
+}
+
+创业科技运维系统{
+    pc端：http://www.zscreat.com/app/index.php?i=1&c=entry&do=web&m=cy_ywsys&html=index
+    手机端：http://www.zscreat.com/app/index.php?i=1&c=entry&do=app&m=cy_ywsys&html=index
+
+    运维设计稿：https://pro.modao.cc/app/dksYtfC4yskNUDaeiZUgzS4iGDiXoWq
+    密码：123456
+
+    FTP
+    61.142.75.26:21
+    帐号：cysys
+    密码：cysys1234
+
+    MySQL
+    61.142.75.26:3306
+    账号：cycx
+    密码：cycx1234
+
+    MySQL管理账户
+    61.142.75.26:3306
+    帐号：www_zscreat_com
+    密码：QsNw2015
+}
+
+running奔跑{
+    FTP
+    119.23.235.214:21
+    账号：xywm
+    密码：xywm1234
+
+    MySQL
+    119.23.235.214:3306
+    账号：xywm
+    密码：xywm1234
+}
+
+西区OA项目{
+    移动端：http://112.91.56.122:211/app/login.aspx
+    电脑端：http://112.91.56.122:211/pc/login.aspx
+
+    账号：admin
+    密码：adminqs
+
+    FTP
+    112.91.56.122:21
+    帐号：ydjf
+    密码：ydjf1234
+
+    MySQL
+    http://192.168.0.253:211/dbm/m.aspx
+}
+
+格兰特系统{
+    ui设计稿：https://pro.modao.cc/app/Sr2kEl7TwFsVVVVv3LOWeHLEEGlvTsT
+    移动端：http://192.168.0.253:8086/app/index.php?i=1&c=entry&html=xiaoxi_lb&do=app&m=qsnw_potm
+    pc端：http://192.168.0.253:8086/app/index.php?i=1&c=entry&html=index&do=web&m=qsnw_potm
+
+    账号：admin
+    密码：1
+
+    FTP
+    192.168.0.253:21
+    账号：glt
+    密码：admin1234
+
+    MySQL
+    192.168.0.253:3306
+    用户名：glt
+    密码：admin1234
+}
+
+格兰特系统(正式版){
+    ui设计稿：https://pro.modao.cc/app/Sr2kEl7TwFsVVVVv3LOWeHLEEGlvTsT
+    移动端：
+    pc端：https://glt.qsnwdss.top/app/index.php?i=1&c=entry&eid=234
+
+    账号：admin
+    密码：1
+
+    FTP
+    118.89.16.204:21
+    账号：glt_qsnwdss_top
+    密码：BDNKJfk4S3
+
+    MySQL
+    118.89.16.204:3306
+    用户名：glt_qsnwdss_top
+    密码：QSh4h4JhMP
+}
+
+小榄投诉举报信息管理平台{
+    http://112.91.58.114/pc/index.aspx
+
+    账号：test
+    密码：1
+
+    FTP
+    112.91.58.114:21
+    帐号：zsqswl
+    密码：qslmj&2017
+}
+
+全胜网络管理后台{
+    http://websys.gnc.ph/app/index.php?i=1&c=entry&html=index&do=web&m=gm_mod
+
+    超级管理员帐号：qsadmin
+    密码：qsnw&2015
+
+    MySQL
+    47.74.249.16:3306
+    账号：gnc_websys
+    密码：admin1234
+
+    FTP（websys）
+    47.74.249.16:21
+    账号：gnc_websys
+    密码：admin1234
+
+    MySQL
+    47.74.249.16:3306
+    账号：gnc_web
+    密码：admin1234
+
+    FTP（WEB）
+    47.74.249.16:21
+    账号：gnc_web
+    密码：admin1234
+}
+
+快多了打折埋单{
+    管理后台：http://www.kduole.com/web/index.php?c=platform&a=cover&eid=1&version_id=0
+
+    FTP（WeChat Mini Program）
+    120.78.207.95:21
+    账号：www_kduole_com
+    密码：SLFYRwdFME
+周刘思源
+    新的地址47.107.248.61:21
+    账号：ylkduole_admin
+    密码：aY4whaJKm3
+}
+gitblit{
+    账号：admin
+    密码：admin1234
+}
+
+校园{
+    手机：
+    https://run.mockplus.cn/efPCF6cBd5QE8b2H/index.html?to=3B85488E-48D9-458F-987D-5D593AEC44B9
+    --------------------------------------------------------------------------------------------------------
+    后台设计稿：https://run.mockplus.cn/qeF1jFEe72Pwy0P2/index.html
+    后台：http://xyaq.gdfulai.com/app/index.php?i=1&c=entry&do=web&m=xyglpt&html=index&hi=1
+
+    MySQL（正式版）
+    IP：39.108.121.203
+    数据库名：xyaq_qsnwltd_cn
+    账号：xyaq_qsnwltd_cn
+    密码：fKR2eHRdc6
+
+
+    FTP（正式版）
+    IP：39.108.121.203:21
+    帐号： xyaq
+    密码：tem3TwxfNX
+
+}
+
+立芯净水{
+    H5链接：http://lxjs.zslx888.com/wechat
+
+
+    FTP
+    IP：193.112.113.56
+    账号：www_water_com
+    密码：MHDMd5mNXf
+
+}
+
+

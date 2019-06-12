@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" onclick="submit_success()" />
+<input type="text" maxlength="6" />
+<script type="text/javascript">
+    function submit_success() {
+        var order_type_new = "p_order";
+        var Request = new UrlSearch(); //实例化
+        var order_type = Request.order_type;
+        if(order_type == '' || order_type == null){ //如果没有传 order_type ,就追加上order_type 然后返回
+            location.href = document.referrer+"?order_type="+"p_order";
+        }else{
+            if(order_type_new == order_type){ //如果新的order_type 和 来源的order_type 一致。那么直接返回
+                location.href=document.referrer;
+            }else{ //否则更新成新的 order_type
+                var num = document.referrer.indexOf("?")
+                var url_no_parameter = document.referrer.substr(0,num);
+                location.href = url_no_parameter+"?order_type="+"p_order";
+            }
+        }
+
+        return;
+    }
+
+    //初始化url地址
+
+    function UrlSearch(){
+        var name,value;
+        var str = document.referrer; //url地址
+
+        var num = str.indexOf("?");
+        str = str.substr(num+1); //取得所有参数 stringvar.substr(start [, length ]
+        var arr=str.split("&"); //各个参数放到数组里
+        for(var i=0;i < arr.length;i++){
+            num=arr[i].indexOf("=");
+            if(num>0){
+                name=arr[i].substring(0,num);
+                value=arr[i].substr(num+1);
+                this[name]=value;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

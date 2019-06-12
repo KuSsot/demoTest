@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .filtrate{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .filRow{
+            width: 100%;
+            display: flex;
+        }
+        .filTitle{
+            width: 10%;
+        }
+        .filInfo{
+            width: 86%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filInfo>div{
+            margin: 5px;
+        }
+        .filCheck{
+            width: 76%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filCheck>div{
+            border: 1px solid #3385FF;
+            display: flex;
+            justify-content: space-between;
+            margin:5px ;
+            color: #3385FF;
+        }
+        .filCheck>div span:last-child{
+            border: 1px solid #3385FF;
+            color: red;
+            cursor: pointer;
+        }
+        .filtrate{
+            background: #d5d3d382;
+        }
+    </style>
+</head>
+<body>
+    <div class="filtrate">
+        <div class="filBox">
+            <div class="filRow">
+                <div class="filTitle">您已选择：</div>
+                <div class="filCheck">
+                    <div class=""><span class="">餐饮美食</span><span class="">×</span></div>
+                    <div class=""><span class="">三万以下</span><span class="">×</span></div>
+                    <div class=""><span class="">中山市</span><span class="">×</span></div>
+                </div>
+            </div>
+            <div class="filRow">
+                <div class="filTitle">商机分类：</div>
+                <div class="filInfo">
+                    <div class=""><span class="">服装鞋包</span></div>
+                    <div class=""><span class="">餐饮美食</span></div>
+                    <div class=""><span class="">家居用品</span></div>
+                </div>
+            </div>
+            <div class="filRow">
+                <div class="filTitle">小类：</div>
+                <div class="filInfo">
+                    <div class=""><span class="">童装</span></div>
+                    <div class=""><span class="">女装</span></div>
+                    <div class=""><span class="">牛仔裤</span></div>
+                    <div class=""><span class="">女鞋</span></div>
+                    <div class=""><span class="">内衣</span></div>
+                    <div class=""><span class="">职业装</span></div>
+                </div>
+            </div>
+            <div class="filRow">
+                <div class="filTitle">投资额度：</div>
+                <div class="filInfo">
+                    <div class=""><span class="">不限</span></div>
+                    <div class=""><span class="">1-3万</span></div>
+                    <div class=""><span class="">3-5万</span></div>
+                    <div class=""><span class="">5-10万</span></div>
+                    <div class=""><span class="">10-20万</span></div>
+                    <div class=""><span class="">50万以上</span></div>
+                </div>
+            </div>
+            <div class="filRow">
+                <div class="filTitle">地区：</div>
+                <div class="filInfo">
+                    <div class="">
+                        <select class="">
+                            <option>不限/省</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <select class="">
+                            <option>不限/市</option>
+                        </select>
+                    </div>
+                    <div class=""><span class="">东区</span></div>
+                    <div class=""><span class="">南区</span></div>
+                    <div class=""><span class="">西区</span></div>
+                    <div class=""><span class="">北区</span></div>
+                </div>
+            </div>
+            <div class="filRow">
+                <div class="filTitle">筛选条件：</div>
+                <div class="filInfo">
+                    <div class="">
+                        <span class="">默认排序</span>
+                    </div>
+                    <div class="">
+                        <select class="">
+                            <option>发布时间 ▼</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <select class="">
+                            <option>经营面积 ▼</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <select class="">
+                            <option>按最少投资额度排 ▼</option>
+                            <option>按最多投资额度排 ▼</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</body>
+<script>
+    $.ajax({
+        url: "http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=filter_init&m=gm_mod",
+        type: "post",
+        dataType: "json",
+        data: {
+            lmid: 1,
+        }
+    }).done(function (data) {
+        console.log(data);
+    })
+</script>
+</html>

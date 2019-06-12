@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>准多多-首页</title>
+</head>
+<link rel="stylesheet" href="indexfile/css/index.css">
+<script src="indexfile/js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.zhunduoduo.cn/addons/gm_mod/template/mobile/web/css/style1.css">
+<style>
+    a {
+        color: black;
+        text-decoration: none;
+    }
+</style>
+<body>
+<div id="ma-box-home">
+    <div id="box-Ngtion">
+        <span><a>首页</a></span>
+        <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=know">知道</a></span>
+        <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=duo_zixun">资讯</a></span>
+        <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=duo11">百科</a></span>
+        <span><a href="">天气</a></span>
+        <span style="display: none" class="not_login"><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=news">消息</a></span>
+        <span style="display: none" class="not_login"><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=gerenzhongxin">我的</a></span>
+        <span style="display: none" class="not_login"><a onclick="logOut()" style="cursor:pointer">退出</a></span>
+        <span class="btn_login"><button onclick="window.location.href='http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=login'">登录</button></span>
+        <span class="btn_login btn_reg"><button onclick="window.location.href='http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=register'">注册</button></span>
+    </div>
+    <div id="box-max-include">
+        <div class="box-search-dv">
+            <div><img src="http://www.zhunduoduo.cn/addons/gm_mod/template/mobile/web/images/zdd.png"></div>
+            <div id="search-box">
+                <span><input id="keyword" type="text" placeholder="搜索交友"></span>
+                <span><button onclick="getkeyword()">搜索一下</button></span>
+            </div>
+        </div>
+        <script>
+            function getkeyword() {
+                var keyword = $('#keyword').val();
+                if (keyword != '' && keyword != null && keyword != undefined) {
+                    window.location.href = 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=all&tdsourcetag=s_pcqq_aiomsg&mtype=0&keword=' + keyword + '';
+                }else {
+                    window.location.reload();
+                }
+            }
+        </script>
+        <div class="box-marst">
+            <div id="box-link">
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=1">招商</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=2">交友</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=3">招聘</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=4">汽车</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=5">房屋</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=6">家装</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=7">建材</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=8">家政</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=9">美容</a></span>
+                <span><a href="http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=web&m=gm_mod&html=list&tdsourcetag=s_pcqq_aiomsg&mtype=10">服务</a></span>
+            </div>
+        </div>
+        <div id="box-code" class="box-fixe">
+            <div>
+                <img src="indexfile/images/download.jpg">
+                <div>扫一扫下载APP</div>
+            </div>
+            <div class="box-text">
+                <div class="box-matters">
+                    <span><a href="">把准多多设为主页</a></span>
+                    <span><a href="">关于准多多</a></span>
+                    <span></span><a href="">About Zhunduoduo</a>
+                    <span><a href="">准多多推广</a></span>
+                </div>
+                <span>©2018 Zhunduoduo <a href="">使用准多多前必读</a> 意见反馈 粤ICP备18158355号 </span>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    $(window).resize(function () {
+        var he = $(window).height();
+        var nav = $("#box-code"); //得到导航对象
+        if (he < 670) {
+            nav.removeClass("box-fixe");
+            nav.addClass("fixednav");
+        } else {
+            nav.removeClass("fixednav");
+            nav.addClass("box-fixe");
+        }
+    })
+
+    $.ajax({//报道正文内容
+        url: 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=checksesssion&m=gm_mod',
+        type: 'post',
+        dataType: 'text',
+
+    }).done(function (data) {
+        console.log(data);
+        if (data == "1") {
+            $(".not_login").show();
+            $(".btn_login").hide();
+        }
+        else {
+            $(".not_login").hide();
+            $(".btn_login").show();
+        }
+    }).fail(function () {
+        console.log("error");
+    });
+
+    function logOut() {
+        $.ajax({
+            url: 'http://www.zhunduoduo.cn/app/index.php?i=1&c=entry&do=logout&m=gm_mod',
+            type: 'post',
+            dataType: 'json',
+            data: {}
+        }).done(function (data) {
+            window.location.reload();
+        });
+        setTimeout(function () {
+            window.location.reload()
+        }, 500);
+    }
+</script>
+</html>

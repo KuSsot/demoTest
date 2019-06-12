@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>reduceDemo</title>
+</head>
+<body>
+
+<p>点击按钮计算数组元素相加后的总和。</p>
+<button onclick="myFunction()">点我</button>
+
+<p>数组元素总和: <span id="demo"></span></p>
+
+<script>
+    var numbers = [10,1,1,1];
+    var i=1;
+
+    function getSum(total, num) {//前一个数加后一个数的函数         total是数组中前一个值加后一个值得和，num是数组中后一个值;把这两个数组成一个数组[total,num]
+        console.log(i+"次-----------------------------------------------");
+        console.log("total");
+        console.log(total);
+        console.log("num");
+        console.log(num);
+        i++;
+        return total + num;
+    }
+    function myFunction(item) {//回调数组的函数，反复的让数组计算后缩减直到length=0
+        //array.reduce(function(total, currentValue, currentIndex, arr){}), initialValue
+        document.getElementById("demo").innerHTML = numbers.reduce(getSum);
+    }
+</script>
+
+</body>
+</html>
