@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        .account_info {
+            width: 100%;
+            background-color: #F2F2F2;
+            padding-top: 5px;
+            margin-bottom: 5px;
+        }
+        .account_info > p {
+            margin-top: 0px;
+            margin-left: 30px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .account_info > div {
+            display: flex;
+            flex-flow: wrap row;
+            justify-content: flex-start;
+        }
+        .account_info>.userMess>.btnBox{
+            width: 100%;
+            text-align: left;
+            display: block;
+        }
+        .account_info>.userMess>.btnBox>.btn{
+            display: inline-block;
+            width: 110px;
+            text-align: center;
+            padding:5px 10px;
+            color: white;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btnBlue{
+            background-color: #3385FF;
+        }
+        .btnGreen{
+            background-color: #27ff5d;
+        }
+        .account_info > div > div {
+            width: 30%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        .account_info > div > div > span {
+            text-align: right;
+            white-space: normal;
+        }
+        .account_info > div > div > input {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #F2F2F2;
+            background-color: white;
+            width: 35%;
+        }
+        .account_info > div > div > select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #F2F2F2;
+            background-color: white;
+            width: 42%;
+        }
+
+    </style>
+</head>
+<body>
+<div id="bigDiv">
+    <div class="account_info"><p>完善信息</p>
+        <div class="userMess">
+            <div class="selects"><span>昵称:</span> <input type="text"></div>
+            <div class="selects"><span>行业:</span> <select>
+                <option value="1">电子</option>
+                <option value="2">服务</option>
+                <option value="3">建材</option>
+            </select></div>
+            <div class="selects"><span>身高:</span> <select>
+                <option value="1">160以下</option>
+                <option value="2">170以下</option>
+            </select></div>
+            <div class="selects"><span>手机号:</span> <input type="text"></div>
+            <div class="selects"><span>月薪:</span> <select>
+                <option value="1">3000-5000</option>
+                <option value="2">6000-10000</option>
+                <option value="3">10000以上</option>
+            </select></div>
+            <div class="selects"><span>体重:</span> <select>
+                <option value="1">100kg以下</option>
+                <option value="2">100kg以上</option>
+            </select></div>
+            <div class="selects"><span>血型:</span> <select>
+                <option value="1">A型血</option>
+                <option value="2">B型血</option>
+                <option value="3">AB型血</option>
+                <option value="4">O型血</option>
+            </select></div>
+            <div class="selects"><span>学历:</span> <select>
+                <option value="1">不限</option>
+                <option value="2">初中</option>
+                <option value="3">高中</option>
+                <option value="4">大学</option>
+            </select></div>
+            <div class="selects"><span>性别:</span> <select>
+                <option value="1">男</option>
+                <option value="2">女</option>
+            </select></div>
+            <div class="selects"><span>购车:</span> <select>
+                <option value="1">未购车</option>
+                <option value="2">已购车</option>
+            </select></div>
+            <div class="selects"><span>地区:</span> <select type="text"></select></div>
+            <div class="selects"><span>住房:</span> <select>
+                <option value="1">自建房</option>
+                <option value="2">商品房</option>
+            </select></div>
+            <div class="selects"><span>详细地址:</span> <input type="text"></div>
+            <div class="selects"><span>星座:</span> <select>
+                <option value="1">巨蟹座</option>
+                <option value="10">天蝎座</option>
+                <option value="11">天秤座</option>
+                <option value="12">射手座</option>
+                <option value="2">白羊座</option>
+                <option value="3">双子座</option>
+                <option value="4">水瓶座</option>
+                <option value="5">处女座</option>
+                <option value="6">狮子座</option>
+                <option value="7">金牛座</option>
+                <option value="8">双鱼座</option>
+                <option value="9">摩羯座</option>
+            </select></div>
+        </div>
+    </div>
+    <div id="addDiv" onclick="addDiv()" style="cursor: pointer; margin:20px auto; border-radius: 5px; width: 40%; font-size: 24px;background-color: #888888;color: white;font-weight: bold;text-align: center;">+</div>
+</div>
+<div id="message" style=" display: none; position:fixed;top:0;left:0;background-color: rgba(0,0,0,0.4);width: 100%;height: 900px;">
+    <div style="margin: 100px auto; width: 30%;height: 50%;border-radius:5px;background-color: white">
+        <div style="width: 100%;text-align: right;"><span style="padding-right: 10px; cursor: pointer; font-size: 20px;" onclick="$('#message').fadeOut();">×</span></div>
+        <div style="width: 80%;height: 360px;margin: 20px auto;">
+            <div id="title" style="text-align: center; width: 100%;margin: 10px 0;height: 25px;font-size: 16px;"></div>
+            <div id="content" style="width: 100%;margin: 10px 0;max-height: 85%;overflow: auto;"></div>
+        </div>
+    </div>
+</div>
+<select>
+    <option></option>
+</select>
+</body>
+<script>
+    function addDiv() {
+        var innerDiv = $(
+            '<div class="account_info">' +
+            '   <p>标题：<input type="text" maxlength="6"></p>' +
+            '   <div class="userMess">' +
+            '       <div class="btnBox">' +
+            '           <span class="btn btnGreen" onclick="addSelOrInp(this,1)">添加下选框 +</span>' +
+            '           <span class="btn btnBlue" onclick="addSelOrInp(this,2)">添加输入框 +</span>' +
+            '       </div>' +
+            '   </div>' +
+            '</div>');
+        $('#bigDiv').after(innerDiv);
+
+    }
+    function addSelOrInp(that,TypeNum) {
+        var DomHtml;
+        if(TypeNum == 1){
+            DomHtml=$(
+                '<div class="selects">' +
+                '   <span><input placeholder="下选框标题" type="text" maxlength="6"></span> ' +
+                '   <select onclick="AddOption(\'添加下选框的内容\')"></select>' +
+                '</div><span>删除</span>');
+        }else{
+            DomHtml=$(
+                '<div class="selects">' +
+                '   <span><input placeholder="输入框标题" type="text" maxlength="6"></span> ' +
+                '   <input placeholder="内容">' +
+                '</div><span>删除</span>');
+        }
+        console.log($(that).parents('.userMess'));
+        $(that).parents('.userMess').append(DomHtml);
+    }
+
+    function AddOption(title) {
+        $('#message #title').text(title);
+        $('#message').fadeIn();
+    }
+</script>
+</html>
