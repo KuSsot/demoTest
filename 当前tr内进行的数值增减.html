@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>矿泉水</td>
+        <td><span>10</span></td>
+        <td><button onclick="remNum(this)">-</button><input type="number" value="0"><button onclick="addNum(this)">+</button></td>
+        <td>0</td>
+    </tr>
+</table>
+</body>
+<script>
+    function remNum(that){
+        var num = parseInt($(that).siblings('input').val());
+        if(num>0){
+            $(that).siblings('input').val(num-1);
+            setTotal(that,num-1);
+        }
+    }
+    function addNum(that){
+        var num = parseInt($(that).siblings('input').val());
+        if(num>=0){
+            $(that).siblings('input').val(num+1);
+            setTotal(that,num+1);
+        }
+    }
+    function setTotal(that,num){
+        var td = $(that).parents('td').siblings();
+        var pri = parseFloat($(td[1]).find('span').text());
+
+        $(td[2]).text(pri*num);
+    }
+</script>
+</html>

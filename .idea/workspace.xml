@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="" />
+    <list default="true" readonly="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/当前tr内进行的数值增减.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="全胜网络用" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/全胜网络用">
+      <file leaf-file-name="当前tr内进行的数值增减.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/当前tr内进行的数值增减.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="657">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="手机滑动删除.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/手机滑动删除.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -61,6 +73,7 @@
         <option value="$PROJECT_DIR$/videoDemo.html" />
         <option value="$PROJECT_DIR$/pDemo.html" />
         <option value="$PROJECT_DIR$/web/alretDemo/js/ui.js" />
+        <option value="$PROJECT_DIR$/当前tr内进行的数值增减.html" />
       </list>
     </option>
   </component>
@@ -92,6 +105,11 @@
           <expand>
             <path>
               <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demoTest" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demoTest" type="47feb1d3:ProjectViewModuleNode" />
               <item name="demoTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -112,7 +130,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -136,26 +154,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.当前tr内进行的数值增减.html">
     <configuration name="浮动demo.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demoTest/浮动demo.html" />
-    <configuration name="flexDemo.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demoTest/flexDemo.html" />
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demoTest/web/alretDemo/index.html" />
     <configuration name="pDemo.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demoTest/pDemo.html" />
+    <configuration name="当前tr内进行的数值增减.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demoTest/当前tr内进行的数值增减.html" />
     <configuration name="videoDemo.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demoTest/videoDemo.html" />
     <list>
-      <item itemvalue="JavaScript Debug.flexDemo.html" />
       <item itemvalue="JavaScript Debug.浮动demo.html" />
       <item itemvalue="JavaScript Debug.videoDemo.html" />
       <item itemvalue="JavaScript Debug.pDemo.html" />
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.当前tr内进行的数值增减.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.当前tr内进行的数值增减.html" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.pDemo.html" />
         <item itemvalue="JavaScript Debug.videoDemo.html" />
         <item itemvalue="JavaScript Debug.浮动demo.html" />
-        <item itemvalue="JavaScript Debug.flexDemo.html" />
       </list>
     </recent_temporary>
   </component>
@@ -198,17 +216,21 @@
       <workItem from="1557286424246" duration="1108000" />
       <workItem from="1557456734619" duration="1737000" />
       <workItem from="1557542118557" duration="1394000" />
-      <workItem from="1560648340381" duration="447000" />
+      <workItem from="1560561986114" duration="943000" />
+      <workItem from="1560914935504" duration="18000" />
+      <workItem from="1560916057997" duration="291000" />
+      <workItem from="1560930887310" duration="2240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35897000" />
+    <option name="totallyTimeSpent" value="38942000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.213125" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21354167" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -218,32 +240,32 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915073" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="SVN Repositories" order="7" weight="0.66883963" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="SVN Repositories" order="7" weight="0.66883963" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.098958336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="SVN Repositories" order="8" weight="0.66883963" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
@@ -596,20 +618,22 @@
     <entry file="file://$PROJECT_DIR$/web/alretDemo/js/ui.js" />
     <entry file="file://$PROJECT_DIR$/web/alretDemo/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" selection-start-line="11" selection-end-line="15" />
+        <state relative-caret-position="286">
+          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/改的操作自增1.html">
+    <entry file="file://$PROJECT_DIR$/手机滑动删除.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137" />
+        <state relative-caret-position="156">
+          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="71" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/全胜网络用">
+    <entry file="file://$PROJECT_DIR$/当前tr内进行的数值增减.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="657">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
         </state>
       </provider>
     </entry>
