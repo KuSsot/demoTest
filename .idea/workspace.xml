@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/当前tr内进行的数值增减.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" readonly="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,8 +17,8 @@
       <file leaf-file-name="当前tr内进行的数值增减.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/当前tr内进行的数值增减.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            <state relative-caret-position="475">
+              <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -219,12 +216,20 @@
       <workItem from="1560561986114" duration="943000" />
       <workItem from="1560914935504" duration="18000" />
       <workItem from="1560916057997" duration="291000" />
-      <workItem from="1560930887310" duration="2240000" />
+      <workItem from="1560930887310" duration="3020000" />
     </task>
+    <task id="LOCAL-00001" summary="新增一个tr内的算账demo">
+      <created>1560933219271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560933219271</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38942000" />
+    <option name="totallyTimeSpent" value="39722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -275,6 +280,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新增一个tr内的算账demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增一个tr内的算账demo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -632,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/当前tr内进行的数值增减.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        <state relative-caret-position="475">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
         </state>
       </provider>
     </entry>
