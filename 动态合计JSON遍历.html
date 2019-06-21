@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        tbody{
+            border: 1px solid;
+        }
+        table td{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>1-1</td>
+            <td>110</td>
+        </tr>
+        <tr>
+            <td>1-2</td>
+            <td>110</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td></td>
+        </tr>
+       <tr>
+            <td>2-1</td>
+            <td>210</td>
+        </tr>
+       <tr>
+            <td>2-2</td>
+            <td>210</td>
+        </tr>
+       <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+       <tr>
+            <td>3-1</td>
+            <td>310</td>
+        </tr>
+       <tr>
+            <td>3-2</td>
+            <td>310</td>
+        </tr>
+    </tbody>
+</table>
+<button onclick="hebing()">生成</button>
+</body>
+<script>
+
+    function hebing() {
+        var td;
+        var ntd;
+        var monn;
+        var trArr={
+            'bf':0,
+            'money':0.0,
+        }
+        $('table tbody tr').each(function () {
+            td = $(this).find('td:first').text().split('-');
+            ntd = $(this).next('tr').find('td:first').text().split('-');
+            monn = $(this).find('td:last').text();
+            if(td[0] == ntd[0]){
+                if(monn<=0){
+                    trArr.money = 0.0;
+                }else {
+                    trArr.money = trArr.money + parseFloat(monn);
+                }
+                trArr.bf = td[0];
+            }else {
+                trArr.money = trArr.money + parseFloat(monn);
+                $(this).after('<tr><td>合计</td><td>'+trArr.money+'</td></tr>');
+                trArr={
+                    'bf':0,
+                    'money':0.0,
+                }
+            }
+        });
+    }
+</script>
+</html>

@@ -13,9 +13,6 @@
 
 
     var hist = initDate.reduce(function (prev, item) {//回调数组的方法
-        console.log(prev);
-        console.log(item);
-
         var d = item.date.split("-");//根据"-"拆分得到的时间以数组的形式存到d中所以d=[2017,7,7](里面的内容是字符串形式)
         var date = d[0];//把得到的数组里面的前2位拼接成新的字符串201707
 
