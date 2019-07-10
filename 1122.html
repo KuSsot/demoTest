@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<input id="input1" type="text" />
+		<script>
+			$("#input1").bind("input propertychange", function(event) {
+				var val = $("#input1").val();
+
+				if (val == "00") {
+					$("#input1").val("0");
+				}
+				var result1 = val.indexOf(".");
+				if (result1 != -1) {
+					console.log("包含了"+val)
+					
+					var num=val.indexOf('.');
+					console.log("下标是"+ num)
+				var	str = val.substr(num,3);
+				var str1=val.substr(0,num-1);
+				console.log("最后赋值的数量"+str)
+				console.log("最后赋666"+str1)
+					var tt=str1+str;
+					console.log(tt)
+					//$("#input1").val(tt);
+					
+				} else {
+					console.log("未包含")
+				}
+
+				console.log($("#input1").val().length)
+			});
+		</script>
+
+		<input name="price"id="goodsPrice" placeholder="请输入商品价格"onkeyup="clearNoNum(this)" onblur="clearNoNum(this)" >
+		<script>
+
+			function clearNoNum(obj){
+				//修复第一个字符是小数点 的情况.
+				if(obj.value !=''&& obj.value.substr(0,1) == '.'){
+					obj.value="";
+				}
+				obj.value = obj.value.replace(/^0*(0\.|[1-9])/, '$1');//解决 粘贴不生效
+				obj.value = obj.value.replace(/[^\d.]/g,"");  //清除“数字”和“.”以外的字符
+				obj.value = obj.value.replace(/\.{2,}/g,"."); //只保留第一个. 清除多余的
+				obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+				obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');//只能输入两个小数
+				if(obj.value.indexOf(".")< 0 && obj.value !=""){//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+					if(obj.value.substr(0,1) == '0' && obj.value.length == 2){
+						obj.value= obj.value.substr(1,obj.value.length);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

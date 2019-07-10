@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/img/check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/img/checked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/img/login_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/js/particles.js" afterDir="false" />
+    <list default="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="新增了一个登录页的demo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state relative-caret-position="775">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -88,16 +81,17 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="33" />
-    <option name="width" value="1537" />
-    <option name="height" value="1078" />
+    <option name="x" value="20" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,29 +99,18 @@
               <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="demoTest" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="酷炫科技星空星座连接登录页面" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../快多了" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/MQTT的连接Demo" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -236,6 +219,7 @@
       <workItem from="1560930887310" duration="3020000" />
       <workItem from="1561430258411" duration="703000" />
       <workItem from="1562652929654" duration="1184000" />
+      <workItem from="1562660906291" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="新增一个tr内的算账demo">
       <created>1560933219271</created>
@@ -244,11 +228,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560933219271</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="新增了一个登录页的demo">
+      <created>1562661034736</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562661034736</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41609000" />
+    <option name="totallyTimeSpent" value="41785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -299,7 +290,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增一个tr内的算账demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增一个tr内的算账demo" />
+    <MESSAGE value="新增了一个登录页的demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了一个登录页的demo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -449,8 +441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        <state relative-caret-position="775">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
