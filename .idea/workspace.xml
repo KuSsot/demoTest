@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="新增了一个登录页的demo">
+    <list default="true" id="4a127576-727c-48ed-b644-0b3c51917370" name="Default" comment="新增一个mqtt案例">
+      <change afterPath="$PROJECT_DIR$/web/MQTT的连接Demo/compatible/audio/9444.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MQTT的连接Demo/compatible/audio/notify.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/MQTT的连接Demo/compatible/jquery.notify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/MQTT的连接Demo/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/MQTT的连接Demo/demo.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,11 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/index.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/MQTT的连接Demo/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/MQTT的连接Demo/compatible/jquery.notify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -64,6 +77,8 @@
         <option value="$PROJECT_DIR$/web/alretDemo/js/ui.js" />
         <option value="$PROJECT_DIR$/当前tr内进行的数值增减.html" />
         <option value="$PROJECT_DIR$/TPF-MySql" />
+        <option value="$PROJECT_DIR$/web/MQTT的连接Demo/demo.html" />
+        <option value="$PROJECT_DIR$/web/MQTT的连接Demo/compatible/jquery.notify.js" />
       </list>
     </option>
   </component>
@@ -72,13 +87,6 @@
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="20" />
@@ -99,6 +107,32 @@
               <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="demoTest" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="MQTT的连接Demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="MQTT的连接Demo" type="462c0819:PsiDirectoryNode" />
+              <item name="compatible" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="MQTT的连接Demo" type="462c0819:PsiDirectoryNode" />
+              <item name="compatible" type="462c0819:PsiDirectoryNode" />
+              <item name="audio" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -110,7 +144,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/MQTT的连接Demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/MQTT的连接Demo/compatible" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -120,13 +154,15 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\zlsy\project\demoTest" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\zlsy\project\demoTest\web\alretDemo" />
       <recent name="F:\zlsy\工作项目\demoTest\js" />
       <recent name="F:\zlsy\工作项目\demoTest\web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\demoTest\web\MQTT的连接Demo\compatible" />
+      <recent name="D:\project\demoTest\web\MQTT的连接Demo" />
+      <recent name="F:\zlsy\project\demoTest" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,6 +256,7 @@
       <workItem from="1561430258411" duration="703000" />
       <workItem from="1562652929654" duration="1184000" />
       <workItem from="1562660906291" duration="176000" />
+      <workItem from="1562752916252" duration="938000" />
     </task>
     <task id="LOCAL-00001" summary="新增一个tr内的算账demo">
       <created>1560933219271</created>
@@ -235,11 +272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562661034736</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="新增一个mqtt案例">
+      <created>1562753032710</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562753032710</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41785000" />
+    <option name="totallyTimeSpent" value="42723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -259,7 +303,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -291,7 +335,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增一个tr内的算账demo" />
     <MESSAGE value="新增了一个登录页的demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增了一个登录页的demo" />
+    <MESSAGE value="新增一个mqtt案例" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增一个mqtt案例" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -439,10 +484,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/MQTT的连接Demo/compatible/md5.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/酷炫科技星空星座连接登录页面/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="644">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MQTT的连接Demo/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MQTT的连接Demo/compatible/jquery.notify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
         </state>
       </provider>
     </entry>
