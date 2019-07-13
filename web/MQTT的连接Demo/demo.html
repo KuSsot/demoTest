@@ -263,6 +263,7 @@ $(function () {
         }
         //接收消息事件
         function onMessageArrived(data) {
+            console.log(data);
             WriteToStatus("收到消息：" + data.payloadString);
         }
 		
